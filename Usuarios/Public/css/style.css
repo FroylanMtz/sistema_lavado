@@ -1,0 +1,55 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    background: lightgray;
+    
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+ol { 
+    list-style-type: none; text-align: center; 
+}
+
+li { 
+    display: inline; 
+}
+
+h3 { 
+    text-align: center; 
+}
+
+fieldset { 
+    text-align: center; 
+}
+
+table { 
+    text-align: center; 
+}
+
+#btnVisitas{
+    width: 100%;
+}
+
+#btnPremios{
+    width: 100%;
+}
+
+#btnClima{
+    width: 100%;
+}
+
+#btnPromociones{
+    width: 100%;
+}
+
+#pan{
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    color: black;
+}
