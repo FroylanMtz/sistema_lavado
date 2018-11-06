@@ -1,8 +1,8 @@
 <div class="col s12 mt-5 " id="pan" >
-    <a href="#!" class="breadcrumb"> First </a>
-    <a href="#!" class="breadcrumb">Second</a>
-    <a href="#!" class="breadcrumb">Third</a>
+    <a data-target="mobile-demo" class="breadcrumb sidenav-trigger"> Menú </a>
+    <a href="index.php?pagina=inicio" class="breadcrumb"> Inicio </a>
 </div>
+
 
 <div class="row"> 
     <div class="col s12">
@@ -16,6 +16,14 @@
     <div class="col s12">
         <center>
             <a href="index.php?pagina=visitas" id="btnVisitas" class="waves-effect waves-light btn-large blue darken-4"><i class="fas fa-map-marker-alt"></i> Mis visitas</a>
+        </center>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12">
+        <center>
+            <a href="index.php?pagina=cupones" id="btnVisitas" class="waves-effect waves-light btn-large blue darken-4"><i class="fas fa-ticket-alt"></i> Cupones </a>
         </center>
     </div>
 </div>

@@ -13,17 +13,31 @@ require_once 'Controllers/Controlador.php';
     <link rel="stylesheet" type="text/css" href="Public/css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" href="Public/css/login.css" />
 
+    <style> 
+        body{
+            background: lightgray;
+        }
+    </style>
+
 </head>
 
-<body background="" >
+<body >
+
+    <header>
+        
+        <nav>
+            <div class="nav-wrapper blue darken-4">
+                <a href="index.php?pagina=inicio" class="brand-logo"> <img src="Public/img/logo.png" alt="" width="60px" height="60px"> </a>
+                
+            </div>
+        </nav>
+    </header>
+
     <main>    
         <div class="section"></div>
     
         <center>
-            <img class="responsive-img" style="width: 150px;" src="Public/img/logo.png" />
-            <div class="section"></div>
-
-            <h5 class="indigo-text">Inicio de sesion de usuario</h5>
+            <h4 class="indigo-text">Inicio de sesion de usuario</h4>
             <div class="section"></div>
 
             <div class="container">
@@ -36,20 +50,20 @@ require_once 'Controllers/Controlador.php';
                         </div>
 
                         <div class='row'>
-                            <div class='input-field col s12'>
-                                <input class='validate' type='email' name='email' id='email' />
-                                <label for='email'>Correo</label>
+                            <div class='input-field col s12 '>
+                                <input class='validate' type='text' name='id' id='id' />
+                                <label for='id'>Id</label>
                             </div>
                         </div>
 
                         <div class='row'>
                             <div class='input-field col s12'>
-                                <input class='validate' type='password' name='password' id='password' />
-                                <label for='password'>Contraseña</label>
+                                <input class='validate' type='password' name='contrasena' id='contrasena' />
+                                <label for='contrasena'>Contraseña</label>
                             </div>
 
-                            <label style='float: right;'>
-                                <a class='pink-text' href='#!'><b>¿Olvidaste tu contraseña?</b></a>
+                            <label style='float: left;'>
+                                <a class='pink-text' href='#!'><b>Estas credenciales son proporcionadas por el admin</b></a>
                             </label>
 
                         </div>
@@ -57,7 +71,7 @@ require_once 'Controllers/Controlador.php';
                         <br />
                         <center>
                             <div class='row'>
-                                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Iniciar Sesion</button>
+                                <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect blue darken-4'>Iniciar Sesion</button>
                             </div>
                         </center>
                     </form>
@@ -70,9 +84,24 @@ require_once 'Controllers/Controlador.php';
         <div class="section"></div>
     </main>
 
+    <footer class="page-footer blue darken-4">
+        <div class="footer-copyright">
+            <div class="container">
+                
+            
+            </div>
+        </div>
+    </footer>
+
     <script type="text/javascript" src="Public/js/jquery-3.3.1.min.js"></script>
     <script type="text/javascript" src="Public/js/materialize.min.js"></script>
 
 </body>
 
 </html>
+
+<?php
+    $controlador= new Controlador();
+
+    $controlador -> iniciarSesion();
+?>
