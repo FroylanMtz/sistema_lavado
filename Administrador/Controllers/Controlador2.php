@@ -21,7 +21,6 @@
        			 //si los datos estan completos y correctos entra al success
         		if($respuesta =="success")
         		{
-         		 //con este echo el ususario una vez que registra al jugador, este echo te regresa la interfaz de listado de jugadores, que contiene la informacion de los jugadores que se han agregado
         		echo "<script> window.location = 'index.php?action=verPromociones';</script>";
         		}
       		}
