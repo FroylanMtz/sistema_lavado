@@ -1,12 +1,12 @@
 <?php
 
 
-class Controlador {
+class Controlador1 {
 
     private $enlace = '';
     private $pagina = '';
 
-    public function cargarPlantilla(){
+    public function cargarPlantilla() {
 
         //session_start();
 
@@ -15,7 +15,6 @@ class Controlador {
         //}else{
             include 'Views/login.php';
         //}
-
     }
 
     public function mostrarPagina(){

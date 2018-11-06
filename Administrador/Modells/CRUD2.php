@@ -2,7 +2,7 @@
 
 require_once 'Conexion.php';
 
-class Datos extends Conexion{
+class crud2 extends Conexion{
 
     
 

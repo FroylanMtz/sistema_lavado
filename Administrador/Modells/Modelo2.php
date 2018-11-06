@@ -1,6 +1,6 @@
 <?php
 
-class Modelo {
+class Modelo2 {
 
 
     public function mostrarPagina($enlace){
