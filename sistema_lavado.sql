@@ -65,7 +65,6 @@ CREATE TABLE `clientes` (
 
 CREATE TABLE `cupones` (
   `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
   `cliente_id` int(11) NOT NULL,
   `expiracion` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
