@@ -3,7 +3,7 @@
 	//▼▼▼▼▼▼▼ PREPARACION DE DATOS ▼▼▼▼▼▼▼
 	class Controlador2 {
 
-		public static function template(){
+		public static function plantilla(){
 			include "Views/Plantilla.php";
 		}
 
