@@ -46,6 +46,7 @@ CREATE TABLE `administradores` (
 
 CREATE TABLE `clientes` (
   `cliente_id` int(11) NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
   `nombreCliente` varchar(255) COLLATE utf8_bin NOT NULL,
   `apellidos` varchar(255) COLLATE utf8_bin NOT NULL,
   `calle` varchar(150) COLLATE utf8_bin DEFAULT NULL,
