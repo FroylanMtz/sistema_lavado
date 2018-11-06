@@ -16,7 +16,7 @@
         		//especificacion de la toma de registro de cada campo
         		$datosController = array("nombre"=>$_POST["nombrePromocionRegistro"],"descripcion"=>$_POST["descripcionPromocionRegistro"]);
 
-        		$respuesta = Datos::registroPromocionesModel($datosController,"promociones");
+        		$respuesta = crud2::registroPromocionesModel($datosController,"promociones");
         
        			 //si los datos estan completos y correctos entra al success
         		if($respuesta =="success")
