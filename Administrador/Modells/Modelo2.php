@@ -5,9 +5,9 @@ class Modelo2 {
 
     public function mostrarPagina($enlace){
 
-        if($enlace == 'inicio'){
+        if($enlace == 'inicio' || $enlace == "registroPromociones" || $enlace == "verPromociones"){
 
-            $pagina = 'Views/Paginas'. $enlace .'.php';
+        $pagina = 'Views/Paginas'. $enlace .'.php';
         
         }else if($enlace == 'index'){
             

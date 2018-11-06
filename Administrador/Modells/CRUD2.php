@@ -26,11 +26,12 @@ class crud2 extends Conexion{
 	//Metodo de registro de Cupones
 	public static function registroCuponesModel($datosModel, $tabla){
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
-		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (cupon_id, password,cliente_id, expiracion) VALUES (:cupon_id,:password,:cliente_id,:expiracion)");
+		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (cupon_id, password,cliente_id,premio_id, expiracion) VALUES (:cupon_id,:password,:cliente_id,:premio_id,:expiracion)");
 		//hacemos referencia a las variables que tenemos vinculadas
 		$stmt->bidParam(":cupon_id",$datosModel["cupon_id"], PDO::PARAM_INT);
 		$stmt->bidParam(":password",$datosModel["password"], PDO::PARAM_STR);
 		$stmt->bidParam(":cliente_id",$datosModel["cliente_id"], PDO::PARAM_INT);
+		$stmt->bidParam(":premio_id",$datosModel["premio_id"], PDO::PARAM_INT);
 		$stmt->bidParam(":expiración",$datosModel["expiración"], PDO::PARAM_INT);
 
 		//esas variables anteriores son ejecutadas con execute
@@ -147,7 +148,7 @@ class crud2 extends Conexion{
 	//✩ Funcion de editar Cupones ✩
 	static public function editarCuponModel($datosModel, $tabla){
 
-		$stmt = Conexion::conectar()->prepare("SELECT cupon_id, password, cliente_id, expiración FROM $tabla WHERE cupon_id = :cupon_id");
+		$stmt = Conexion::conectar()->prepare("SELECT cupon_id, password, cliente_id, premio_id, expiración FROM $tabla WHERE cupon_id = :cupon_id");
 		$stmt->bindParam(":cupon_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
@@ -170,23 +171,13 @@ class crud2 extends Conexion{
 
 
 	//✩ Funcion de Actualizar Promocion ✩
-		static public function actualizarPromocionModel($datosModel, $tabla){
+	static public function actualizarPromocionModel($datosModel, $tabla){
 
-		
-		$id_equipo = Conexion::conectar()->prepare("SELECT max(id) FROM equipos WHERE nombre = :nombre");
-		$id_equipo->bindParam(":nombre", $datosModel['equipo'], PDO::PARAM_STR);
-		$id_equipo->execute();
-		$id_equipo = $id_equipo->fetchColumn();
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombrePromocion = :nombrePromocion, descripcion = :descripcion WHERE promocion_id = :promocion_id");
 
-		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombre = :nombre, id_equipo = :equipo, nacionalidad = :nacionalidad, posicion = :posicion, edad = :edad, email = :email  WHERE id = :id");
-
-		$stmt->bindParam(":nombre", $datosModel["nombre"], PDO::PARAM_STR);
-		$stmt->bindParam(":equipo", $id_equipo, PDO::PARAM_INT);
-		$stmt->bindParam(":nacionalidad", $datosModel["nacionalidad"], PDO::PARAM_STR);
-		$stmt->bindParam(":posicion", $datosModel["posicion"], PDO::PARAM_STR);
-		$stmt->bindParam(":edad", $datosModel["edad"], PDO::PARAM_STR);
-		$stmt->bindParam(":email", $datosModel["email"], PDO::PARAM_STR);
-		$stmt->bindParam(":id", $datosModel["id"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombrePromocion", $datosModel["nombrePromocion"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion", $datosModel["descripcion"], PDO::PARAM_STR);
+		$stmt->bindParam(":promocion_id", $datosModel["promocion_id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";
@@ -198,6 +189,25 @@ class crud2 extends Conexion{
 		$stmt->close();
 	}
 
+	//✩ Funcion de Actualizar cupon ✩
+	static public function actualizarCuponModel($datosModel, $tabla){
 
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET password = :password, cliente_id = :cliente_id, premio_id = :premio_id, expiración = :expiración WHERE cupon_id = :cupon_id");
+
+		$stmt->bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
+		$stmt->bindParam(":cliente_id", $datosModel["cliente_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":premio_id", $datosModel["premio_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":expiración", $datosModel["expiración"], PDO::PARAM_STR);
+		$stmt->bindParam(":cupon_id", $datosModel["cupon_id"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+			return "success";
+		}
+
+		else{
+			return "error";
+		}
+		$stmt->close();
+	}
 
 }
