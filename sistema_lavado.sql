@@ -65,7 +65,6 @@ CREATE TABLE `clientes` (
 
 CREATE TABLE `cupones` (
   `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
   `cliente_id` int(11) NOT NULL,
   `premio_id` int(11) NOT NULL,
   `expiracion` date NOT NULL
@@ -116,7 +115,6 @@ CREATE TABLE `promociones` (
 CREATE TABLE `visitas` (
   `visita_id` int(11) NOT NULL,
   `fecha` date NOT NULL,
-  `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
   `cliente_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -165,9 +163,7 @@ ALTER TABLE `promociones`
 -- Indexes for table `visitas`
 --
 ALTER TABLE `visitas`
-  ADD PRIMARY KEY (`visita_id`),
-  ADD KEY `visitas_ibfk_1` (`cupon_id`);
-
+  ADD PRIMARY KEY (`visita_id`);
 --
 -- AUTO_INCREMENT for dumped tables
 --
@@ -202,15 +198,9 @@ ALTER TABLE `promociones`
 ALTER TABLE `visitas`
   MODIFY `visita_id` int(11) NOT NULL AUTO_INCREMENT;
 
---- AUTO_INCREMENT for table `clientes`
---
-ALTER TABLE `clientes`
-MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- Constraints for dumped tables
 --
-
 
 --
 -- Constraints for table `cupones`
@@ -224,7 +214,6 @@ ALTER TABLE `cupones`
 -- Constraints for table `visitas`
 --
 ALTER TABLE `visitas`
-  ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`cupon_id`) REFERENCES `cupones` (`cupon_id`) ON DELETE CASCADE;
   ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`) ON DELETE CASCADE;
 COMMIT;
 
