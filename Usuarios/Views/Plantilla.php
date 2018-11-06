@@ -12,7 +12,6 @@
     <title> Sistema de cupones </title>
 
     <script src="Public/js/jquery-3.3.1.min.js"></script>
-    <script src="Public/js/script.js"></script>
 
 </head>
 <body >
@@ -50,6 +49,13 @@
 
     <script src="Public/js/jquery-3.3.1.min.js"></script>
     <script src="Public/js/materialize.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfoip2f7_0MCUm26iAtAQ3Slk6Lj72Qjc&callback=initMap"
+    async defer></script>
+
+    <script src="Public/js/localizacion.js"></script>
+    <script src="Public/js/main.js"></script>
+
 
 
     <script>
