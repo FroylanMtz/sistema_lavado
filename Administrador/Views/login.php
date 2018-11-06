@@ -1,11 +1,21 @@
 <?php 
 
 require_once 'Modells/Modelo1.php';
-require_once 'Modells/Modelo2.php';
+//require_once 'Modells/Modelo2.php';
 require_once 'Modells/CRUD1.php';
-require_once 'Modells/CRUD2.php';
+//require_once 'Modells/CRUD2.php';
 require_once 'Controllers/Controlador1.php';
-require_once 'Controllers/Controlador2.php';
+//require_once 'Controllers/Controlador2.php';
+
+
+// Si se oprimió el botón de "INICIAR SESION"
+if (isset($_POST["btn_login"])) {
+  // Se crea un objeto del tipo Controlador1
+  $controlador = new Controlador1();
+  // Se manda llamar al método del controlador para iniciar sesión
+  //$controlador->iniciarSesion();
+}
+
 
 ?>
 
@@ -33,25 +43,29 @@ require_once 'Controllers/Controlador2.php';
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form class="col s12" method="post">
+          <!-- FORMULARIO DEL LOGIN -->
+          <form class="col s12" method="POST">
             <div class='row'>
               <div class='col s12'>
               </div>
             </div>
 
+            <!-- USUARIO -->
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='email' name='email' id='email' />
-                <label for='email'>Correo</label>
+                <input class='validate' type='text' name='usuario' />
+                <label for='text'>Nombre de usuario</label>
               </div>
             </div>
 
+            <!-- CONTRASEÑA -->
             <div class='row'>
               <div class='input-field col s12'>
                 <input class='validate' type='password' name='password' id='password' />
                 <label for='password'>Contraseña</label>
               </div>
 
+              <!-- CONTRASEÑA OLVIDADA -->
                 <label style='float: right;'>
                     <a class='pink-text' href='#!'><b>¿Olvidaste tu contraseña?</b></a>
                 </label>
@@ -59,12 +73,13 @@ require_once 'Controllers/Controlador2.php';
             </div>
 
             <br />
-            <center>
+            <center> <!-- BOTÓN -->
               <div class='row'>
                 <button type='submit' name='btn_login' class='col s12 btn btn-large waves-effect indigo'>Iniciar Sesion</button>
               </div>
             </center>
           </form>
+          <!-- FIN FORMULARIO DEL LOGIN -->
         </div>
       </div>
 

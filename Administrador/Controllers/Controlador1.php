@@ -10,11 +10,11 @@ class Controlador1 {
 
         //session_start();
 
-        //if( isset($_SESSION['iniciada']) ){
+        if( isset($_SESSION['iniciada']) ){
             include 'Views/Plantilla.php';
-        //}else{
+        }else{
             include 'Views/login.php';
-        //}
+        }
     }
 
     public function mostrarPagina(){
@@ -25,10 +25,21 @@ class Controlador1 {
             $enlace = 'inicio'; 
         }
 
-        $pagina = Modelo::mostrarPagina($enlace);
+        $pagina = Modelo1::mostrarPagina($enlace);
 
         include $pagina;
-
     }
+
+
+    # INICIAR SESIÓN --------------------------------
+        # ---------------------
+    // Método que toma los datos del form de login y recibe la validación del modelo
+    public function iniciarSesion() {
+        // Se recibe la respuesta del modelo, se pasan el nombre de usuario
+        // y contraseña del admin traido del form
+        $respuesta = crud1::iniciarSesion($_POST["usuario"], $_POST["password"]);
+        
+    }
+
 
 }
