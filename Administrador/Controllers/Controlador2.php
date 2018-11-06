@@ -1,6 +1,6 @@
 <?php 
 
-	
+	//
 	class Controlador2 {
 
 		
