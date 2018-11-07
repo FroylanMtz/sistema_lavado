@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 06, 2018 at 04:37 AM
+-- Generation Time: Nov 07, 2018 at 06:47 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -30,33 +30,21 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administradores` (
   `admin_id` int(11) NOT NULL,
-  `nombreAdmin` varchar(255) COLLATE utf8_bin NOT NULL,
   `nombreUsuario` varchar(255) COLLATE utf8_bin NOT NULL,
   `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `nombreAdmin` varchar(255) COLLATE utf8_bin NOT NULL,
   `apellidos` varchar(255) COLLATE utf8_bin NOT NULL,
   `telefono` varchar(150) COLLATE utf8_bin DEFAULT NULL,
   `correo` varchar(150) COLLATE utf8_bin NOT NULL,
   `foto` varchar(50) COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `clientes`
+-- Dumping data for table `administradores`
 --
 
-CREATE TABLE `clientes` (
-  `cliente_id` int(11) NOT NULL,
-  `password` varchar(255) COLLATE utf8_bin NOT NULL,
-  `nombreCliente` varchar(255) COLLATE utf8_bin NOT NULL,
-  `apellidos` varchar(255) COLLATE utf8_bin NOT NULL,
-  `calle` varchar(150) COLLATE utf8_bin DEFAULT NULL,
-  `numero` int(11) DEFAULT NULL,
-  `colonia` varchar(150) COLLATE utf8_bin DEFAULT NULL,
-  `telefono` varchar(150) COLLATE utf8_bin DEFAULT NULL,
-  `correo` varchar(150) COLLATE utf8_bin DEFAULT NULL,
-  `foto` varchar(50) COLLATE utf8_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+INSERT INTO `administradores` (`admin_id`, `nombreUsuario`, `password`, `nombreAdmin`, `apellidos`, `telefono`, `correo`, `foto`) VALUES
+(2, 'admin', 'admin', 'admin', 'admin', '8342472450', '1530278@upv.edu.mx', 'foto');
 
 -- --------------------------------------------------------
 
@@ -65,11 +53,9 @@ CREATE TABLE `clientes` (
 --
 
 CREATE TABLE `cupones` (
- `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
- `password` varchar(255) COLLATE utf8_bin NOT NULL,
- `cliente_id` int(11) NOT NULL,
- `premio_id` int(11) NOT NULL,
- `expiracion` date NOT NULL
+  `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
+  `password` varchar(255) COLLATE utf8_bin NOT NULL,
+  `expiracion` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -99,6 +85,18 @@ CREATE TABLE `premios` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `premios_cupones`
+--
+
+CREATE TABLE `premios_cupones` (
+  `premio_id` int(11) NOT NULL,
+  `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
+  `canjeable` varchar(5) COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `promociones`
 --
 
@@ -116,9 +114,10 @@ CREATE TABLE `promociones` (
 
 CREATE TABLE `visitas` (
   `visita_id` int(11) NOT NULL,
+  `productoServicio` varchar(255) COLLATE utf8_bin NOT NULL,
+  `total` decimal(10,0) NOT NULL,
   `fecha` date NOT NULL,
-  `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL,
-  `cliente_id` int(11) NOT NULL
+  `cupon_id` varchar(7) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -132,17 +131,10 @@ ALTER TABLE `administradores`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `clientes`
---
-ALTER TABLE `clientes`
-  ADD PRIMARY KEY (`cliente_id`);
-
---
 -- Indexes for table `cupones`
 --
 ALTER TABLE `cupones`
-  ADD PRIMARY KEY (`cupon_id`),
-  ADD KEY `cupones_ibfk_1` (`cliente_id`);
+  ADD PRIMARY KEY (`cupon_id`);
 
 --
 -- Indexes for table `horarios`
@@ -157,6 +149,13 @@ ALTER TABLE `premios`
   ADD PRIMARY KEY (`premio_id`);
 
 --
+-- Indexes for table `premios_cupones`
+--
+ALTER TABLE `premios_cupones`
+  ADD KEY `premios_cupones_ibfk_1` (`premio_id`),
+  ADD KEY `premios_cupones_ibfk_2` (`cupon_id`);
+
+--
 -- Indexes for table `promociones`
 --
 ALTER TABLE `promociones`
@@ -169,64 +168,22 @@ ALTER TABLE `visitas`
   ADD PRIMARY KEY (`visita_id`),
   ADD KEY `visitas_ibfk_1` (`cupon_id`);
 
-ADD PRIMARY KEY (`visita_id`);
 --
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `administradores`
---
-ALTER TABLE `administradores`
-  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `horarios`
---
-ALTER TABLE `horarios`
-  MODIFY `horario_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `premios`
---
-ALTER TABLE `premios`
-  MODIFY `premio_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `promociones`
---
-ALTER TABLE `promociones`
-  MODIFY `promocion_id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `visitas`
---
-ALTER TABLE `visitas`
-  MODIFY `visita_id` int(11) NOT NULL AUTO_INCREMENT;
-
-
----- AUTO_INCREMENT for table `clientes`
-ALTER TABLE `clientes`
-MODIFY `cliente_id` int(11) NOT NULL AUTO_INCREMENT;
-
-
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `cupones`
+-- Constraints for table `premios_cupones`
 --
-ALTER TABLE `cupones`
-  ADD CONSTRAINT `cupones_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`) ON DELETE CASCADE;
+ALTER TABLE `premios_cupones`
+  ADD CONSTRAINT `premios_cupones_ibfk_1` FOREIGN KEY (`premio_id`) REFERENCES `premios` (`premio_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `premios_cupones_ibfk_2` FOREIGN KEY (`cupon_id`) REFERENCES `cupones` (`cupon_id`) ON DELETE CASCADE;
 
-ALTER TABLE `cupones`
-  ADD CONSTRAINT `cupones_ibfk_2` FOREIGN KEY (`premio_id`) REFERENCES `premios` (`premio_id`) ON DELETE CASCADE;
 --
 -- Constraints for table `visitas`
 --
- ALTER TABLE `visitas`
+ALTER TABLE `visitas`
   ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`cupon_id`) REFERENCES `cupones` (`cupon_id`) ON DELETE CASCADE;
-  ADD CONSTRAINT `visitas_ibfk_1` FOREIGN KEY (`cliente_id`) REFERENCES `clientes` (`cliente_id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

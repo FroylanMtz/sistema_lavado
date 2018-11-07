@@ -3,10 +3,10 @@
 
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
-  <link type="text/css" rel="stylesheet" href="css/main.css" />
+  <link type="text/css" rel="stylesheet" href="Public/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="Public/css/main.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Webstats | Admin Page</title>
+  <title>DWASH | Administrador </title>
   <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 </head>
 
@@ -17,7 +17,7 @@
   <nav class="red darken-2">
     <div class="container">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">WebStats</a>
+        <a href="#" class="brand-logo">DWASH</a>
         <a href="#" data-activates="side-nav" class="button-collapse show-on-small left">
           <i class="material-icons">menu</i>
         </a>
@@ -349,7 +349,7 @@
 
   <!-- FOOTER -->
   <footer class="section red darken-2 white-text center">
-    <p>WebStats Copyright &copy; 2018</p>
+    <p>DWASH - Copyright &copy; 2018</p>
   </footer>
 
 
