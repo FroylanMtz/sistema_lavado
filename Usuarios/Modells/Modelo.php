@@ -16,7 +16,8 @@ class Modelo {
            $enlace == 'salir' ||
            $enlace == 'ubicacion' ||
            $enlace == 'visitas' ||
-           $enlace == 'cupones'){
+           $enlace == 'cupones' ||
+           $enlace == 'misPremios'){
 
             $pagina = 'Views/Paginas/'. $enlace .'.php';
         

@@ -8,6 +8,8 @@ $datosVisitas = $controlador -> obtenerVisitas();
 
 $totalVisitas = count($datosVisitas);
 
+
+
 ?>
 
 
@@ -34,6 +36,8 @@ $totalVisitas = count($datosVisitas);
                 <thead>
                 <tr>
                     <th><center> Id de visita </center> </th>
+                    <th> <center> Producto/Servicio </center> </th>
+                    <th> <center> Total </center> </th>
                     <th> <center> Fecha </center> </th>
                 </tr>
                 </thead>
@@ -44,6 +48,8 @@ $totalVisitas = count($datosVisitas);
                             
                             echo '<tr>';
                             echo '<td> <center>' . $datosVisitas[$i]['visita_id'] . ' </center> </td>';
+                            echo '<td> <center> '. $datosVisitas[$i]['productoServicio'] .' </center> </td>';
+                            echo '<td> <center> $ '. $datosVisitas[$i]['total'] .' Pesos </center> </td>';
                             echo '<td> <center> '. $datosVisitas[$i]['fecha'] .' </center> </td>';
 
 
@@ -56,13 +62,6 @@ $totalVisitas = count($datosVisitas);
         </div>
     </div>
 
-    <div class="row">
-        <div class="col s12">
-            <center>
-                <a href="index.php?pagina=visitas" id="btnVisitas" class="waves-effect waves-light btn-large blue darken-4"><i class="fas fa-map-marker-alt"></i> Reportar Visita</a>
-            </center>
-        </div>
-    </div>
 
 <div>
 

@@ -42,16 +42,15 @@ class Controlador {
                             'contrasena'  => $_POST['contrasena']);
             
 
-            $respuesta = Datos::validarUsuario($datos, 'clientes');
+            $respuesta = Datos::validarUsuario($datos, 'cupones');
 
             
             if( $respuesta )
             {
                 session_start();
                 $_SESSION['iniciada'] = true;
-                $_SESSION['nombre'] = $respuesta['nombreCliente'];
-                $_SESSION['idUsuario'] = $respuesta['cliente_id'];
-                $_SESSION['foto'] = $respuesta['foto'];
+                $_SESSION['idCupon'] = $respuesta['cupon_id'];
+                $_SESSION['contrasena'] = $respuesta['password'];
 
                 echo '<script> window.location.href = "index.php?action=jugadores"; </script>';
             }else
@@ -85,7 +84,60 @@ class Controlador {
 
     }
 
+    public function obtenerMisPremios(){
+
+
+        $datosMisPremios = array();
+
+        $datosMisPremios = Datos::obtenerMisPremios();
+
+        return $datosMisPremios;
+
+    }
+
     public function obtenerVisitas(){
+
+        $datosVisitas = array();
+
+        $datosVisitas = Datos::obtenerVisitas();
+
+        return $datosVisitas;
+
+    }
+
+    public function actualizarContrasena(){
+
+        $contrasenaActual = $_POST['contrasenaActual'];
+        $contrasenaNueva = $_POST['contrasenaNueva'];
+        $idCupon = $_SESSION['idCupon'];
+
+        if($contrasenaActual == $_SESSION['contrasena']){
+            //echo 'Las contraseñas coinciden';
+
+            $respuesta = Datos::actualizarContrasena($idCupon, $contrasenaNueva);
+
+            if($respuesta == "success"){
+            
+                echo '<script> 
+                        alert("Datos editados correctamente");
+                        window.location.href = "index.php?pagina=salir"; 
+                      </script>';
+                
+            }else{
+                echo '<script> alert("Error al editar") </script>';
+            }
+
+        }else{
+            echo '<script> alert("Las contraseña actual no coincide") </script>';
+        }
+
+        //$respuesta = Datos::
+
+    }
+
+
+    public function obtenerPromociones(){
+
 
         $datosVisitas = array();
 
