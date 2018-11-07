@@ -83,7 +83,7 @@
   		public function borrarPromocionesController(){
     		if(isset($_GET["idBorrar"])){
     			$crud2Controller = $_GET["idBorrar"];
-    			$respuesta = crud2::borrarEquipoModel($datosController, "promociones");
+    			$respuesta = crud2::borrarPromocionModel($datosController, "promociones");
 
        			if($respuesta == "success"){
         			echo "<script> window.location = 'index.php?action=verPromociones';</script>";
