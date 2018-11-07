@@ -210,4 +210,19 @@ class crud2 extends Conexion{
 		$stmt->close();
 	}
 
+	//✩ Funcion de borrar promocion ✩
+	static public function borrarPromocionModel($datosModel, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE promocion_id = :promocion_id");
+		$stmt->bindParam(":promocion_id", $datosModel, PDO::PARAM_INT);
+
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+		return "error";
+		}
+		$stmt->close();
+	}
+
 }
