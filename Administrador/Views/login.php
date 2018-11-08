@@ -88,7 +88,7 @@ Author: SAEROX
                     <!-- Begin Form -->
                     <div class="authentication-form mx-auto">
                         <div class="logo-centered">
-                            <a href="db-default.html"> <!-- Logo del form login -->
+                            <a href="db-default.html"> <!-- Logo del form login-->
                                 <img src="Public/imagenes/dwash.png" alt="logo">
                             </a>
                         </div>

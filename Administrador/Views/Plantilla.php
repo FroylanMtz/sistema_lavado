@@ -24,14 +24,14 @@ Author: SAEROX
           });
         </script>
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="Public/assets/img/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="Public/assets/img/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="Public/assets/img/favicon-16x16.png">
         <!-- Stylesheet -->
-        <link rel="stylesheet" href="assets/vendors/css/base/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/vendors/css/base/elisyam-1.5.min.css">
-        <link rel="stylesheet" href="assets/css/owl-carousel/owl.carousel.min.css">
-        <link rel="stylesheet" href="assets/css/owl-carousel/owl.theme.min.css">
+        <link rel="stylesheet" href="Public/assets/vendors/css/base/bootstrap.min.css">
+        <link rel="stylesheet" href="Public/assets/vendors/css/base/elisyam-1.5.min.css">
+        <link rel="stylesheet" href="Public/assets/css/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="Public/assets/css/owl-carousel/owl.theme.min.css">
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -40,7 +40,7 @@ Author: SAEROX
         <!-- Begin Preloader -->
         <div id="preloader">
             <div class="canvas">
-                <img src="assets/img/logo.png" alt="logo" class="loader-logo">
+                <img src="Public/assets/img/logo.png" alt="logo" class="loader-logo">
                 <div class="spinner"></div>   
             </div>
         </div>
@@ -63,10 +63,10 @@ Author: SAEROX
                         <div class="navbar-header">
                             <a href="db-default.html" class="navbar-brand">
                                 <div class="brand-image brand-big">
-                                    <img src="assets/img/logo-big.png" alt="logo" class="logo-big">
+                                    <img src="Public/assets/img/logo-big.png" alt="logo" class="logo-big">
                                 </div>
                                 <div class="brand-image brand-small">
-                                    <img src="assets/img/logo.png" alt="logo" class="logo-small">
+                                    <img src="Public/assets/img/logo.png" alt="logo" class="logo-small">
                                 </div>
                             </a>
                             <!-- Toggle Button -->
@@ -90,7 +90,7 @@ Author: SAEROX
                                         <div class="notifications-header">
                                             <div class="title">Notifications (4)</div>
                                             <div class="notifications-overlay"></div>
-                                            <img src="assets/img/notifications/01.jpg" alt="..." class="img-fluid">
+                                            <img src="Public/assets/img/notifications/01.jpg" alt="..." class="img-fluid">
                                         </div>
                                     </li>
                                     <li>
@@ -152,11 +152,11 @@ Author: SAEROX
                             </li>
                             <!-- End Notifications -->
                             <!-- User -->
-                            <li class="nav-item dropdown"><a id="user" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><img src="assets/img/avatar/avatar-01.jpg" alt="..." class="avatar rounded-circle"></a>
+                            <li class="nav-item dropdown"><a id="user" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link"><img src="Public/assets/img/avatar/avatar-01.jpg" alt="..." class="avatar rounded-circle"></a>
                                 <ul aria-labelledby="user" class="user-size dropdown-menu">
                                     <li class="welcome">
                                         <a href="#" class="edit-profil"><i class="la la-gear"></i></a>
-                                        <img src="assets/img/avatar/avatar-01.jpg" alt="..." class="rounded-circle">
+                                        <img src="Public/assets/img/avatar/avatar-01.jpg" alt="..." class="rounded-circle">
                                     </li>
                                     <li>
                                         <a href="pages-profile.html" class="dropdown-item"> 
@@ -468,7 +468,7 @@ Author: SAEROX
                                         <div class="post-container">
                                             <div class="media mb-3">
                                                 <div class="media-left align-self-center user">
-                                                    <a href="pages-profile.html"><img src="assets/img/avatar/avatar-07.jpg" class="rounded-circle" alt="..."></a>
+                                                    <a href="pages-profile.html"><img src="Public/assets/img/avatar/avatar-07.jpg" class="rounded-circle" alt="..."></a>
                                                 </div>
                                                 <div class="media-body align-self-center ml-3">
                                                     <div class="title">
@@ -477,7 +477,7 @@ Author: SAEROX
                                                     <div class="time">42 min ago</div>
                                                 </div>
                                             </div>
-                                            <img src="assets/img/background/01.jpg" alt="..." class="img-fluid">
+                                            <img src="Public/assets/img/background/01.jpg" alt="..." class="img-fluid">
                                             <div class="col no-padding d-flex justify-content-end mt-3">
                                                 <div class="meta">
                                                     <ul>
@@ -534,7 +534,7 @@ Author: SAEROX
                                     <div class="widget-body no-padding hidden">
                                         <div class="author-avatar">
                                             <span class="badge-pulse-green"></span>
-                                            <img src="assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle">
+                                            <img src="Public/assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle">
                                         </div>
                                         <div class="author-name">
                                             Louis Henry
@@ -622,7 +622,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-start">
-                                                            <img src="assets/img/avatar/avatar-02.jpg" class="user-img rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-02.jpg" class="user-img rounded-circle" alt="...">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="username">
@@ -658,7 +658,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-start">
-                                                            <img src="assets/img/avatar/avatar-05.jpg" class="user-img rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-05.jpg" class="user-img rounded-circle" alt="...">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="username">
@@ -694,7 +694,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-start">
-                                                            <img src="assets/img/avatar/avatar-04.jpg" class="user-img rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-04.jpg" class="user-img rounded-circle" alt="...">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="username">
@@ -730,7 +730,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-start">
-                                                            <img src="assets/img/avatar/avatar-09.jpg" class="user-img rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-09.jpg" class="user-img rounded-circle" alt="...">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="username">
@@ -766,7 +766,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-start">
-                                                            <img src="assets/img/avatar/avatar-03.jpg" class="user-img rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-03.jpg" class="user-img rounded-circle" alt="...">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="username">
@@ -1092,7 +1092,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center pr-4">
-                                                        <img src="assets/img/avatar/avatar-02.jpg" class="user-img rounded-circle" alt="...">
+                                                        <img src="Public/assets/img/avatar/avatar-02.jpg" class="user-img rounded-circle" alt="...">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="username">
@@ -1112,7 +1112,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center pr-4">
-                                                        <img src="assets/img/avatar/avatar-04.jpg" class="user-img rounded-circle" alt="...">
+                                                        <img src="Public/assets/img/avatar/avatar-04.jpg" class="user-img rounded-circle" alt="...">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="username">
@@ -1132,7 +1132,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center pr-4">
-                                                        <img src="assets/img/avatar/avatar-05.jpg" class="user-img rounded-circle" alt="...">
+                                                        <img src="Public/assets/img/avatar/avatar-05.jpg" class="user-img rounded-circle" alt="...">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="username">
@@ -1189,7 +1189,7 @@ Author: SAEROX
                                     <div class="timeline violet">
                                         <div class="timeline-content d-flex align-items-center">
                                             <div class="user-image">
-                                                <img class="rounded-circle" src="assets/img/avatar/avatar-06.jpg" alt="...">
+                                                <img class="rounded-circle" src="Public/assets/img/avatar/avatar-06.jpg" alt="...">
                                             </div>
                                             <div class="d-flex flex-column mr-auto">
                                                 <div class="title">
@@ -1220,7 +1220,7 @@ Author: SAEROX
                                     <div class="timeline violet">
                                         <div class="timeline-content d-flex align-items-center">
                                             <div class="user-image">
-                                                <img class="rounded-circle" src="assets/img/avatar/avatar-05.jpg" alt="...">
+                                                <img class="rounded-circle" src="Public/assets/img/avatar/avatar-05.jpg" alt="...">
                                             </div>
                                             <div class="d-flex flex-column mr-auto">
                                                 <div class="title">
@@ -1228,16 +1228,16 @@ Author: SAEROX
                                                     Followed 4 people
                                                     <div class="users-like">
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-01.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-01.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-02.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-02.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-07.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-07.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-09.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-09.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -1273,13 +1273,13 @@ Author: SAEROX
                                                     + 3 new followers
                                                     <div class="users-like">
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-09.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-09.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-06.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-06.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                         <a href="profile.html">
-                                                            <img src="assets/img/avatar/avatar-03.jpg" class="img-fluid rounded-circle" alt="...">
+                                                            <img src="Public/assets/img/avatar/avatar-03.jpg" class="img-fluid rounded-circle" alt="...">
                                                         </a>
                                                     </div>
                                                 </div>
@@ -1292,7 +1292,7 @@ Author: SAEROX
                                     <div class="timeline violet">
                                         <div class="timeline-content d-flex align-items-center">
                                             <div class="user-image">
-                                                <img class="rounded-circle" src="assets/img/avatar/avatar-04.jpg" alt="...">
+                                                <img class="rounded-circle" src="Public/assets/img/avatar/avatar-04.jpg" alt="...">
                                             </div>
                                             <div class="d-flex flex-column mr-auto">
                                                 <div class="title">
@@ -1308,7 +1308,7 @@ Author: SAEROX
                                     <div class="timeline violet">
                                         <div class="timeline-content d-flex align-items-center">
                                             <div class="user-image">
-                                                <img class="rounded-circle" src="assets/img/avatar/avatar-03.jpg" alt="...">
+                                                <img class="rounded-circle" src="Public/assets/img/avatar/avatar-03.jpg" alt="...">
                                             </div>
                                             <div class="d-flex flex-column mr-auto">
                                                 <div class="title">
@@ -1428,7 +1428,7 @@ Author: SAEROX
                                         <div class="new-message">
                                             <div class="media">
                                                 <div class="media-left align-self-center mr-3">
-                                                    <img src="assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
+                                                    <img src="Public/assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
                                                 </div>
                                                 <div class="media-body align-self-center">
                                                     <div class="new-message-sender">Nathan Hunter</div>
@@ -1446,7 +1446,7 @@ Author: SAEROX
                                                 <div class="other-message">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
+                                                            <img src="Public/assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="other-message-sender">Brandon Smith</div>
@@ -1464,7 +1464,7 @@ Author: SAEROX
                                                 <div class="other-message">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
+                                                            <img src="sistema_lavado/Administrador/Public/assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="other-message-sender">Louis Henry</div>
@@ -1482,7 +1482,7 @@ Author: SAEROX
                                                 <div class="other-message">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
+                                                            <img src="Public/assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 50px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <div class="other-message-sender">Megan Duncan</div>
@@ -1600,7 +1600,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Brandon Smith</div>
@@ -1613,7 +1613,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Louis Henry</div>
@@ -1626,7 +1626,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Nathan Hunter</div>
@@ -1639,7 +1639,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Megan Duncan</div>
@@ -1652,7 +1652,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-06.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-06.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Beverly Oliver</div>
@@ -1665,7 +1665,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-07.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-07.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Lisa Garett</div>
@@ -1678,7 +1678,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-08.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-08.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Peter Collins</div>
@@ -1691,7 +1691,7 @@ Author: SAEROX
                                             <li class="list-group-item">
                                                 <div class="media">
                                                     <div class="media-left align-self-center mr-3">
-                                                        <img src="assets/img/avatar/avatar-09.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                        <img src="Public/assets/img/avatar/avatar-09.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                     </div>
                                                     <div class="media-body align-self-center">
                                                         <div class="people-name">Michael Bradley</div>
@@ -1740,7 +1740,7 @@ Author: SAEROX
                                                 <div class="widget20 owl-carousel">
                                                     <div class="item">
                                                         <div class="card-image">
-                                                            <img src="assets/img/background/03.jpg" alt="...">
+                                                            <img src="Public/assets/img/background/03.jpg" alt="...">
                                                             <div class="card-overlay card-overlay-01">
                                                                 <div class="card-overlay-content">
                                                                     <div class="category">
@@ -1753,7 +1753,7 @@ Author: SAEROX
                                                     </div>
                                                     <div class="item">
                                                         <div class="card-image">
-                                                            <img src="assets/img/background/04.jpg" alt="...">
+                                                            <img src="Public/assets/img/background/04.jpg" alt="...">
                                                             <div class="card-overlay card-overlay-02">
                                                                 <div class="card-overlay-content">
                                                                     <div class="category">
@@ -1766,7 +1766,7 @@ Author: SAEROX
                                                     </div>
                                                     <div class="item">
                                                         <div class="card-image">
-                                                            <img src="assets/img/background/05.jpg" alt="...">
+                                                            <img src="Public/assets/img/background/05.jpg" alt="...">
                                                             <div class="card-overlay card-overlay-01">
                                                                 <div class="card-overlay-content">
                                                                     <div class="category">
@@ -1779,7 +1779,7 @@ Author: SAEROX
                                                     </div>
                                                     <div class="item">
                                                         <div class="card-image">
-                                                            <img src="assets/img/background/02.jpg" alt="...">
+                                                            <img src="Public/assets/img/background/02.jpg" alt="...">
                                                             <div class="card-overlay card-overlay-02">
                                                                 <div class="card-overlay-content">
                                                                     <div class="category">
@@ -1906,7 +1906,7 @@ Author: SAEROX
                                         <!-- Begin Chat Message -->
                                         <span class="date">Today</span>
                                         <div class="messenger-message messenger-message-sender">
-                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-02.jpg" alt="...">
+                                            <img class="messenger-image messenger-image-default" src="Public/assets/img/avatar/avatar-02.jpg" alt="...">
                                             <div class="messenger-message-wrapper">
                                                 <div class="messenger-message-content">
                                                     <p>
@@ -1935,7 +1935,7 @@ Author: SAEROX
                                             </div>
                                         </div>
                                         <div class="messenger-message messenger-message-sender">
-                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-02.jpg" alt="...">
+                                            <img class="messenger-image messenger-image-default" src="Public/assets/img/avatar/avatar-02.jpg" alt="...">
                                             <div class="messenger-message-wrapper">
                                                 <div class="messenger-message-content">
                                                     <p>
@@ -1962,7 +1962,7 @@ Author: SAEROX
                                         </div>
                                         <span class="date">Yesterday</span>
                                         <div class="messenger-message messenger-message-sender">
-                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-05.jpg" alt="...">
+                                            <img class="messenger-image messenger-image-default" src="Public/assets/img/avatar/avatar-05.jpg" alt="...">
                                             <div class="messenger-message-wrapper">
                                                 <div class="messenger-message-content">
                                                     <p>
@@ -1981,7 +1981,7 @@ Author: SAEROX
                                             </div>
                                         </div>
                                         <div class="messenger-message messenger-message-sender">
-                                            <img class="messenger-image messenger-image-default" src="assets/img/avatar/avatar-05.jpg" alt="...">
+                                            <img class="messenger-image messenger-image-default" src="Public/assets/img/avatar/avatar-05.jpg" alt="...">
                                             <div class="messenger-message-wrapper">
                                                 <div class="messenger-message-content">
                                                     <p>
@@ -2046,7 +2046,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                            <img src="Public/assets/img/avatar/avatar-02.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <a href="javascript:void(0);">Brandon Smith</a>
@@ -2056,7 +2056,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                            <img src="Public/assets/img/avatar/avatar-03.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <a href="javascript:void(0);">Louis Henry</a>
@@ -2066,7 +2066,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                            <img src="Public/assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <a href="javascript:void(0);">Nathan Hunter</a>
@@ -2076,7 +2076,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                            <img src="Public/assets/img/avatar/avatar-05.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <a href="javascript:void(0);">Megan Duncan</a>
@@ -2086,7 +2086,7 @@ Author: SAEROX
                                                 <li class="list-group-item">
                                                     <div class="media">
                                                         <div class="media-left align-self-center mr-3">
-                                                            <img src="assets/img/avatar/avatar-06.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
+                                                            <img src="Public/assets/img/avatar/avatar-06.jpg" alt="..." class="img-fluid rounded-circle" style="width: 35px;">
                                                         </div>
                                                         <div class="media-body align-self-center">
                                                             <a href="javascript:void(0);">Beverly Oliver</a>
@@ -2210,20 +2210,20 @@ Author: SAEROX
         </div>
         <!-- End Modal -->
         <!-- Begin Vendor Js -->
-        <script src="assets/vendors/js/base/jquery.min.js"></script>
-        <script src="assets/vendors/js/base/core.min.js"></script>
+        <script src="Public/assets/vendors/js/base/jquery.min.js"></script>
+        <script src="Public/assets/vendors/js/base/core.min.js"></script>
         <!-- End Vendor Js -->
         <!-- Begin Page Vendor Js -->
-        <script src="assets/vendors/js/nicescroll/nicescroll.min.js"></script>
-        <script src="assets/vendors/js/chart/chart.min.js"></script>
-        <script src="assets/vendors/js/progress/circle-progress.min.js"></script>
-        <script src="assets/vendors/js/calendar/moment.min.js"></script>
-        <script src="assets/vendors/js/calendar/fullcalendar.min.js"></script>
-        <script src="assets/vendors/js/owl-carousel/owl.carousel.min.js"></script>
-        <script src="assets/vendors/js/app/app.js"></script>
+        <script src="Public/assets/vendors/js/nicescroll/nicescroll.min.js"></script>
+        <script src="Public/assets/vendors/js/chart/chart.min.js"></script>
+        <script src="Public/assets/vendors/js/progress/circle-progress.min.js"></script>
+        <script src="Public/assets/vendors/js/calendar/moment.min.js"></script>
+        <script src="Public/assets/vendors/js/calendar/fullcalendar.min.js"></script>
+        <script src="Public/assets/vendors/js/owl-carousel/owl.carousel.min.js"></script>
+        <script src="Public/assets/vendors/js/app/app.js"></script>
         <!-- End Page Vendor Js -->
         <!-- Begin Page Snippets -->
-        <script src="assets/js/dashboard/db-default.js"></script>
+        <script src="Public/assets/js/dashboard/db-default.js"></script>
         <!-- End Page Snippets -->
     </body>
 </html>
