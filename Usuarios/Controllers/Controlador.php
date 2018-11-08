@@ -53,9 +53,18 @@ class Controlador {
                 $_SESSION['contrasena'] = $respuesta['password'];
 
                 echo '<script> window.location.href = "index.php?action=jugadores"; </script>';
+
+                
             }else
             {
-                echo '<script> alert("Correo o contraseña incorrectos") </script>';
+                echo '<script>
+                swal({
+                    type: "error",
+                    title: "Error al ingresar",
+                    text: "Verifique sus credenciales, e intente de nuevo"
+                  })
+
+                </script>';
                 echo '<script> window.location.href = login.php"; </script>';
             }
 
@@ -119,16 +128,37 @@ class Controlador {
             if($respuesta == "success"){
             
                 echo '<script> 
-                        alert("Datos editados correctamente");
-                        window.location.href = "index.php?pagina=salir"; 
+                        swal({
+                            position: "top-end",
+                            type: "success",
+                            title: "Datos editados correctamente",
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
+
+                        window.location.href = "login.php";
                       </script>';
                 
             }else{
-                echo '<script> alert("Error al editar") </script>';
+                echo '<script> swal({
+                    position: "top-end",
+                    type: "error",
+                    title: "No se pudieron editar los datos",
+                    showConfirmButton: false,
+                    timer: 1500
+                }) </script>';
             }
 
         }else{
-            echo '<script> alert("Las contraseña actual no coincide") </script>';
+            echo '<script> 
+                
+            swal({
+                type: "error",
+                title: "Error al editar",
+                text: "La contraseña actual no corresponde con la ingresada"
+              })
+
+            </script>';
         }
 
         //$respuesta = Datos::

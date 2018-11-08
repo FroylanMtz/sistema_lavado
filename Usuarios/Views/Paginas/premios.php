@@ -12,6 +12,9 @@ $datosVisitas = $controlador -> obtenerVisitas();
 
 $totalVisitas = count($datosVisitas);
 
+$premiosDisponibles = array();
+
+$premiosDisponibles = $controlador -> obtenerMisPremios();
 ?>
 
 
@@ -33,10 +36,9 @@ $totalVisitas = count($datosVisitas);
 
         echo '<div class="row">
                 <div class="col s12 m12">
-                    <div class="card blue hoverable">
+                    <div class="card  blue lighten-2 hoverable">
                         <div class="card-content white-text">
-            
-                        
+        
             <h4> <center> Premio '. $datosPremios[$i]['premio_id'] .' </center> </h4>
 
             <center> <img src="Public/img/regalo.png" alt="" width="100px" height="100px"> </center>
@@ -46,10 +48,43 @@ $totalVisitas = count($datosVisitas);
             
             <h6> <center> '. $datosPremios[$i]['descripcion'] .'</center> </h6>
 
-            <span class="black-text text-darken-2"> <center> <h5> Visitas requeridas </h5> </center> </span>
+            </span>';
             
-            <span class="pink-text"> <center> <h4> '. $datosPremios[$i]['visitasRequeridas'] .' </h4> </center> </span>
-            </div>
+
+        if( ($datosPremios[$i]['visitasRequeridas'] - $totalVisitas  )<= 0){
+            
+            for($j=0; $j < count($premiosDisponibles); $j++ ){
+
+                if($datosPremios[$i]['premio_id'] == $premiosDisponibles[$j]['premio_id'] ){
+
+                    if($premiosDisponibles[$j]['canjeable'] == 'No' ){
+                        echo '<span class="red-text text-darken-2"> <center> <h4> Premio ya canjeado </h4> </center> ';
+                    }else{
+                        echo '<span class="green-text text-darken-2"> <center>
+                        <h4> Disponible para canje </h4> </center> ';
+                    }
+
+                    //echo 'Canjeable: ' . $premiosDisponibles[$j]['canjeable'];
+
+                }
+
+            }
+            
+
+        }else{
+
+            echo '   
+            
+            <span class="black-text text-darken-2"> <center> <h5> Te faltan </h5> </center> 
+
+            <span class="pink-text"> <center> <h4> '. ($datosPremios[$i]['visitasRequeridas'] - $totalVisitas ).' </h4> </center> </span>
+
+            <span class="black-text text-darken-2"> <center> <h5> Visitas </h5> </center> </span>';
+
+        }
+        
+        echo '    </div>
+
                         </div>
                     </div>
                 </div>';
