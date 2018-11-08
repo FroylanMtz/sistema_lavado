@@ -22,7 +22,7 @@
                         </ul>
                         
                         <ul class="list-unstyled"> <!-- USUARIOS -->
-                              <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-puzzle-piece"></i>Usuarios</a>
+                              <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-user"></i>Usuarios</a>
                                 <ul id="dropdown-app" class="collapse list-unstyled pt-0">
                                     <li><a href="app-calendar.html">Calendar</a></li>
                                     <li><a href="app-chat.html">Chat</a></li>
@@ -50,7 +50,7 @@
                             </li>
 
                             <!-- VISITAS -->
-                             <li><a href="#dropdown-authentication" aria-expanded="false" data-toggle="collapse"><i class="la la-user"></i><span>Visitas</span></a>
+                             <li><a href="#dropdown-authentication" aria-expanded="false" data-toggle="collapse"><i class="la la-car"></i><span>Visitas</span></a>
                                 <ul id="dropdown-authentication" class="collapse list-unstyled pt-0">
                                     <li><a href="pages-login.html">Login</a></li>
                                     <li><a href="pages-login-02.html">Login 02</a></li>
@@ -61,4 +61,3 @@
                                 </ul>
                             </li>
 
-                            

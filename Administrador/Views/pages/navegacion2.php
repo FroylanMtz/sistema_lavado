@@ -15,7 +15,7 @@
         </li>
 
         <!-- PROMOCIONES -->
-        <li><a href="#dropdown-forms" aria-expanded="false" data-toggle="collapse"><i class="la la-list-alt"></i><span>Promociones</span></a>
+        <li><a href="#dropdown-forms" aria-expanded="false" data-toggle="collapse"><i class="la la-flag-checkered"></i><span>Promociones</span></a>
             <ul id="dropdown-forms" class="collapse list-unstyled pt-0">
                 <li><a href="#">Opc 1</a></li>
                 <li><a href="#">Opc 2</a></li>
