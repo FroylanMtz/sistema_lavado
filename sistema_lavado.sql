@@ -168,6 +168,9 @@ ALTER TABLE `visitas`
   ADD PRIMARY KEY (`visita_id`),
   ADD KEY `visitas_ibfk_1` (`cupon_id`);
 
+ALTER TABLE `premios_cupones`
+  ADD PRIMARY KEY (`premio_id`, `cupon_id`);
+
 --
 -- Constraints for dumped tables
 --

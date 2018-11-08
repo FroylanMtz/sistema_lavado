@@ -6,12 +6,14 @@
     <link rel="stylesheet" href="Public/css/style.css">
     <link rel="stylesheet" href="Public/css/materialize.min.css">
     <link rel="stylesheet" href="Public/css/style.css">
+    
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 
     <title> Sistema de cupones </title>
 
-    <script src="Public/js/jquery-3.3.1.min.js"></script>
+    <script src="Public/js/jquery-3.3.1.min.js">    </script>
+    <script src="Public/js/sweetalert2.all.min.js"> </script>
 
 </head>
 <body >
@@ -26,11 +28,10 @@
         <div class="container">
 
             <?php
-      
+
                 $controlador = new Controlador();
-
                 $controlador -> mostrarPagina();
-
+                
             ?>
 
         </div>
@@ -41,7 +42,6 @@
         <div class="footer-copyright">
             <div class="container">
                 <h6 class="center-align"> ¡Gracias por tu visita! </h6>
-            
             </div>
         </div>
     </footer>

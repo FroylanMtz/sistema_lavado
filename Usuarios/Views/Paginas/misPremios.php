@@ -37,7 +37,7 @@ $datosPremios = $controlador -> obtenerMisPremios();
             <h4> <center> Premio '. $datosPremios[$i]['premio_id'] .' </center> </h4>
              
 
-            <center> <img   src="Public/img/coupon.png" alt="" width="100px" height="100px"> </center>
+            <center> <img   src="Public/img/discount.png" alt="" width="100px" height="100px"> </center>
 
             <span class="black-text text-darken-2"> <b> <h4> <center> '. $datosPremios[$i]['nombrePremio'] .' </center> </h4> </b> </span>
             
@@ -53,13 +53,6 @@ $datosPremios = $controlador -> obtenerMisPremios();
     
 ?>
     <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
-    <div class="section"></div>
-
     <div class="row">
         <center> <span class="red-text"> <h5> Premios canjeados </h5> </span> </center>
         <hr>

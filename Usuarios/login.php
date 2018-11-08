@@ -13,6 +13,8 @@ require_once 'Controllers/Controlador.php';
     <link rel="stylesheet" type="text/css" href="Public/css/materialize.min.css" />
     <link rel="stylesheet" type="text/css" href="Public/css/login.css" />
 
+    <script src="Public/js/sweetalert2.all.min.js"> </script>
+
     <style> 
         body{
             background: lightgray;
