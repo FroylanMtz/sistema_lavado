@@ -15,7 +15,7 @@ class Controlador1 {
         // Si la variable de sesión está iniciada se incluye la plantilla, de lo contrario
         // se direcciona al login
         if( isset($_SESSION['iniciada']) ){
-            include 'Views/Plantilla.php';
+            include 'Views/plantilla.php';
         }else{
             include 'Views/login.php';
         }
