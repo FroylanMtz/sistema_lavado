@@ -25,7 +25,9 @@ $premios = $registro->getPremios();
               </div>
               <form role="form" method="POST">
                 <div class="card-body">
-                
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="idPremiooRegistro" name="idPremioRegistro"  value="1">
+                  </div>
                   <div class="form-group">
                     <label for="nombrePremioRegistro">Nombre</label>
                     <input type="text" class="form-control" id="nombrePremioRegistro" name="nombrePremioRegistro" placeholder="nombre">
@@ -45,12 +47,11 @@ $premios = $registro->getPremios();
             </div>
             <!-- /.card -->
 <?php 
-
-//se invoca la funcion  registroPromocionController de la clase crud2
-$registro ->registroPremiosController();
-if(isset($_GET["action"])){
-  if($_GET["action"]=="ok"){
-    echo "Registro Exitoso";
-  }
-}
- ?>
+  //se invoca la funcion  registroPromocionController de la clase crud2
+  $registro ->registroPremiosController();
+    if(isset($_GET["action"])){
+      if($_GET["action"]=="ok"){
+        echo "Registro Exitoso";
+      }
+    }
+?>

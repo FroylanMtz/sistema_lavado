@@ -25,14 +25,16 @@ $promociones = $registro->getPromociones();
               </div>
               <form role="form" method="POST">
                 <div class="card-body">
-                
-                  <div class="form-group">
-                    <label for="passwordPromocionRegistro">Password</label>
-                    <input type="text" class="form-control" id="passwordPromocionRegistro" name="passwordPromocionRegistro" placeholder="Password">
+                <div class="form-group">
+                    <input type="hidden" class="form-control" id="idPromocionRegistro" name="idPromocionRegistro"  value="1">
                   </div>
                   <div class="form-group">
-                    <label for="expiracionPromocionRegistro">Expiracion</label>
-                    <input type="text" class="form-control" id="expiracionPromocionRegistro" name="expiracionPromocionRegistro" placeholder="Expiracion">
+                    <label for="nombrePromocionRegistro">Nombre</label>
+                    <input type="text" class="form-control" id="nombrePromocionRegistro" name="nombrePromocionRegistro" placeholder="nombre">
+                  </div>
+                  <div class="form-group">
+                    <label for="descripcionPromocionRegistro">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcionPromocionRegistro" name="descripcionPromocionRegistro" placeholder="descripcion">
                   </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Guardar</button>
@@ -42,11 +44,11 @@ $promociones = $registro->getPromociones();
             <!-- /.card -->
 <?php 
 
-//se invoca la funcion  registroPromocionController de la clase crud2
-$registro ->registroPromocionesController();
-if(isset($_GET["action"])){
-  if($_GET["action"]=="ok"){
-    echo "Registro Exitoso";
+  //se invoca la funcion  registroPromocionController de la clase crud2
+  $registro ->registroPromocionesController();
+  if(isset($_GET["action"])){
+    if($_GET["action"]=="ok"){
+      echo "Registro Exitoso";
+    }
   }
-}
- ?>
+?>
