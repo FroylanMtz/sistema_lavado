@@ -4,9 +4,9 @@
                     <!-- Begin Side Navbar -->
                     <nav class="side-navbar box-scroll sidebar-scroll">
                         <!-- Begin Main Navigation -->
-                        <ul class="list-unstyled">
+                        <!--<ul class="list-unstyled">
                             <!-- DASHBOARD -->
-                            <li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i class="la la-columns"></i><span>Dashboard</span></a>
+                            <!--<li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i class="la la-columns"></i><span>Dashboard</span><!-- </a>
                                 <ul id="dropdown-db" class="collapse list-unstyled show pt-0">
                                     <li><a class="active" href="db-default.html">Default</a></li>
                                     <li><a href="db-clean.html">Clean</a></li>
@@ -15,11 +15,11 @@
                                     <li><a href="db-social.html">Social</a></li>
                                     <li><a href="db-smarthome.html">Smarthome</a></li>
                                     <li><a href="db-all.html">All</a></li>
-                                </ul>
-                            </li>
+                                </ul>-->
+                            <!--</li> 
                           
                            
-                        </ul>
+                        </ul> -->
                         
                         <ul class="list-unstyled"> <!-- USUARIOS -->
                               <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-user"></i>Usuarios</a>

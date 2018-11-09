@@ -197,107 +197,17 @@ Author: SAEROX
 
             <div class="page-content d-flex align-items-stretch">
                 <!-- SE INCLUYE LA NAVGACIÓN -->
-            <?php include 'Views/pages/navegacion1.php'; ?>
-            <?php include 'Views/pages/navegacion2.php'; ?>
-                <!-- End Left Sidebar -->
-                <div class="content-inner">
-
-                    <div class="container-fluid">
-                        <!-- Begin Page Header-->
-
-                        <div class="row">
-                            <div class="page-header">
-                              <div class="d-flex align-items-center">
-                                  <h2 class="page-header-title">Dashboard</h2>
-                                  <div>
-                                  <div class="page-header-tools">
-                                      <a class="btn btn-gradient-01" href="#">Add Widget</a>
-                                  </div>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
-                        <!-- End Page Header -->
-                        <!-- Begin Row -->
-                        
-                        <!-- End Row -->
-                        <!-- Begin Row -->
-                      
-                        <!-- End Row -->
-                        <!-- Begin Row -->
-                        
-                        <!-- End Row -->
-                       
-                        <!-- End Row -->
-                      
-                        <!-- End Row -->
-                        <!-- Begin Row -->
-                        <br><br><br><br><br><br><br><br><br>
-                        <!-- End Row -->
-                        
-                    </div>
-
-                    <!-- End Container -->
-                    <!-- Begin Page Footer-->
-                    <footer class="main-footer">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-start justify-content-lg-start justify-content-md-start justify-content-center">
-                                <p class="text-gradient-02">Design By Saerox</p>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 d-flex align-items-center justify-content-xl-end justify-content-lg-end justify-content-md-end justify-content-center">
-                                <ul class="nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="documentation.html">Documentation</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="changelog.html">Changelog</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End Page Footer -->
-                    <a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
-                    <!-- Offcanvas Sidebar -->
-                    <div class="off-sidebar from-right">
-                        <div class="off-sidebar-container">
-                            <header class="off-sidebar-header">
-                                <ul class="button-nav nav nav-tabs mt-3 mb-3 ml-3" role="tablist" id="weather-tab">
-                                    <li><a class="active" data-toggle="tab" href="#messenger" role="tab" id="messenger-tab">Messages</a></li>
-                                    <li><a data-toggle="tab" href="#today" role="tab" id="today-tab">Today</a></li>
-                                </ul>
-                                <a href="#off-canvas" class="off-sidebar-close"></a>
-                            </header>
-                        
-                            <!-- End Offcanvas Container -->
-                        </div>
-                        <!-- End Offsidebar Container -->
-                    </div>
-                    <!-- End Offcanvas Sidebar -->
-                </div>
-                <!-- End Content -->
-            </div>
-            <!-- End Page Content -->
-        </div>
-        <!-- Begin Success Modal -->
-        <div id="delay-modal" class="modal fade">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body text-center">
-                        <div class="sa-icon sa-success animate" style="display: block;">
-                            <span class="sa-line sa-tip animateSuccessTip"></span>
-                            <span class="sa-line sa-long animateSuccessLong"></span>
-                            <div class="sa-placeholder"></div>
-                            <div class="sa-fix"></div>
-                        </div>
-                        <div class="section-title mt-5 mb-5">
-                            <h2 class="text-dark">Meeting successfully created</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- End Success Modal -->
+           <?php 
+                    include 'Views/pages/navegacion1.php';
+                    include 'Views/pages/navegacion2.php';
+                    
+                    $mvc = new Controlador2();
+                    $mvc -> mostrarPagina();
+            ?>
+                
+       
+    </body>
+     <!-- End Success Modal -->
         <!-- Begin Modal -->
  
         <!-- End Modal -->
@@ -317,5 +227,4 @@ Author: SAEROX
         <!-- Begin Page Snippets -->
         <script src="Public/assets/js/dashboard/db-default.js"></script>
         <!-- End Page Snippets -->
-    </body>
 </html>

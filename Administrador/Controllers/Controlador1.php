@@ -31,6 +31,7 @@ class Controlador1 {
         }
 
         // Se llama al método del modelo que regresa la ruta del archivo a incluir
+        //$pagina = Modelo1::mostrarPagina($enlace);
         $pagina = Modelo1::mostrarPagina($enlace);
 
         include $pagina;
