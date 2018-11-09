@@ -2,6 +2,7 @@
 
 
  <div class="default-sidebar">
+<<<<<<< HEAD
 
                     <!-- Begin Side Navbar -->
                     <nav class="side-navbar box-scroll sidebar-scroll">
@@ -34,6 +35,10 @@
                             </li>
 
  <div class="default-sidebar">               
+=======
+        
+
+>>>>>>> 543dbcdb066657b68396530edb33797194e6062d
 
     <!-- Begin Side Navbar -->
     <nav class="side-navbar box-scroll sidebar-scroll">

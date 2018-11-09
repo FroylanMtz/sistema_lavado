@@ -8,6 +8,12 @@
     // Se pasa el nombre de la tabla como parámetro
     $usuarios = $controlador->getAll("administradores");    
 
+
+    // Si se oprimió el botón de agregar usuario
+    if(isset($_POST["agregar"])){
+        echo "agregar";
+    }
+
  ?>
 
 <div class="row">
@@ -16,8 +22,23 @@
               <h2 class="page-header-title">Lista de usuarios</h2>              
           </div>
         </div>
+<<<<<<< HEAD
     </div><br>
 
+=======
+    </div>
+
+     <div class="col-xl-6">
+            <!-- Block Buttons -->            
+            <div class="row">                           
+                <div class="col-xl-6">
+                    <button onclick="agregarUsuario();" name="agregar" type="button" class="btn btn-shadow btn-block mb-2">+ Agregar Usuario</button>
+                </div>
+            </div>
+            <!-- End Block Buttons -->
+        </div>
+    <br>
+>>>>>>> 543dbcdb066657b68396530edb33797194e6062d
     <table id="sorting-table" class="table mb-0">
         <thead>
             <tr>
@@ -54,6 +75,12 @@
         </tbody>
     </table>
 
+    <!-- Script para redireccionar a la página de agregar usuario -->
+    <script type="text/javascript">
+        function agregarUsuario(){
+            window.location.href = "index.php?action=agregarUsuario";
+        }
+    </script>
 
 
             

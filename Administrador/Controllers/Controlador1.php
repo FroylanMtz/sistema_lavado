@@ -78,4 +78,11 @@ class Controlador1 {
     }
 
 
+    # USUARIOS ------------------------------------
+        # ---------------------
+    // Método para preparar los datos y enviarlos al modelo, después recibe la respuesta
+    // del modelo y la envía a la vista
+    public function agregarUsuario() {
+        
+    }
 }
