@@ -1,3 +1,4 @@
+<!--Pagina en la cual se muestran los desarrolladores de esta aplicacion-->
 <div class="col s12 mt-5 " id="pan" >
     <a data-target="mobile-demo" class="breadcrumb sidenav-trigger"> Menú </a>
     <a href="index.php?pagina=acerca" class="breadcrumb"> Acerca de </a>

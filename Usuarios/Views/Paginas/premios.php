@@ -1,19 +1,27 @@
 <?php
 
+//Se instancia un objeto de la clase controlador
 $controlador = new Controlador();
 
+//Se declara un arreglo para almacenar los datos traidos por el controlador acerca de los permios disponibles del cupon
 $datosPremios = array();
 
+//Se carga dicho arreglo con los datos traidos por la funcion obtenerPremios()
 $datosPremios = $controlador -> obtenerPremios();
 
+//Se declara un arreglo para guardar los datos de las visitas
 $datosVisitas = array();
 
+//Se llena el arreglo con los datos de las visitas traidos desde el controladro y este por el modelo
 $datosVisitas = $controlador -> obtenerVisitas();
 
+//Se cuenta el total de las visitas para alamcenarlas como numero en la variable #totalVisitas
 $totalVisitas = count($datosVisitas);
 
+//Se declara un arreglo para almacenar los datos de los premios disponibles o ya cajeados por el usuario
 $premiosDisponibles = array();
 
+//Se rellena con los datos desde l base de datos, estos datos son los datos de la tabla intermedia entre cupones y premios
 $premiosDisponibles = $controlador -> obtenerMisPremios();
 ?>
 
@@ -32,6 +40,8 @@ $premiosDisponibles = $controlador -> obtenerMisPremios();
 </label>
 
 <?php
+
+    //Se despiegan los premios disponibles o canjeados por el usuario del cupon, pero ademas se muestra un mensaje dependiendo del permio, es decir, si el usuario ya cambio el permio, si esta disponible para el canje o si le faltan algunas visitas para obtenerlo y si es asi indica el numero de visitas necesarias faltantes para conseguir dicho premio
     for($i = 0; $i < count($datosPremios); $i++){
 
         echo '<div class="row">
@@ -57,7 +67,7 @@ $premiosDisponibles = $controlador -> obtenerMisPremios();
 
                 if($datosPremios[$i]['premio_id'] == $premiosDisponibles[$j]['premio_id'] ){
 
-                    if($premiosDisponibles[$j]['canjeable'] == 'No' ){
+                    if($premiosDisponibles[$j]['canjeable'] == 'No' || $premiosDisponibles[$j]['canjeable'] == 'no' ){
                         echo '<span class="red-text text-darken-2"> <center> <h4> Premio ya canjeado </h4> </center> ';
                     }else{
                         echo '<span class="green-text text-darken-2"> <center>

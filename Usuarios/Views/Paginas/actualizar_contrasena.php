@@ -1,8 +1,14 @@
 <?php
 
+//Pagina en donde se realiza la actualizacion de la contraseña de la cuenta
+
+//Se almacena la contraseña actual de la cuenta en una variable
 $contrasenaActual =  $_SESSION['contrasena'];
+
+//Despues se crea un objeto de la clase controlador
 $controlador = new Controlador();
 
+//Como el formulario redirecciona a la misma pagina, y esta a la vez manda llamar la funcion que valida y manda llamar al modelo que interactua con la base de datos, es necesario valir que se estan enviando los datos a traves del formulario, porque cuando se carga por primera vez marcaria errro porque no encuentra los parametros del formulario
 if(isset($_POST['contrasenaActual']) && isset($_POST['contrasenaNueva'])){
 
     $controlador -> actualizarContrasena();
@@ -15,6 +21,7 @@ if(isset($_POST['contrasenaActual']) && isset($_POST['contrasenaNueva'])){
     <a href="index.php?pagina=actualizar_contrasena" class="breadcrumb"> Actualizar contraseña </a>
 </div>
 
+<!--Titulo de la pagina-->
 <div class="row">
     <h4> Actualizar contraseña </h4>
 </div>
@@ -23,7 +30,7 @@ if(isset($_POST['contrasenaActual']) && isset($_POST['contrasenaNueva'])){
 
 <div class="row">
     <form class="col s12" method="post">
-
+        <!--Formulario para introducir la contrasea actual y una nueva a la que se quiere cambiar la actual :D -->
         <div class="card blue-grey lighten-5 hoverable">
             <div class="card-content white-text">
 

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-		
+
+    <!--Esta es la plantilla en donde se agregan todos los estilos y funcionalidades (javascript) del sistema en general, es decir es la base de todo el sistema visualmente -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
     <link rel="shortcut icon" href="Public/img/logo.png">
     <link rel="stylesheet" href="Public/css/style.css">
     <link rel="stylesheet" href="Public/css/materialize.min.css">
@@ -21,14 +24,14 @@
     <header> </header>
 
     <main>
-        
+        <!--Este de aqui se encarga de poner la navegacion de la pagina que son los botones a la izquierda si la esta reducido y los botones en la parte derecha en el header si esta extendida la pagina-->
         <?php require_once 'Views/Paginas/navegacion.php'; ?>
 
         
         <div class="container">
 
             <?php
-
+                //Se manda llamar al controlador para validar las paginas y mostrarlas 
                 $controlador = new Controlador();
                 $controlador -> mostrarPagina();
                 
@@ -38,6 +41,7 @@
 
     </main>
 
+    <!--EL footer que aparecerá en todas las paginas-->
     <footer class="page-footer blue darken-4">
         <div class="footer-copyright">
             <div class="container">
@@ -46,7 +50,7 @@
         </div>
     </footer>
 
-
+    <!--Los js's que necesita el sistema para su mejor funcionamiento-->
     <script src="Public/js/jquery-3.3.1.min.js"></script>
     <script src="Public/js/materialize.min.js"></script>
 
@@ -57,7 +61,7 @@
     <script src="Public/js/main.js"></script>
 
 
-
+    <!--Este script inicializa el menu de navegacion cuando la pagina esta reducida-->
     <script>
         $(document).ready(function(){
             $('.sidenav').sidenav();
