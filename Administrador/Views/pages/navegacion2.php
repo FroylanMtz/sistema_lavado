@@ -7,8 +7,8 @@
     <!-- PREMIOS -->
         <li><a href="#dropdown-icons" aria-expanded="false" data-toggle="collapse"><i class="ti-gift"></i><span>Premios</span></a>
             <ul id="dropdown-icons" class="collapse list-unstyled pt-0">
-                <li><a href="icons-lineawesome.html">Ver Premios</a></li>
-                <li><a href="icons-themify.html">Registrar Premio</a></li>
+                <li><a href="index.php?action=verPremios"">Ver Premios</a></li>
+                <li><a href="index.php?action=registrarPremios"">Registrar Premio</a></li>
             </ul>
         </li>
 

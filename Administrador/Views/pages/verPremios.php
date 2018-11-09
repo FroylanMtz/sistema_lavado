@@ -31,8 +31,9 @@
               <div class="card-body table-responsive p-0">
                 <table class="table table-hover">
                   <tr>
-                    <th>Nombre de la Promocion</th>
+                    <th>Nombre del premio</th>
                     <th>Descripcion</th>
+                    <th>Visitas</th>
                   </tr>
                   <tbody>
                   <?php

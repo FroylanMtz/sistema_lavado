@@ -23,8 +23,8 @@
         }
 
         // Se llama al método del modelo que regresa la ruta del archivo a incluir
-        //$pagina = Modelo1::mostrarPagina($enlace);
-        $pagina = Modelo1::mostrarPagina($enlace);
+      
+        $pagina = Modelo2::mostrarPagina($enlace);
     }
     //////////////////////////////////////////////P R O M O C I O N E S /////////////////////////////////////////////////////////////////////////
 

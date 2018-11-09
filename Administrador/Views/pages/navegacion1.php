@@ -1,7 +1,42 @@
  <!-- NAVEGACIÓN -->
 
+<<<<<<< HEAD
+ <div class="default-sidebar">
+<<<<<<< HEAD
+                    <!-- Begin Side Navbar -->
+                    <nav class="side-navbar box-scroll sidebar-scroll">
+                        <!-- Begin Main Navigation -->
+                        <!--<ul class="list-unstyled">
+                             DASHBOARD -->
+                            <!--<li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i class="la la-columns"></i><span>Dashboard</span></a>
+                                <ul id="dropdown-db" class="collapse list-unstyled show pt-0">
+                                    <li><a class="active" href="db-default.html">Default</a></li>
+                                    <li><a href="db-clean.html">Clean</a></li>
+                                    <li><a href="db-compact.html">Compact</a></li>
+                                    <li><a href="db-modern.html">Modern</a></li>
+                                    <li><a href="db-social.html">Social</a></li>
+                                    <li><a href="db-smarthome.html">Smarthome</a></li>
+                                    <li><a href="db-all.html">All</a></li>
+                                </ul>-->
+                            <!--</li> 
+                          
+                           
+                        </ul> -->
+                        
+                        <ul class="list-unstyled"> <!-- USUARIOS -->
+                              <li><a href="#dropdown-app" aria-expanded="false" data-toggle="collapse"><i class="la la-user"></i>Usuarios</a>
+                                <ul id="dropdown-app" class="collapse list-unstyled pt-0">
+                                    <li><a href="app-calendar.html">Calendar</a></li>
+                                    <li><a href="app-chat.html">Chat</a></li>
+                                    <li><a href="app-mail.html">Mail</a></li>
+                                    <li><a href="app-contact.html">Contact</a></li>
+                                </ul>
+                            </li>
+=======
+=======
  <div class="default-sidebar">               
 
+>>>>>>> 49ffb309fcb8237e537fa0093858f4276d418385
     <!-- Begin Side Navbar -->
     <nav class="side-navbar box-scroll sidebar-scroll">
         <!-- Begin Main Navigation -->

@@ -38,7 +38,7 @@
                   <?php
                   $vistaCupones = new Controlador2();
                   $vistaCupones -> vistaCuponesControlador2();
-                  //$vistaCupones -> borrarCuponesController();
+                  $vistaCupones -> borrarCuponesController();
                   ?>
                   </tbody>
                 </table>
