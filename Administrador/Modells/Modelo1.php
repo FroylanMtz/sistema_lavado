@@ -9,6 +9,7 @@ class Modelo1 {
             $enlace == 'usuarios' ||
             $enlace == 'listaDeUsuarios' ||
             $enlace == 'verUsuario' ||
+            $enlace == 'agregarUsuario' ||
             $enlace == 'editarUsuario' ||
             $enlace == 'eliminarUsuario' ||
             $enlace == 'cupones' ||
