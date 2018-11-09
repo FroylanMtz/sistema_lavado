@@ -38,7 +38,7 @@
                   <?php
                   $vistaPromociones = new Controlador2();
                   $vistaPromociones -> vistaPromocionesController();
-                  //$vistaPromociones -> borrarPromocionesController();
+                  $vistaPromociones -> borrarPromocionesController();
                   ?>
                   </tbody>
                 </table>

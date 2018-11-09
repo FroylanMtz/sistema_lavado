@@ -6,8 +6,8 @@
                     <nav class="side-navbar box-scroll sidebar-scroll">
                         <!-- Begin Main Navigation -->
                         <!--<ul class="list-unstyled">
-                            <!-- DASHBOARD -->
-                            <!--<li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i class="la la-columns"></i><span>Dashboard</span><!-- </a>
+                             DASHBOARD -->
+                            <!--<li class="active"><a href="#dropdown-db" aria-expanded="true" data-toggle="collapse"><i class="la la-columns"></i><span>Dashboard</span></a>
                                 <ul id="dropdown-db" class="collapse list-unstyled show pt-0">
                                     <li><a class="active" href="db-default.html">Default</a></li>
                                     <li><a href="db-clean.html">Clean</a></li>
