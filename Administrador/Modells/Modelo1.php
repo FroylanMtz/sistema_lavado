@@ -14,7 +14,14 @@ class Modelo1 {
             $enlace == 'cupones' ||
             $enlace == 'visitas' ||
             $enlace == 'verPromociones' || 
-            $enlace == 'registroPromociones'
+            $enlace == 'registroPromociones'||
+            $enlace == 'editarPromocion' ||
+            $enlace == 'verPremios' ||
+            $enlace == 'registroPremios' ||
+            $enlace == 'editarPremio' ||
+            $enlace == 'verCupones' ||
+            $enlace == 'registroCupon' ||
+            $enlace == 'editarCupon'
         ){
 
             $pagina = 'Views/pages/'. $enlace .'.php';
