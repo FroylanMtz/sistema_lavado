@@ -1,8 +1,8 @@
  <!-- NAVEGACIÓN -->
 
-<<<<<<< HEAD
+
  <div class="default-sidebar">
-<<<<<<< HEAD
+
                     <!-- Begin Side Navbar -->
                     <nav class="side-navbar box-scroll sidebar-scroll">
                         <!-- Begin Main Navigation -->
@@ -32,11 +32,9 @@
                                     <li><a href="app-contact.html">Contact</a></li>
                                 </ul>
                             </li>
-=======
-=======
+
  <div class="default-sidebar">               
 
->>>>>>> 49ffb309fcb8237e537fa0093858f4276d418385
     <!-- Begin Side Navbar -->
     <nav class="side-navbar box-scroll sidebar-scroll">
         <!-- Begin Main Navigation -->

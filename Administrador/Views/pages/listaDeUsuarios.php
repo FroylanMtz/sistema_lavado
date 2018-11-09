@@ -18,8 +18,6 @@
         </div>
     </div><br>
 
-
-
     <table id="sorting-table" class="table mb-0">
         <thead>
             <tr>
