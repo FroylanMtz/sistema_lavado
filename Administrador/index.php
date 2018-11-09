@@ -7,6 +7,7 @@ require_once 'Modells/CRUD2.php';
 require_once 'Controllers/Controlador1.php';
 require_once 'Controllers/Controlador2.php';
 
+session_start();
 
 $controlador = new Controlador1();
 
