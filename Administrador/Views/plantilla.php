@@ -128,6 +128,19 @@ Author: SAEROX
 
             <div class="page-content d-flex align-items-stretch">
                 <!-- SE INCLUYE LA NAVGACIÓN -->
+<<<<<<< HEAD
+           <?php 
+                    include 'Views/pages/navegacion1.php';
+                    include 'Views/pages/navegacion2.php';
+                    
+                    $mvc = new Controlador2();
+                    $mvc -> mostrarPagina();
+            ?>
+                
+       
+    </body>
+     <!-- End Success Modal -->
+=======
             <?php include 'Views/pages/navegacion1.php'; ?>
             <?php include 'Views/pages/navegacion2.php'; ?>
                 <!-- End Left Sidebar -->
@@ -212,6 +225,7 @@ Author: SAEROX
             </div>
         </div>
         <!-- End Success Modal -->
+>>>>>>> b7730566530d50dcfcc2a6438da4fa93114f5494
         <!-- Begin Modal -->
  
         <!-- End Modal -->
@@ -231,5 +245,4 @@ Author: SAEROX
         <!-- Begin Page Snippets -->
         <script src="Public/assets/js/dashboard/db-default.js"></script>
         <!-- End Page Snippets -->
-    </body>
 </html>
