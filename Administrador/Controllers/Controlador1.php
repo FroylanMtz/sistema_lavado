@@ -64,5 +64,17 @@ class Controlador1 {
         }
     }
 
+    # TODOS LOS DATOS SEGUN LA TABLA ----------------------------
+        # ----------------------
+    // Método que devuelve todos los datos de una tabla en específico (parametro: $tabla)
+    public function getAll($tabla) {
+        // Recibe la respuesta del modelo, se pasa como parámetro el nombre de la tabla
+        $respuesta = crud1::getAll($tabla);
+
+        // Si trae por lo menos un registro retorna el registro (array asociativo)
+        if($respuesta) return $respuesta;
+        else return false; // Si no trae nada retorna false
+    }
+
 
 }
