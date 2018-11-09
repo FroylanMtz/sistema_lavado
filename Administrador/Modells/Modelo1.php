@@ -13,7 +13,8 @@ class Modelo1 {
             $enlace == 'eliminarUsuario' ||
             $enlace == 'cupones' ||
             $enlace == 'visitas' ||
-            $enlace == 'verPromociones'
+            $enlace == 'verPromociones' || 
+            $enlace == 'registroPromociones'
         ){
 
             $pagina = 'Views/pages/'. $enlace .'.php';
