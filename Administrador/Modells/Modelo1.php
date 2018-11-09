@@ -8,8 +8,14 @@ class Modelo1 {
         if($enlace == 'dashboard' ||
             $enlace == 'usuarios' ||
             $enlace == 'listaDeUsuarios' ||
+            $enlace == 'verUsuario' ||
+            $enlace == 'editarUsuario' ||
+            $enlace == 'eliminarUsuario' ||
             $enlace == 'cupones' ||
-            $enlace == 'visitas'){
+            $enlace == 'visitas' ||
+            $enlace == 'verPromociones' || 
+            $enlace == 'registroPromociones'
+        ){
 
             $pagina = 'Views/pages/'. $enlace .'.php';
         

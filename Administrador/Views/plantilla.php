@@ -128,7 +128,7 @@ Author: SAEROX
 
             <div class="page-content d-flex align-items-stretch">
                 <!-- SE INCLUYE LA NAVGACIÓN -->
-<<<<<<< HEAD
+
            <?php 
                     include 'Views/pages/navegacion1.php';
                     include 'Views/pages/navegacion2.php';
@@ -140,7 +140,7 @@ Author: SAEROX
        
     </body>
      <!-- End Success Modal -->
-=======
+
             <?php include 'Views/pages/navegacion1.php'; ?>
             <?php include 'Views/pages/navegacion2.php'; ?>
                 <!-- End Left Sidebar -->
@@ -225,7 +225,7 @@ Author: SAEROX
             </div>
         </div>
         <!-- End Success Modal -->
->>>>>>> b7730566530d50dcfcc2a6438da4fa93114f5494
+
         <!-- Begin Modal -->
  
         <!-- End Modal -->

@@ -1,5 +1,6 @@
  <!-- NAVEGACIÓN -->
 
+<<<<<<< HEAD
  <div class="default-sidebar">
 <<<<<<< HEAD
                     <!-- Begin Side Navbar -->
@@ -32,6 +33,10 @@
                                 </ul>
                             </li>
 =======
+=======
+ <div class="default-sidebar">               
+
+>>>>>>> 49ffb309fcb8237e537fa0093858f4276d418385
     <!-- Begin Side Navbar -->
     <nav class="side-navbar box-scroll sidebar-scroll">
         <!-- Begin Main Navigation -->
@@ -46,7 +51,6 @@
                     <li><a href="index.php?action=listaDeUsuarios">Lista de usuarios</a></li>
                 </ul>
             </li>
->>>>>>> b7730566530d50dcfcc2a6438da4fa93114f5494
 
             <!-- CUPONES -->
             <li><a href="#dropdown-ui" aria-expanded="false" data-toggle="collapse"><i class="la la-ticket"></i><span>Cupones</span></a>
