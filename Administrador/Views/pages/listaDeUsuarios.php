@@ -22,11 +22,10 @@
               <h2 class="page-header-title">Lista de usuarios</h2>              
           </div>
         </div>
-<<<<<<< HEAD
+
     </div><br>
 
-=======
-    </div>
+
 
      <div class="col-xl-6">
             <!-- Block Buttons -->            
@@ -38,7 +37,7 @@
             <!-- End Block Buttons -->
         </div>
     <br>
->>>>>>> 543dbcdb066657b68396530edb33797194e6062d
+
     <table id="sorting-table" class="table mb-0">
         <thead>
             <tr>
