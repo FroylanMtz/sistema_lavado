@@ -32,4 +32,29 @@ class crud1 extends Conexion{
     	return $respuesta;
     }
 
+
+    # USUARIOS ------------------------------------
+        # ---------------------
+    // Método para guardar los datos de un nuevo usuario
+    public function agregarUsuario($datosUsuario) {
+        // Consulta sql para insertar en la tabla administradores
+        $sql = "INSERT INTO administradores (nombreUsuario,password,nombreAdmin,apellidos,telefono,correo,foto) VALUES (?,?,?,?,?,?,?)";
+        // Se prepara la consulta
+        $stmt = Conexion::conectar()->prepare($sql);
+
+        // Si se ejecuta con éxito retorna el resultado correspondiente al modelo
+        // Se pasan como parámetros de la función execute() los datos del usuario
+        if($stmt->execute([$datosUsuario["usuario"],
+                            $datosUsuario["password"],
+                            $datosUsuario["nombre"],
+                            $datosUsuario["apellidos"],
+                            $datosUsuario["telefono"],
+                            $datosUsuario["correo"],
+                            $datosUsuario["foto"]])){
+            return "success";
+        }else{
+            return "false";
+        }
+    }
+
 }

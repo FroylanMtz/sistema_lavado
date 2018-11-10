@@ -1,8 +1,11 @@
 <?php 
     
     // Si se oprimió el botón de guardar datos
-    if(isset($_POST["guardar"])){
-        echo "string";
+    if(isset($_POST["usuario"])){
+        // Se crea un objeto del tipo Controlador1
+        $controlador = new Controlador1();
+        // Se llama al método para agregar usuario
+        $controlador->agregarUsuario();        
     }
 
 
@@ -14,7 +17,7 @@
             <h4>Agregar Usuario</h4>
         </div>
         <div class="widget-body">
-            <form class="needs-validation" novalidate method="POST">
+            <form class="needs-validation" method="POST" enctype="multipart/form-data">
                 <!-- NOMBRE DE USUARIO -->
                 <div class="form-group row d-flex align-items-center mb-5">
                     <label class="col-lg-4 form-control-label d-flex justify-content-lg-end">Nombre de usuario</label>
@@ -79,7 +82,7 @@
                             <span class="input-group-addon addon-secondary">
                                 <i class="la la-file-photo-o"></i>
                             </span>
-                            <input type="file" class="form-control" placeholder="Número de teléfono" name="foto">
+                            <input type="file" class="form-control" name="foto">
                         </div>
                     </div>
                 </div>

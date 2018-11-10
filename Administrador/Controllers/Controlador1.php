@@ -83,7 +83,51 @@ class Controlador1 {
     // Método para preparar los datos y enviarlos al modelo, después recibe la respuesta
     // del modelo y la envía a la vista
     public function agregarUsuario() {
-        
-    }
+        $usuario = $_POST["usuario"];
+        $nombre = $_POST["nombre"];
+        $apellidos = $_POST["apellidos"];
+        $correo = $_POST["correo"];
+        $password = $_POST["password"];
+        $telefono = $_POST["telefono"];        
 
+        //Para saber el nombre de la foto se manda llamar esta funcion
+        $nombreArchivo = basename($_FILES['foto']['name']);
+
+        //Se concatena al nombre la carpeta en donde se guardaran todas las fotos cargadas por los usuarios
+        $directorio = 'fotosAdmin/' . $nombreArchivo;
+
+        //Para hacer algunas validaciones y el usuario por ejemplo no pase como foto una archivo pdf se extrae la extension de la foto
+        $extension = pathinfo($directorio , PATHINFO_EXTENSION);
+
+        //Todos los datos obtenidos del formulario son guardados en un objeto para luego ser pasados al modelo en donde seran almacenados en su respectiva tabla
+        $datosUsuario = array('usuario' => $usuario,
+                            'nombre' => $nombre,
+                            'apellidos' => $apellidos,
+                            'correo' => $correo,
+                            'password' => $password,
+                            'telefono' => $telefono,
+                            'foto' => $usuario.'.'.$extension ); //El nombre de la foto de cada uusario sera el nombre de su usuario, para de esta forma llevar un control y que las fotos no se repitan y se sobreescriban
+
+        //Aqui es donde se hace la validacion que el archivo sea una foto con extensiones de imagenes frecuentes y no un formato .docs o un pdf por ejemplo
+        if($extension != 'png' && $extension != 'jpg' && $extension != 'PNG' && $extension != 'JPG' && $extension != 'jpeg' && $extension != 'JPEG'){
+            echo '<script> alert("Error al subir el archivo intenta con otro") </sript>';
+        }else {
+            //Una vez que se ha cargado la imagen a los archivos temporales de php, esta funcion la mueve de ahi y la coloca en la direccion donde se guardaran las fotos ya con el nombre presonalizado por cada usuario, que es su matricula
+            move_uploaded_file($_FILES['foto']['tmp_name'], 'fotosAdmin/'.$usuario . '.' . $extension);
+
+            //Despues de que se ha guardado la imagen en la carpeta, se manda llamar la funcion del modelo en la cual se pasan el objeto con los datos del formulario para ser guardado
+            $respuesta = crud1::agregarUsuario($datosUsuario);
+
+            //Se recibe la respuesta del metodo y si esta es exitosa se manda un mensaje de notificacion al cliente y se reenvia al usuario a la lista de todos los usuarios para que vea la insercion del nuevo usuario (admin).
+            if($respuesta == "success"){
+                echo '<script> 
+                            alert("Datos guardados correctamente");
+                            window.location.href = "index.php?action=listaDeUsuarios"; 
+                      </script>';                
+            }else{
+                //En caso de haber un error se queda en la misma pagina y le notifica al usuario
+                echo '<script> alert("Error al guardar") </script>';
+            }
+        }
+    }
 }
