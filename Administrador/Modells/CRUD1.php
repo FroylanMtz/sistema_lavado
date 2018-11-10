@@ -108,4 +108,19 @@ class crud1 extends Conexion{
         if ($stmt->execute([$admin_id])) return true;
         else return false;
     }
+
+
+    # CUPONES ---------------------------------
+        // -------------------
+    // Método para generar un cupón. Parámetros: id, password y fecha de expiración
+    public function generarCupon($id, $password, $expiracion) {
+        // Consulta sql
+        $sql = "INSERT INTO cupones (cupon_id,password,expiracion) VALUES (?,?,?)";
+        // Se prepara la consulta
+        $stmt = Conexion::conectar()->prepare($sql);
+
+        // Si se ejecuta con éxito devuelve true. Se pasan las tres variables como parametros
+        if($stmt->execute([$id,$password,$expiracion])) return true;
+        else return false;
+    }
 }

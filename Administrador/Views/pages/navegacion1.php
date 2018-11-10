@@ -22,12 +22,7 @@
             </li>
 
             <!-- CUPONES -->
-            <li><a href="#dropdown-ui" aria-expanded="false" data-toggle="collapse"><i class="la la-ticket"></i><span>Cupones</span></a>
-                <ul id="dropdown-ui" class="collapse list-unstyled pt-0">
-                    <li><a href="components-buttons.html">Buttons</a></li>
-                    <li><a href="components-alerts.html">Alerts</a></li>
-                    <li><a href="components-modal.html">Modal</a></li>
-                </ul>
+            <li><a href="index.php?action=listaDeCupones" ><i class="la la-ticket"></i><span>Cupones</span></a>                
             </li>
 
             <!-- VISITAS -->

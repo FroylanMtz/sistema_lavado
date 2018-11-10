@@ -22,7 +22,9 @@ class Modelo1 {
             $enlace == 'editarPremio' ||
             $enlace == 'verCupones' ||
             $enlace == 'registroCupon' ||
-            $enlace == 'editarCupon'
+            $enlace == 'editarCupon' ||
+            $enlace == 'listaDeCupones' ||
+            $enlace == 'generarCupon'
         ){
 
             $pagina = 'Views/pages/'. $enlace .'.php';

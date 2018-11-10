@@ -233,4 +233,31 @@ class Controlador1 {
                   </script>';
         }
     }
+
+
+    # CUPONES -----------------------------
+        # -----------------
+    // Método para generar los datos de un cupón y enviarlos al modelo
+    public function generarCupon() {
+        // Genera numeros pseudoaleatorios entre el rango especificado
+        // El número generado será el id y el password(inicial) del cupón
+        $id = $password = random_int(10000, 99999);
+        // Se establece la fecha de expiración
+        $expiracion = Date("2018-11-22");
+
+        // Se recibe la respuesta del modelo. Parámetro: id, password y fecha
+        $respuesta = crud1::generarCupon($id,$password,$expiracion);
+
+        // Si el modelo generó con éxito el cupón se muestra el mensaje prtinente
+        if($respuesta){
+             echo '<script> 
+                        alert("Cupón Generado Correctamente!!!");
+                        window.location.href = "index.php?action=listaDeCupones"; 
+                  </script>'; 
+        }else{ // Si no se generó muestra el mensaje de error
+            echo '<script> 
+                        alert("Error -> ERR_COUPON_INSERT");                        
+                  </script>';
+        }
+    }
 }
