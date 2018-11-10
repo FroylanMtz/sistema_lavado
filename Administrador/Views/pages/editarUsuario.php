@@ -12,8 +12,8 @@
     // Si se oprimió el botón de guardar datos
     if(isset($_POST["actualizar"])){        
         // Se llama al método para agregar usuario
-        //$controlador->editarUsuario();
-        echo "editar";
+        $controlador->editarUsuario();
+        //echo "editar";
     }
 
 
@@ -25,9 +25,9 @@
             <h4>
                 <?php 
                     if($_GET["id"] == $_SESSION["admin_id"])
-                        echo "Editar mis datos";
+                        echo "Editar mis datos <strong>(".$_SESSION["usuario"].")</strong>";
                     else
-                        echo "Editar Usuario";
+                        echo "Editar Usuario: <strong>".$admin["nombreUsuario"]."</strong>";
                  ?>
             </h4>
         </div>
@@ -36,13 +36,9 @@
 
                 <!-- ID DEL ADMIN -->
                 <input type="hidden" name="id" value="<?php echo($admin["admin_id"]) ?>">
-                <!-- NOMBRE DE USUARIO -->
-                <div class="form-group row d-flex align-items-center mb-5">
-                    <label class="col-lg-4 form-control-label d-flex justify-content-lg-end">Nombre de usuario</label>
-                    <div class="col-lg-5">
-                        <input type="text" class="form-control" placeholder="Nombre de usuario" required name="usuario" value="<?php echo($admin["nombreUsuario"]) ?>" disabled>
-                    </div>
-                </div>
+
+                <!-- FOTO ACTUAL -->
+                <input type="hidden" name="fotoActual" value="<?php echo($admin["foto"]) ?>">                
 
                 <!-- NOMBRE -->
                 <div class="form-group row d-flex align-items-center mb-5">

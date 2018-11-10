@@ -1,10 +1,28 @@
-<div class="row">
-        <div class="page-header">
-          <div class="d-flex align-items-center">
-              <h2 class="page-header-title">Usuario</h2>              
-          </div>
-        </div>
-    </div>
+<?php 
+    
+    // Se declara un objeto del tipo Controlador1
+    $controlador = new Controlador1();
+
+    // Se trae el id con GET del usuario
+    if(isset($_GET["id"])){
+        // Se llama al método para obtener los datos del admin
+        $admin = $controlador->getAdminById($_GET["id"]);
+        // Si no se obtuvieron resultados quiere decir que el id no se encuentra en la base
+        // de datos por lo tanto se manda el siguiente mensaje
+        if($admin == false){
+            echo '<script> 
+                        alert("error -> Id No registrado!");
+                        window.location.href = "index.php?action=listaDeUsuarios";
+                  </script>';
+        }
+
+        $nombreCompleto = $admin["nombreAdmin"] . " " . $admin["apellidos"];
+    }
+
+
+ ?>
+
+
 
 
 
@@ -14,31 +32,43 @@
         <div class="widget widget-13 has-shadow">
             <div class="widget-body p-0">
                 <div class="author-avatar">
-                    <img src="assets/img/avatar/avatar-04.jpg" alt="..." class="img-fluid rounded-circle">
+                    <img src="fotosAdmin/<?php echo($admin["foto"]) ?>" alt="..." class="img-fluid rounded-circle">
                 </div>
+
+                <!-- NOMBRE DE USUARIO -->
                 <div class="author-name">
-                    Nathan Hunter
-                    <span>Mobile Designer</span>
+                    <?php echo $admin["nombreUsuario"]; ?>
+                    <span>Administrador</span>
                 </div>
+                
+                <!-- BOTONES PARA EDITAR Y ELIMINAR -->
                 <div class="follow-btn text-center mt-4">
-                    <a class="btn btn-shadow" href="#">Follow</a>
+                    <a class="btn btn-primary" href="index.php?action=editarUsuario&id=<?php echo $_GET["id"] ?>">Editar</a>
+                    <a class="btn btn-danger" href="index.php?action=eliminarUsuario&id=<?php echo $_GET["id"] ?>">Eliminar</a>
                 </div>
+                
+
+                <!-- NOMBRE COMPLETO -->
                 <div class="social-stats mt-5">
                     <div class="row d-flex justify-content-between">
                         <div class="col-4 text-center">
-                            <i class="la la-users followers"></i>
-                            <div class="counter">+124</div>
-                            <div class="heading">Followers</div>
+                            <i class="la la-user"></i>
+                            <div class="counter"><?php echo $nombreCompleto ?></div>
+                            <div class="heading">Nombre completo</div>
                         </div>
+
+                        <!-- CORREO -->
                         <div class="col-4 text-center">
-                            <i class="la la-dribbble dribbble"></i>
-                            <div class="counter">+357</div>
-                            <div class="heading">Likes</div>
+                            <i class="la la-at"></i>
+                            <div class="counter"><?php echo $admin["correo"] ?></div>
+                            <div class="heading">Correo</div>
                         </div>
+
+                        <!-- TELÉFONO -->
                         <div class="col-4 text-center">
-                            <i class="la la-behance behance"></i>
-                            <div class="counter">+98</div>
-                            <div class="heading">Followers</div>
+                            <i class="la la-phone"></i>
+                            <div class="counter"><?php echo $admin["telefono"]; ?></div>
+                            <div class="heading">Teléfono</div>
                         </div>
                     </div>
                 </div>

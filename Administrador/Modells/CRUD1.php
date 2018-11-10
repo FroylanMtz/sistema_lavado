@@ -60,7 +60,23 @@ class crud1 extends Conexion{
 
     // Método para editar los datos de un usuario
     public function editarUsuario ($datosUsuario) {
-
+        // consulta sql
+        $sql = "UPDATE administradores SET password=?, nombreAdmin=?, apellidos=?, telefono=?, correo=?, foto=? WHERE admin_id=?";
+        // Se prepara la consulta
+        $stmt = Conexion::conectar()->prepare($sql);
+        // Se ejecuta y se verifica si se ejecuta con éxito
+        // Se pasan todos los valores de los datos del usuario
+        if($stmt->execute([$datosUsuario["password"],
+                            $datosUsuario["nombre"],
+                            $datosUsuario["apellidos"],
+                            $datosUsuario["telefono"],
+                            $datosUsuario["correo"],
+                            $datosUsuario["foto"],
+                            $datosUsuario["admin_id"]])){
+            return "success";
+        }else{
+            return false;
+        }
     }
 
 
@@ -78,6 +94,18 @@ class crud1 extends Conexion{
 
         // Si el arreglo no está vacío se retorna, sino devuelve false
         if($respuesta) return $respuesta;
+        else return false;
+    }
+
+    // Método para eliminar un usuario de la BD, se recibe como parámetro el id del usuario
+    public function eliminarUsuario($admin_id) {
+        // Consulta sql
+        $sql = "DELETE FROM administradores WHERE admin_id=?";
+        // Se prepara la consulta
+        $stmt = Conexion::conectar()->prepare($sql);
+
+        // Si se ejecuta con éxito devuelve true
+        if ($stmt->execute([$admin_id])) return true;
         else return false;
     }
 }

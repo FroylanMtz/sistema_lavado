@@ -140,7 +140,71 @@ class Controlador1 {
     // Método para editar los datos del usuario y regresar el mensaje
     // correspondiente a la vista
     public function editarUsuario() {
+        $admin_id = $_POST["id"];
+        $usuario = $_POST["usuario"];
+        $nombre = $_POST["nombre"];
+        $apellidos = $_POST["apellidos"];
+        $correo = $_POST["correo"];
+        $password = $_POST["password"];
+        $telefono = $_POST["telefono"];
 
+        $fotoActual = $_POST["fotoActual"];
+
+        //Para saber el nombre de la foto se manda llamar esta funcion
+        $nombreArchivo = basename($_FILES['foto']['name']);
+
+        //Se concatena al nombre la carpeta en donde se guardaran todas las fotos cargadas por los usuarios
+        $directorio = 'fotosAdmin/' . $nombreArchivo;
+
+        //Para hacer algunas validaciones y el usuario por ejemplo no pase como foto una archivo pdf se extrae la extension de la foto
+        $extension = pathinfo($directorio , PATHINFO_EXTENSION);
+
+        // Si no seleccionó una foto se verifica para dejar la foto actual
+        if($nombreArchivo == ""){
+            $foto = $fotoActual;
+        }else{
+            
+            if($extension != 'png' && $extension != 'jpg' && $extension != 'PNG' && $extension != 'JPG' && $extension != 'jpeg' && $extension != 'JPEG'){
+                echo '<script> alert("Error al subir el archivo intenta con otro") </sript>';
+                
+                $foto = $_POST['fotoActual'];
+
+            }else{
+
+                //En caso de que el usuario haya querido ademas de actualizar sus datos en tipo texto, tambien editar la foto, entra a esta parte del if en donde crea una nueva foto, o sobreescibe la existente y la almacena en la variable foto la cual sera almacenada con los datos realizado.
+
+                move_uploaded_file($_FILES['foto']['tmp_name'], 'fotosAdmin/'.$usuario . '.' . $extension);
+
+                $foto = $usuario . '.' . $extension;
+
+
+                
+            }
+        }
+
+
+        //Todos los datos obtenidos del formulario son guardados en un objeto para luego ser pasados al modelo en donde seran almacenados en su respectiva tabla
+        $datosUsuario = array('admin_id' => $admin_id,                            
+                            'nombre' => $nombre,
+                            'apellidos' => $apellidos,
+                            'correo' => $correo,
+                            'password' => $password,
+                            'telefono' => $telefono,
+                            'foto' => $foto);
+
+        //Despues de que se ha guardado la imagen en la carpeta, se manda llamar la funcion del modelo en la cual se pasan el objeto con los datos del formulario para ser guardado
+        $respuesta = crud1::editarUsuario($datosUsuario);
+
+        //Se recibe la respuesta del metodo y si esta es exitosa se manda un mensaje de notificacion al cliente y se reenvia al usuario a la lista de todos los usuarios para que vea la insercion del nuevo usuario (admin).
+        if($respuesta == "success"){
+            echo '<script> 
+                        alert("Datos guardados correctamente");
+                        window.location.href = "index.php?action=listaDeUsuarios"; 
+                  </script>';                
+        }else{
+            //En caso de haber un error se queda en la misma pagina y le notifica al usuario
+            echo '<script> alert("Error al guardar") </script>';
+        }
     }
 
     // Método para traer los datos de un admin, recibir los datos del modelo y
@@ -151,5 +215,22 @@ class Controlador1 {
 
         // Se retorna la respuesta
         return $respuesta;
+    }
+
+    // Método para enviar el id del usuario (con GET) a eliminar al modelo
+    public function eliminarUsuario() {
+        $respuesta = crud1::eliminarUsuario($_GET["id"]);
+
+        // Si el modelo realiźó la eliminacipon correctamente se muestra el mensaje
+        if($respuesta){
+            echo '<script> 
+                        alert("Usuario eliminado");
+                        window.location.href = "index.php?action=listaDeUsuarios"; 
+                  </script>'; 
+        }else{
+            echo '<script> 
+                        alert("Ha ocurrido un error -> ERR_DELETE_USER!");
+                  </script>';
+        }
     }
 }
