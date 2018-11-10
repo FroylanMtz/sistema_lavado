@@ -33,7 +33,7 @@ class crud1 extends Conexion{
     }
 
 
-    # USUARIOS ------------------------------------
+    # USUARIOS (ADMINISTRADORES) ------------------------------------
         # ---------------------
     // Método para guardar los datos de un nuevo usuario
     public function agregarUsuario($datosUsuario) {
@@ -57,4 +57,27 @@ class crud1 extends Conexion{
         }
     }
 
+
+    // Método para editar los datos de un usuario
+    public function editarUsuario ($datosUsuario) {
+
+    }
+
+
+    // Método para obtener los datos de un usuario específico y enviarlos al controlador
+    public function getAdminById($admin_id) {
+        // Consulta sql
+        $sql = "SELECT * FROM administradores WHERE admin_id=?";
+        // Se prepara la consulta
+        $stmt = Conexion::conectar()->prepare($sql);
+        // Se ejecuta, se pasa como parámetro el id del admin
+        $stmt->execute([$admin_id]);
+
+        // Se almacena el resultado en un array asociativo
+        $respuesta = $stmt->fetch(); // fetch solo trae un registro
+
+        // Si el arreglo no está vacío se retorna, sino devuelve false
+        if($respuesta) return $respuesta;
+        else return false;
+    }
 }

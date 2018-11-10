@@ -135,4 +135,21 @@ class Controlador1 {
             }
         }
     }
+
+    
+    // Método para editar los datos del usuario y regresar el mensaje
+    // correspondiente a la vista
+    public function editarUsuario() {
+
+    }
+
+    // Método para traer los datos de un admin, recibir los datos del modelo y
+    // enviarlos a la vista, (parámetro: admin_id)
+    public function getAdminById($admin_id) {
+        // Se recibe la respuesta del modelo
+        $respuesta = crud1::getAdminById($admin_id);
+
+        // Se retorna la respuesta
+        return $respuesta;
+    }
 }
