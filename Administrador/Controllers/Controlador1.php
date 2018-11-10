@@ -242,8 +242,16 @@ class Controlador1 {
         // Genera numeros pseudoaleatorios entre el rango especificado
         // El número generado será el id y el password(inicial) del cupón
         $id = $password = random_int(10000, 99999);
+        
         // Se establece la fecha de expiración
-        $expiracion = Date("2018-11-22");
+        $fecha = date('Y-m-j'); // Fecha actual
+        // Se le suman la cantidad de dias requeridos
+        $expiracion = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
+        // Se pasa un segundo parámetro a la fecha actual que son los dias de la
+        // función anterior
+        $expiracion = date ( 'Y-m-j' , $expiracion );
+        
+
 
         // Se recibe la respuesta del modelo. Parámetro: id, password y fecha
         $respuesta = crud1::generarCupon($id,$password,$expiracion);
