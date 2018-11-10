@@ -1,15 +1,14 @@
 
 <?php 
     
-    // Traer todos los datos de la tabla administradores
+    // Traer todos los datos de la tabla promociones
     // Se crea un objeto del tipo Controlador1
     $controlador = new Controlador1();
 
-    // Llamada al método que trae los datos de los usuarios (admin)
     // Se pasa el nombre de la tabla como parámetro
     $promociones = $controlador->getAll("promociones");
 
-       // Si se oprimió el botón de agregar usuario
+       // Si se oprimió el botón de agregar promocion
     if(isset($_POST["agregar"])){
         echo "agregar";
     }

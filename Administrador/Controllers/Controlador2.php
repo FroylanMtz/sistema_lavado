@@ -293,7 +293,6 @@
             echo "<script> window.location = 'index.php?action=verPremios';</script>";
           }
         }
-      }   		
+      }
 	  }
-  
 ?>
