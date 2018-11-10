@@ -1,7 +1,13 @@
     <div class="row">
         <div class="page-header">
           <div class="d-flex align-items-center">
-              <h2 class="page-header-title">Dashboard</h2>              
+              <h2 class="page-header-title">Dashboard <?php echo $_SESSION["usuario"]; ?></h2>     <?php 
+                        if(isset($_SESSION["foto"])){
+                            echo "session";
+                        }else{
+                            echo "no sesion";
+                        }
+               ?>
           </div>
         </div>
     </div><br>

@@ -51,10 +51,15 @@ class Controlador1 {
             $_SESSION["iniciada"] = true; // para comparar si está iniciada la sesión
             // Se guarda el nombre de usuario, contraseña, nombre y apellidos
             // del admin en las variables de sesión $_SESSION
-            $_SESSION["usuario"] = $respuesta["nombreUsuario"];             
-            $_SESSION["password"] = $respuesta["password"];
-            $_SESSION["nombre"] = $respuesta["nombreAdmin"];
-            $_SESSION["apellidos"] = $respuesta["apellidos"];
+            $_SESSION["usuario"] = $respuesta[0]["nombreUsuario"];             
+            $_SESSION["password"] = $respuesta[0]["password"];
+            $_SESSION["nombre"] = $respuesta[0]["nombreAdmin"];
+            $_SESSION["apellidos"] = $respuesta[0]["apellidos"];
+            $_SESSION["correo"] = $respuesta[0]["correo"];
+            $_SESSION["foto"] = $respuesta[0]["foto"];
+            $_SESSION["telefono"] = $respuesta[0]["telefono"];
+            $_SESSION["admin_id"] = $respuesta[0]["admin_id"];
+            
 
             // Se direcciona a la plantilla o navegación principal
             echo '<script> window.location.href = "index.php?action=dashboard"; </script>';
