@@ -5,17 +5,31 @@ class Modelo1 {
 
     public function mostrarPagina($enlace){
 
-        if($enlace == 'inicio'){
+        if($enlace == 'dashboard' ||
+            $enlace == 'usuarios' ||
+            $enlace == 'listaDeUsuarios' ||
+            $enlace == 'verUsuario' ||
+            $enlace == 'agregarUsuario' ||
+            $enlace == 'editarUsuario' ||
+            $enlace == 'eliminarUsuario' ||
+            $enlace == 'cupones' ||
+            $enlace == 'visitas' ||
+            $enlace == 'verPromociones' || 
+            $enlace == 'registroPromociones'||
+            $enlace == 'editarPromocion' ||
+            $enlace == 'verPremios' ||
+            $enlace == 'registroPremios' ||
+            $enlace == 'editarPremio' ||
+            $enlace == 'verCupones' ||
+            $enlace == 'registroCupon' ||
+            $enlace == 'editarCupon'
+        ){
 
-            $pagina = 'Views/Paginas'. $enlace .'.php';
-        
-        }else if($enlace == 'index'){
-            
-            $pagina = 'Views/Paginas/inicio.php';
+            $pagina = 'Views/pages/'. $enlace .'.php';
         
         }else{
             
-            $pagina = 'Views/Paginas/inicio.php';
+            $pagina = 'Views/pages/dashboard.php';
         
         }
 

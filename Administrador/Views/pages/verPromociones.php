@@ -18,33 +18,33 @@
               <div class="card-header">
                 <h3 class="card-title">Promociones</h3>
 
-                <div class="card-tools" >
-                  <div  class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" action="POST" name="table_search" class="form-control float-right" placeholder="Buscar">
-                    <div class="input-group-append">
-                      <button  type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                  <tr>
-                    <th>Nombre de la Promocion</th>
-                    <th>Descripcion</th>
-                  </tr>
+                 <table id="sorting-table" class="table mb-0">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                      </tr>
+                    </thead>
                   <tbody>
-                  <?php
-                  $vistaPromociones = new Controlador2();
-                  $vistaPromociones -> vistaPromocionesController();
-                  //$vistaPromociones -> borrarPromocionesController();
-                  ?>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-          </div>
-        </div><!-- /.row -->
+                  <?php 
+                  // Se muestran todos los registros de los admin con un foreach
+                  foreach($Promociones as $Promociones): // Inicio foreach
+                  ?>        
+                  <tr>
+                    <td><span style="width:100px;"><span class="badge-text badge-text-small info"><?php echo $Promociones["nombrePromocion"]; ?></span></span></td>
+                    <td><span class="text-primary"><?php echo $Promociones["nombreAdmin"]; ?></span></td>
+                    <td><?php echo $Promociones["apellidos"]; ?></td>
+                    <td><?php echo $Promociones["telefono"]; ?></td>
+                    <td><?php echo $Promociones["correo"]; ?></td>
+                    <td><?php echo $Promociones["foto"]; ?></td>
+                    <td class="td-actions">
+                      <a href="index.php?action=verPromociones&id=<?php echo($Promociones["admin_id"]); ?>"><i class="la la-search edit"></i></a>
+                      <a href="index.php?action=editarPromocion&id=<?php echo($promociones["admin_id"]); ?>"><i class="la la-edit edit"></i></a>
+                      <a href="index.php?action=eliminarUsuario&id=<?php echo($promociones["admin_id"]); ?>"><i class="la la-trash delete"></i></a>
+                   </td>
+                  </tr>    
+              <?php  endforeach; // FIN foreach?>
+            </tbody>
+          </table>
+                

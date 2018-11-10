@@ -7,13 +7,11 @@ class Controlador1 {
     private $enlace = '';
     private $pagina = '';
 
-    public function cargarPlantilla() {
-
-        // Se inicia la sesión
-        session_start();
-
+    public function cargarPlantilla() {        
+        
+        //session_start();
         // Si la variable de sesión está iniciada se incluye la plantilla, de lo contrario
-        // se direcciona al login
+        // se direcciona al login, se inicia la session con session_start() en index.php
         if( isset($_SESSION['iniciada']) ){
             include 'Views/plantilla.php';
         }else{
@@ -27,10 +25,11 @@ class Controlador1 {
         if(isset($_GET['action'] )){
             $enlace = $_GET['action'];
         }else{
-            $enlace = 'inicio'; 
+            $enlace = 'dashboard'; 
         }
 
         // Se llama al método del modelo que regresa la ruta del archivo a incluir
+        //$pagina = Modelo1::mostrarPagina($enlace);
         $pagina = Modelo1::mostrarPagina($enlace);
 
         include $pagina;
@@ -47,7 +46,7 @@ class Controlador1 {
         
         // Si los datos ingresados son correctos se inicia la sesion (session_start())
         if($respuesta) {
-            session_start();
+            //session_start();
 
             $_SESSION["iniciada"] = true; // para comparar si está iniciada la sesión
             // Se guarda el nombre de usuario, contraseña, nombre y apellidos
@@ -58,7 +57,7 @@ class Controlador1 {
             $_SESSION["apellidos"] = $respuesta["apellidos"];
 
             // Se direcciona a la plantilla o navegación principal
-            echo '<script> window.location.href = "index.php?action=plantilla"; </script>';
+            echo '<script> window.location.href = "index.php?action=dashboard"; </script>';
         }else {
             // Si se ingresaron datos del usuario incorrectos se dirije al login
             echo '<script> alert("Usuario o contraseña incorrectos") </script>';
@@ -66,5 +65,24 @@ class Controlador1 {
         }
     }
 
+    # TODOS LOS DATOS SEGUN LA TABLA ----------------------------
+        # ----------------------
+    // Método que devuelve todos los datos de una tabla en específico (parametro: $tabla)
+    public function getAll($tabla) {
+        // Recibe la respuesta del modelo, se pasa como parámetro el nombre de la tabla
+        $respuesta = crud1::getAll($tabla);
 
+        // Si trae por lo menos un registro retorna el registro (array asociativo)
+        if($respuesta) return $respuesta;
+        else return false; // Si no trae nada retorna false
+    }
+
+
+    # USUARIOS ------------------------------------
+        # ---------------------
+    // Método para preparar los datos y enviarlos al modelo, después recibe la respuesta
+    // del modelo y la envía a la vista
+    public function agregarUsuario() {
+        
+    }
 }

@@ -7,29 +7,24 @@
     <!-- PREMIOS -->
         <li><a href="#dropdown-icons" aria-expanded="false" data-toggle="collapse"><i class="ti-gift"></i><span>Premios</span></a>
             <ul id="dropdown-icons" class="collapse list-unstyled pt-0">
-                <li><a href="icons-lineawesome.html">Opción 1</a></li>
-                <li><a href="icons-themify.html">Opción 2</a></li>
-                <li><a href="icons-ionicons.html">Opción 3</a></li>
-                <li><a href="icons-meteocons.html">Opción 4</a></li>
+                <li><a href="index.php?action=verPremios"">Ver Premios</a></li>
+                <li><a href="index.php?action=registrarPremios"">Registrar Premio</a></li>
             </ul>
         </li>
 
         <!-- PROMOCIONES -->
         <li><a href="#dropdown-forms" aria-expanded="false" data-toggle="collapse"><i class="la la-flag-checkered"></i><span>Promociones</span></a>
             <ul id="dropdown-forms" class="collapse list-unstyled pt-0">
-                <li><a href="#">Opc 1</a></li>
-                <li><a href="#">Opc 2</a></li>
-                <li><a href="#">Opc 3</a></li>
-                <li><a href="#">Opc 4</a></li>
+                <li><a href="index.php?action=verPromociones">Ver Promociones</a></li>
+                <li><a href="index.php?action=registroPromociones">Registro Promociones</a></li>
             </ul>
         </li>
        
         <!-- HORARIOS -->
         <li><a href="#dropdown-tables" aria-expanded="false" data-toggle="collapse"><i class="ion-clock"></i><span>Horarios</span></a>
             <ul id="dropdown-tables" class="collapse list-unstyled pt-0">
-                <li><a href="#">Opc 1</a></li>
-                <li><a href="#">Opc 2</a></li>
-                <li><a href="#">Opc 3</a></li>
+                <li><a href="#">Ver Horarios</a></li>
+                <li><a href="#">Registrar Horario</a></li>
             </ul>
         </li>
         
