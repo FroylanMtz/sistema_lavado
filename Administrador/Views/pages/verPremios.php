@@ -1,51 +1,72 @@
-<div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Vista de Premios </h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
 
-<!-- /.row -->
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Premios</h3>
+<?php 
+    
+    // Traer todos los datos de la tabla administradores
+    // Se crea un objeto del tipo Controlador1
+    $controlador = new Controlador1();
 
-                <div class="card-tools" >
-                  <div  class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" action="POST" name="table_search" class="form-control float-right" placeholder="Buscar">
-                    <div class="input-group-append">
-                      <button  type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover">
-                  <tr>
-                    <th>Nombre del premio</th>
-                    <th>Descripcion</th>
-                    <th>Visitas</th>
-                  </tr>
-                  <tbody>
-                  <?php
-                  $vistaPremios = new Controlador2();
-                  $vistaPremios -> vistaPremiosController();
-                  $vistaPremios -> borrarPremiosController();
-                  ?>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
+    // Llamada al método que trae los datos de los usuarios (admin)
+    // Se pasa el nombre de la tabla como parámetro
+    $premios = $controlador->getAll("premios");
+
+       // Si se oprimió el botón de agregar usuario
+    if(isset($_POST["agregar"])){
+        echo "agregar";
+    }
+?>
+
+<div class="row">
+        <div class="page-header">
+          <div class="d-flex align-items-center">
+              <h2 class="page-header-title">Ver Premios</h2>        
           </div>
-        </div><!-- /.row -->
+        </div>
+</div><br>
+
+
+     <div class="col-xl-6">
+            <!-- Block Buttons -->            
+            <div class="row">                           
+                <div class="col-xl-6">
+                    <button onclick="registroPremios();" name="agregar" type="button" class="btn btn-shadow btn-block mb-2">Agregar Premio</button>
+                </div>
+            </div>
+            <!-- End Block Buttons -->
+        </div>
+    <br>
+
+                 <table id="sorting-table" class="table mb-0">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Visitas Requeridas</th>
+                      </tr>
+                    </thead>
+                  <tbody>
+                  <?php 
+                  // Se muestran todos los registros de los admin con un foreach
+                  foreach($premios as $premios)://inicio foreach
+                  ?>        
+                  <tr>
+                    <td><?php echo $premios["premio_id"]; ?></td>
+                    <td><?php echo $premios["nombrePremio"]; ?></td>
+                    <td><?php echo $premios["descripcion"]; ?></td>
+                    <td><?php echo $premios["visitasRequeridas"]; ?></td>
+                    <td class="td-actions">
+                      <a href="index.php?action=verPremios&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-search edit"></i></a>
+                      <a href="index.php?action=editarPremios&id=<?php echo($premios["ppremio_id"]); ?>"><i class="la la-edit edit"></i></a>
+                      <a href="index.php?action=borrarPremio&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-trash delete"></i></a>
+                   </td>
+                  </tr>    
+              <?php  endforeach; // FIN foreach?>
+            </tbody>
+          </table>
+ <!-- Script para redireccionar a la página de agregar usuario -->
+    <script type="text/javascript">
+        function registroPremios(){
+            window.location.href = "index.php?action=registroPremios";
+        }
+    </script>
+                

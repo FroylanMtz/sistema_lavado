@@ -243,4 +243,20 @@ class crud2 extends Conexion{
 		}
 		$stmt->close();
 	}
+
+
+	//✩ Funcion de borrar premio ✩
+	static public function borrarPremioModel($crud2Model,$tabla){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE premio_id = :premio_id");
+		$stmt->bindParam(":premio_id", $crud2Model, PDO::PARAM_INT);
+
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+		return "error";
+		}
+		$stmt->close();
+	}
 }
