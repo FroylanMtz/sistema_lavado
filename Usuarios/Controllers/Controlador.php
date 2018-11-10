@@ -13,6 +13,9 @@ class Controlador {
         session_start();
 
         //Se compara para saber si se redirecciona a la pagina principal o al login
+        
+        
+        
         if( isset($_SESSION['iniciada']) ){
             include 'Views/Plantilla.php';
         }else{
@@ -21,20 +24,52 @@ class Controlador {
 
     }
 
+
+
     //Funcion ruteadora la cual "cacha el parametro GET de la url y la redirecciona a la pagina mencionada con esta variable GET"
     public function mostrarPagina(){
 
         //si la variable no existe o viene vacia se manda por defecto a la pagina principal dentro de la aplicacion
-        if(isset($_GET['pagina'] )){
-            $enlace = $_GET['pagina'];
+        
+        $contrasenaCupon = $_SESSION['contrasena'];
+        $idCupon = $_SESSION['idCupon'];
+        
+        $expiracion = $_SESSION['expiracion'];
+
+        if( strtotime( $expiracion ) < strtotime( date('Y-m-d') )  ){
+
+            echo '<script>
+                
+                alert("Su cupon ya está expriado, le recomendamos coprar otro con el vendedor del establecimiento para seguir disfrutando de los premios que tenemos para ti :)");
+
+                window.location.href = "login.php";
+
+
+
+                </script>';
+            
         }else{
-            $enlace = 'inicio'; 
-        }
 
-        //Este valor se le manda al modelo para que valide si existe la pagina, una vez validado esta funcion del modelo regresa la pagina y el controlador la carga
-        $pagina = Modelo::mostrarPagina($enlace);
+            if ($contrasenaCupon == $idCupon){
+                $enlace = 'actualizar_contrasena';
+            }else{
+                if(isset($_GET['pagina'] )){
+                    $enlace = $_GET['pagina'];
+                }else{
+                    $enlace = 'inicio'; 
+                }
+            }
 
-        include $pagina;
+            //Este valor se le manda al modelo para que valide si existe la pagina, una vez validado esta funcion del modelo regresa la pagina y el controlador la carga
+            $pagina = Modelo::mostrarPagina($enlace);
+
+            include $pagina;
+
+        } 
+
+        
+        
+        
 
     }
 
@@ -61,6 +96,7 @@ class Controlador {
                 $_SESSION['iniciada'] = true;
                 $_SESSION['idCupon'] = $respuesta['cupon_id'];
                 $_SESSION['contrasena'] = $respuesta['password'];
+                $_SESSION['expiracion'] = $respuesta['expiracion'];
 
                 //redirecciona dentro del sistema
                 echo '<script> window.location.href = "index.php?action=inicio"; </script>';

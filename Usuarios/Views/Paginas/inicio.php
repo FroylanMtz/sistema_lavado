@@ -1,4 +1,10 @@
 <!--Pagina de inicio en el cual unicamente se encuentran los botones para las principales funcionalidades de la aplicacion, esta el boton de visitas, premios disponibles, premios que se pueden canjear o canjeados, clima y promociones-->
+
+<?php
+
+    //echo 'Ahora ' . date('d-m-Y');
+?>
+
 <div class="col s12 mt-5 " id="pan" >
     <a data-target="mobile-demo" class="breadcrumb sidenav-trigger"> Menú </a>
     <a href="index.php?pagina=inicio" class="breadcrumb"> Inicio </a>

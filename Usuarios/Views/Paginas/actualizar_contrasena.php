@@ -8,6 +8,19 @@ $contrasenaActual =  $_SESSION['contrasena'];
 //Despues se crea un objeto de la clase controlador
 $controlador = new Controlador();
 
+if( $_SESSION['contrasena'] == $_SESSION['idCupon'] ){
+
+    echo '<script>
+                swal({
+                    type: "question",
+                    title: "Cambie su contraseña",
+                    text: "Antes de usar el sistema, necesita actualizar la contraseña por defecto"
+                  })
+
+                </script>';
+
+}
+
 //Como el formulario redirecciona a la misma pagina, y esta a la vez manda llamar la funcion que valida y manda llamar al modelo que interactua con la base de datos, es necesario valir que se estan enviando los datos a traves del formulario, porque cuando se carga por primera vez marcaria errro porque no encuentra los parametros del formulario
 if(isset($_POST['contrasenaActual']) && isset($_POST['contrasenaNueva'])){
 
