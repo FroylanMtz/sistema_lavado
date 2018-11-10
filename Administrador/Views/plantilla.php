@@ -36,8 +36,8 @@ Author: SAEROX
         </script>
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="Public/assets/img/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="Public/assets/img/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="Public/assets/img/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="Public/assets/img/favicon-32x32.png"><!-- Imagen alado del tittle -->
+        <link rel="icon" type="image/png" sizes="16x16" href="Public/imagenes/dwash.png">
         <!-- Stylesheet -->
         <link rel="stylesheet" href="Public/assets/vendors/css/base/bootstrap.min.css">
         <link rel="stylesheet" href="Public/assets/vendors/css/base/elisyam-1.5.min.css">
