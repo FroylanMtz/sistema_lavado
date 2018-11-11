@@ -15,8 +15,6 @@ if (isset($_POST["btn_login"])) {
   // Se manda llamar al método del controlador para iniciar sesión
   $controlador->iniciarSesion();
 }
-
-
 ?>
 
 

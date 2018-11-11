@@ -1,23 +1,9 @@
-  <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark">REGISTRO DE PROMOCIONES</h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid// -->
-    </div>
-<?php 
-  
-  //Enviar los datos al controlador 
-$registro = new crud2();
-$promociones = $registro->getPromociones();
-
-?>
-
+<div class="widget has-shadow">
+  <div class="widget-header bordered no-actions d-flex align-items-center">
+    <h4>Registrar Promocion</h4>
+  </div>
+</div>
+   
 
 <div class="card card-primary">
               <div class="card-header">
@@ -43,12 +29,11 @@ $promociones = $registro->getPromociones();
             </div>
             <!-- /.card -->
 <?php 
-
-  //se invoca la funcion  registroPromocionController de la clase crud2
-  $registro ->registroPromocionesController();
-  if(isset($_GET["action"])){
-    if($_GET["action"]=="ok"){
-      echo "Registro Exitoso";
-    }
+  // Si se oprimió el botón de guardar datos
+  if(isset($_POST["promociones"])){
+    // Se crea un objeto del tipo Controlador2
+    $controlador = new crud2();
+    // Se llama al método para agregar usuario
+    $controlador->registroPromociones();        
   }
 ?>

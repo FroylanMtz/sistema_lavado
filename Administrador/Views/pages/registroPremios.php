@@ -1,3 +1,19 @@
+
+<?php 
+    
+    // Si se oprimió el botón de guardar datos
+    if(isset($_POST["premios"])){
+        // Se crea un objeto del tipo Controlador1
+        $controlador = new crud2();
+        // Se llama al método para agregar usuario
+        $controlador->getPremios();        
+    }
+
+
+ ?>
+
+
+
   <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
@@ -8,16 +24,8 @@
             
           </div><!-- /.col -->
         </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
+      </div><!-- /.container-fluid //-->
     </div>
-<?php 
-  
-  //Enviar los datos al controlador 
-$registro = new crud2();
-$premios = $registro->getPremios();
-
-?>
-
 
 <div class="card card-primary">
               <div class="card-header">
