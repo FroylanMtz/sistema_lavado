@@ -4,7 +4,6 @@
   </div>
 </div>
    
-
 <div class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title">Registro</h3>
@@ -32,7 +31,7 @@
   // Si se oprimió el botón de guardar datos
   if(isset($_POST["promociones"])){
     // Se crea un objeto del tipo Controlador2
-    $controlador = new crud2();
+    $controlador = new Controlador2();
     // Se llama al método para agregar usuario
     $controlador->registroPromociones();        
   }

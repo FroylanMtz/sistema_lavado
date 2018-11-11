@@ -4,6 +4,22 @@ require_once 'Conexion.php';
 
 class crud2 extends Conexion{
 
+	 # Traer todos los datos de una tabla
+    	// ------------------------------------
+    public function getAll($tabla) {
+    	// Consulta sql, trae todo de $tabla
+    	$sql = "SELECT * FROM $tabla";
+    	// Se prepara la consulta
+    	$stmt = Conexion::conectar()->prepare($sql);
+    	// se ejecuta
+    	$stmt->execute();
+
+    	// Se guarda en una variable un array asciativo con todos los resultados
+    	$respuesta = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    	// Se retorna el array
+    	return $respuesta;
+    }
+
 	//Metodo de registro de Promociones
     public static function registroPromocionesModel($crud2Model, $tabla){
     	//consulta para obtener el valor de las variables cuando ejecutamos execute
@@ -177,7 +193,7 @@ class crud2 extends Conexion{
 
 
 	//✩ Funcion de Actualizar Promocion ✩
-	static public function actualizarPromocionModel($crud2sModel, $tabla){
+	static public function actualizarPromocionModel($crud2Model, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombrePromocion = :nombrePromocion, descripcion = :descripcion WHERE promocion_id = :promocion_id");
 

@@ -1,40 +1,38 @@
-
 <?php 
-    
-    // Traer todos los datos de la tabla promociones
-    // Se crea un objeto del tipo Controlador1
-    $controlador = new Controlador1();
+  // Traer todos los datos de la tabla promociones
+  // Se crea un objeto del tipo Controlador2
+  $controlador = new Controlador2();
 
-    // Se pasa el nombre de la tabla como parámetro
-    $promociones = $controlador->getAll("promociones");
+  // Se pasa el nombre de la tabla como parámetro
+  $promociones = $controlador->getAll("promociones");
 
-       // Si se oprimió el botón de agregar promocion
-    if(isset($_POST["agregar"])){
-        echo "agregar";
-    }
+  // Si se oprimió el botón de agregar promocion
+  if(isset($_POST["agregar"])){
+    echo "agregar";
+  }
 ?>
 
 <div class="row">
-        <div class="page-header">
-          <div class="d-flex align-items-center">
-              <h2 class="page-header-title">Ver Promociones</h2>        
-          </div>
-        </div>
+  <div class="page-header">
+    <div class="d-flex align-items-center">
+      <h2 class="page-header-title">Ver Promociones</h2>        
+    </div>
+  </div>
 </div><br>
 
 
-     <div class="col-xl-6">
-            <!-- Block Buttons -->            
-            <div class="row">                           
-                <div class="col-xl-6">
-                    <button onclick="registroPromociones();" name="agregar" type="button" class="btn btn-shadow btn-block mb-2">Agregar Promocion</button>
-                </div>
-            </div>
-            <!-- End Block Buttons -->
-        </div>
-    <br>
-
-                 <table id="sorting-table" class="table mb-0">
+<div class="col-xl-6">
+  <!-- Block Buttons -->            
+    <div class="row">                           
+      <div class="col-xl-6">
+        <button onclick="registroPromociones();" name="agregar" type="button" class="btn btn-shadow btn-block mb-2">Registrar Promocion</button>
+      </div>
+    </div>
+  <!-- End Block Buttons -->
+</div>
+    
+<br>
+  <table id="sorting-table" class="table mb-0">
                     <thead>
                       <tr>
                         <th>ID</th>
@@ -60,7 +58,7 @@
               <?php  endforeach; // FIN foreach?>
             </tbody>
           </table>
- <!-- Script para redireccionar a la página de agregar usuario -->
+ <!-- Script para redireccionar a la página de agregar promocion -->
     <script type="text/javascript">
         function registroPromociones(){
             window.location.href = "index.php?action=registroPromociones";

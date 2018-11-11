@@ -1,9 +1,7 @@
-
 <?php 
-    
     // Traer todos los datos de la tabla premios
     // Se crea un objeto del tipo Controlador
-    $controlador = new Controlador1();
+    $controlador = new Controlador2();
 
     // Se pasa el nombre de la tabla como parámetro
     $premios = $controlador->getAll("premios");
@@ -27,7 +25,7 @@
             <!-- Block Buttons -->            
             <div class="row">                           
                 <div class="col-xl-6">
-                    <button onclick="registroPremios();" name="agregar" type="button" class="btn btn-shadow btn-block mb-2">Agregar Premio</button>
+                    <button onclick="registroPremios();" name="agregar" type="button" class="btn btn-shadow btn-block mb-2">Registrar Premio</button>
                 </div>
             </div>
             <!-- End Block Buttons -->
@@ -55,7 +53,7 @@
                     <td><?php echo $premios["visitasRequeridas"]; ?></td>
                     <td class="td-actions">
                       <a href="index.php?action=verPremios&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-search edit"></i></a>
-                      <a href="index.php?action=editarPremios&id=<?php echo($premios["ppremio_id"]); ?>"><i class="la la-edit edit"></i></a>
+                      <a href="index.php?action=editarPremios&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-edit edit"></i></a>
                       <a href="index.php?action=borrarPremio&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-trash delete"></i></a>
                    </td>
                   </tr>    

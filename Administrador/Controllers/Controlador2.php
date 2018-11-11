@@ -26,6 +26,20 @@
       
         $pagina = Modelo2::mostrarPagina($enlace);
     }
+
+
+     # TODOS LOS DATOS SEGUN LA TABLA ----------------------------
+        # ----------------------
+    // Método que devuelve todos los datos de una tabla en específico (parametro: $tabla)
+    public function getAll($tabla) {
+        // Recibe la respuesta del modelo, se pasa como parámetro el nombre de la tabla
+        $respuesta = crud2::getAll($tabla);
+
+        // Si trae por lo menos un registro retorna el registro (array asociativo)
+        if($respuesta) return $respuesta;
+        else return false; // Si no trae nada retorna false
+    }
+
     //////////////////////////////////////////////P R O M O C I O N E S /////////////////////////////////////////////////////////////////////////
 
 		//✩ Funcion para registrar Promociones ✩
@@ -146,6 +160,8 @@
     		}
   		}
 
+
+
   		public function editarCuponController(){//Funcion para editar Cupon
 
     		$Controlador = $_GET["cupon_id"];
@@ -218,7 +234,7 @@
           //si los datos estan completos y correctos entra al success
           if($respuesta =="success")
           {
-            echo "<script> window.location = 'index.php?action=verPremios';</script>";
+            echo "<script> window.location = 'index.php?action=registroPremios';</script>";
           }
         }
       }
@@ -231,14 +247,15 @@
             <td>'.$item["descripcion"].'</td>
             <td>'.$item["visitasRequeridas"].'</td>
 
-            <td><a href="index.php?action=verPremios&idBorrar='.$item["premio_id"].'"><button class="btn btn-danger">Borrar</button></a></td></tr>';
+            <td><a href="index.php?action=verPremios&idBorrar='.$item["premio_id"].'"><button class="btn btn-danger">Borrar</button></a></td></tr>
+            <td><a href="index.php?action=verPremios&idBorrar='.$item["premio_id"].'"><button class="btn btn-info">Editar</button></a></td></tr>';
         }
       }
 
       public function editarPremioController(){//Funcion para editar Premio
 
         $Controlador = $_GET["premio_id"];
-        $respuesta = crud2::editarPremiosModel($ControladorControlador, "premios");
+        $respuesta = crud2::editarPremiosModel($Controlador, "premios");
          echo'
         <div class="form-group"> 
             <input type="hidden" class="form-control" value="'.$respuesta["premio_id"].'" name="idPremioActualizar">
@@ -267,7 +284,8 @@
 
           $Controlador = array("premio_id"=>$_POST["idPremioActualizar"],
             "nombre"=>$_POST["nombrePremioActualizar"],
-            "descripcion"=>$_POST["descripcionPremioActualizar"]);
+            "descripcion"=>$_POST["descripcionPremioActualizar"],
+            "visitasRequeridas"=>$_POST["visitasRequeridasPremioActualizar"]);
 
             $respuesta = crud2::actualizarPremioModel($Controlador, "premios");
 
@@ -281,7 +299,7 @@
       }
 
       //Funcion para borrar premio
-      public function borrarPremioController(){
+      public function borrarPremiosController(){
 
         if(isset($_GET["idBorrar"])){
 
