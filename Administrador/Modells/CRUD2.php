@@ -21,13 +21,13 @@ class crud2 extends Conexion{
     }
 
 	//Metodo de registro de Promociones
-    public static function registroPromocionesModel($crud2Model, $tabla){
+    public static function registroPromocionesModel($datosModel, $tabla){
     	//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (promocion_id, nombrePromocion,descripcion) VALUES (:promocion_id,:nombrePromocion,:descripcion)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":promocion_id",$crud2Model["promocion_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":nombrePromocion",$crud2Model["nombrePromocion"], PDO::PARAM_STR);
-		$stmt->bidParam(":descripcion",$crud2Model["descripcion"], PDO::PARAM_STR);
+		$stmt->bidParam(":promocion_id",$datosModel["promocion_id"], PDO::PARAM_INT);
+		$stmt->bidParam(":nombrePromocion",$datosModel["nombrePromocion"], PDO::PARAM_STR);
+		$stmt->bidParam(":descripcion",$datosModel["descripcion"], PDO::PARAM_STR);
 
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
@@ -40,13 +40,13 @@ class crud2 extends Conexion{
 	}
 
 	//Metodo de registro de Cupones
-	public static function registroCuponesModel($crud2Model, $tabla){
+	public static function registroCuponesModel($datosModel, $tabla){
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (cupon_id, password, expiracion) VALUES (:cupon_id,:password,:expiracion)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":cupon_id",$crud2Model["cupon_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":password",$crud2Model["password"], PDO::PARAM_STR);
-		$stmt->bidParam(":expiración",$crud2Model["expiración"], PDO::PARAM_INT);
+		$stmt->bidParam(":cupon_id",$datosModel["cupon_id"], PDO::PARAM_INT);
+		$stmt->bidParam(":password",$datosModel["password"], PDO::PARAM_STR);
+		$stmt->bidParam(":expiración",$datosModel["expiración"], PDO::PARAM_INT);
 
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
@@ -59,14 +59,14 @@ class crud2 extends Conexion{
 	}
 
 	//Metodo de registro de Premios
-	public static function registroPremiosModel($crud2Model, $tabla){
+	public static function registroPremiosModel($datosModel, $tabla){
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (premio_id, nombrePremio,descripcion, visitasRequeridas) VALUES (:premio_id,:nombrePremio,:descripcion,:visitasRequeridas)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":premio_id",$crud2Model["premio_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":nombrePremio",$crud2Model["nombrePremio"], PDO::PARAM_STR);
-		$stmt->bidParam(":descripcion",$crud2Model["descripcion"], PDO::PARAM_STR);
-		$stmt->bidParam(":visitasRequeridas",$crud2Model["visitasRequeridas"], PDO::PARAM_INT);
+		$stmt->bidParam(":premio_id",$datosModel["premio_id"], PDO::PARAM_INT);
+		$stmt->bidParam(":nombrePremio",$datosModel["nombrePremio"], PDO::PARAM_STR);
+		$stmt->bidParam(":descripcion",$datosdatosModel["descripcion"], PDO::PARAM_STR);
+		$stmt->bidParam(":visitasRequeridas",$datosModel["visitasRequeridas"], PDO::PARAM_INT);
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
 			return "success";
@@ -78,12 +78,12 @@ class crud2 extends Conexion{
 	}
 
 	//Metodo de registro de Horarios
-	public static function registroHorariosModel($crud2Model, $tabla){
+	public static function registroHorariosModel($datosModel, $tabla){
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (horario_id, horario) VALUES (:horario_id,:horario)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":horario_id",$crud2Model["horario_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":horario",$crud2Model["horario"], PDO::PARAM_STR);
+		$stmt->bidParam(":horario_id",$datosModel["horario_id"], PDO::PARAM_INT);
+		$stmt->bidParam(":horario",$datosModel["horario"], PDO::PARAM_STR);
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
 			return "success";
@@ -156,10 +156,10 @@ class crud2 extends Conexion{
 
 
 	//✩ Funcion de editar Promociones ✩
-	static public function editarPromocionModel($crud2Model, $tabla){
+	static public function editarPromocionModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("SELECT promocion_id, nombrePromocion, descripcion FROM $tabla WHERE promocion_id = :promocion_id");
-		$stmt->bindParam(":promocion_id", $crud2Model, PDO::PARAM_INT);	
+		$stmt->bindParam(":promocion_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
 		return $stmt->fetch();
@@ -168,10 +168,10 @@ class crud2 extends Conexion{
 	}
 
 	//✩ Funcion de editar Cupones ✩
-	static public function editarCuponModel($crud2Model, $tabla){
+	static public function editarCuponModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("SELECT cupon_id, password, expiración FROM $tabla WHERE cupon_id = :cupon_id");
-		$stmt->bindParam(":cupon_id", $crud2Model, PDO::PARAM_INT);	
+		$stmt->bindParam(":cupon_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
 		return $stmt->fetch();
@@ -180,10 +180,10 @@ class crud2 extends Conexion{
 	}
 
 	//✩ Funcion de editar Premios ✩
-	static public function editarPremioModel($crud2Model, $tabla){
+	static public function editarPremioModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("SELECT premio_id, nombrePremio, descripcion, visitasRequeridas FROM $tabla WHERE premio_id = :premio_id");
-		$stmt->bindParam(":premio_id", $crud2Model, PDO::PARAM_INT);	
+		$stmt->bindParam(":premio_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
 		return $stmt->fetch();
@@ -193,13 +193,13 @@ class crud2 extends Conexion{
 
 
 	//✩ Funcion de Actualizar Promocion ✩
-	static public function actualizarPromocionModel($crud2Model, $tabla){
+	static public function actualizarPromocionModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombrePromocion = :nombrePromocion, descripcion = :descripcion WHERE promocion_id = :promocion_id");
 
-		$stmt->bindParam(":nombrePromocion", $crud2Model["nombrePromocion"], PDO::PARAM_STR);
-		$stmt->bindParam(":descripcion", $crud2Model["descripcion"], PDO::PARAM_STR);
-		$stmt->bindParam(":promocion_id", $crud2Model["promocion_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombrePromocion", $datosModel["nombrePromocion"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion", $datosModel["descripcion"], PDO::PARAM_STR);
+		$stmt->bindParam(":promocion_id", $datos2Model["promocion_id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";
@@ -212,13 +212,13 @@ class crud2 extends Conexion{
 	}
 
 	//✩ Funcion de Actualizar cupon ✩
-	static public function actualizarCuponModel($crud2Model, $tabla){
+	static public function actualizarCuponModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET password = :password, expiración = :expiración WHERE cupon_id = :cupon_id");
 
-		$stmt->bindParam(":password", $crud2Model["password"], PDO::PARAM_STR);
-		$stmt->bindParam(":expiración", $crud2Model["expiración"], PDO::PARAM_STR);
-		$stmt->bindParam(":cupon_id", $crud2Model["cupon_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
+		$stmt->bindParam(":expiración", $datosModel["expiración"], PDO::PARAM_STR);
+		$stmt->bindParam(":cupon_id", $datosModel["cupon_id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";
@@ -231,10 +231,10 @@ class crud2 extends Conexion{
 	}
 
 	//✩ Funcion de borrar promocion ✩
-	static public function borrarPromocionModel($crud2Model, $tabla){
+	static public function borrarPromocionModel($datosModel, $tabla){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE promocion_id = :promocion_id");
-		$stmt->bindParam(":promocion_id", $crud2Model, PDO::PARAM_INT);
+		$stmt->bindParam(":promocion_id", $datosModel, PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";
@@ -246,10 +246,10 @@ class crud2 extends Conexion{
 	}
 
 	//✩ Funcion de borrar cupon ✩
-	static public function borrarCuponModel($crud2Model,$tabla){
+	static public function borrarCuponModel($datosModel,$tabla){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE cupon_id = :cupon_id");
-		$stmt->bindParam(":cupon_id", $crud2Model, PDO::PARAM_INT);
+		$stmt->bindParam(":cupon_id", $datosModel, PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";
@@ -262,10 +262,10 @@ class crud2 extends Conexion{
 
 
 	//✩ Funcion de borrar premio ✩
-	static public function borrarPremioModel($crud2Model,$tabla){
+	static public function borrarPremioModel($datosModel,$tabla){
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE premio_id = :premio_id");
-		$stmt->bindParam(":premio_id", $crud2Model, PDO::PARAM_INT);
+		$stmt->bindParam(":premio_id", $datosModel, PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";

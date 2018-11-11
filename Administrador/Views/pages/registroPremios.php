@@ -1,3 +1,15 @@
+<?php 
+    
+    // Si se oprimió el botón de guardar datos
+    if(isset($_POST["premios"])){
+        // Se crea un objeto del tipo Controlador2
+        $controlador = new Controlador2();
+        // Se llama al método para agregar usuario
+        $controlador->registroPremios();        
+    }
+?>
+
+
 <div class="widget has-shadow">
   <div class="widget-header bordered no-actions d-flex align-items-center">
     <h4>Registrar Premio</h4>
@@ -31,16 +43,3 @@
               </form>
             </div>
             <!-- /.card -->
-
-<?php 
-    
-    // Si se oprimió el botón de guardar datos
-    if(isset($_POST["premios"])){
-        // Se crea un objeto del tipo Controlador2
-        $controlador = new Controlador2();
-        // Se llama al método para agregar usuario
-        $controlador->registroPremios();        
-    }
-
-
- ?>

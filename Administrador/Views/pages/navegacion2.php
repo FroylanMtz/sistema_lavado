@@ -23,8 +23,8 @@
         <!-- HORARIOS -->
         <li><a href="#dropdown-tables" aria-expanded="false" data-toggle="collapse"><i class="ion-clock"></i><span>Horarios</span></a>
             <ul id="dropdown-tables" class="collapse list-unstyled pt-0">
-                <li><a href="#">Ver Horarios</a></li>
-                <li><a href="#">Registrar Horario</a></li>
+                <li><a href="index.php?action=verHorarios">Ver Horarios</a></li>
+                <li><a href="index.php?action=registroHorarios">Registrar Horario</a></li>
             </ul>
         </li>
         

@@ -49,14 +49,14 @@
       if(isset($_POST["idPromocionRegistro"]))
       {
         //especificacion de la toma de registro de cada campo
-        $Controlador = array("nombre"=>$_POST["nombrePromocionRegistro"],"descripcion"=>$_POST["descripcionPromocionRegistro"]);
+        $datosController = array("nombre"=>$_POST["nombrePromocionRegistro"],"descripcion"=>$_POST["descripcionPromocionRegistro"]);
 
-        $respuesta = crud2::registroPromocionesModel($Controlador,"promociones");
+        $respuesta = crud2::registroPromocionesModel($datosController,"promociones");
         
        	//si los datos estan completos y correctos entra al success
         if($respuesta =="success")
         {
-        	echo "<script> window.location = 'index.php?action=registroPromociones';</script>";
+        	echo "<script> window.location = 'index.php?action=verPromociones';</script>";
         }
       }
   	}
@@ -77,8 +77,8 @@
 
   		public function editarPromocionController(){//Funcion para editar Promocion
 
-    		$Controlador = $_GET["promocion_id"];
-    		$respuesta = crud2::editarPromocionesModel($Controlador, "promociones");
+    		$datosController = $_GET["promocion_id"];
+    		$respuesta = crud2::editarPromocionesModel($datosController, "promociones");
 			echo'
     		<div class="form-group"> 
       			<input type="hidden" class="form-control" value="'.$respuesta["promocion_id"].'" name="idPromocionActualizar">
@@ -101,11 +101,11 @@
 
     		if(isset($_POST["idPromocionActualizar"])){
 
-      			$Controlador = array("promocion_id"=>$_POST["idPromocionActualizar"],
+      			$datosController = array("promocion_id"=>$_POST["idPromocionActualizar"],
             	"nombre"=>$_POST["nombrePromocionActualizar"],
             	"descripcion"=>$_POST["descripcionPromocionActualizar"]);
 
-				$respuesta = crud2::actualizarPromocionModel($Controlador, "promociones");
+				$respuesta = crud2::actualizarPromocionModel($datosController, "promociones");
 
       			if($respuesta == "success"){
         			echo "<script> window.location = 'index.php?action=verPromociones';</script>";
@@ -119,8 +119,8 @@
   		//Funcion para borrar Promocion
   		public function borrarPromocionesController(){
     		if(isset($_GET["idBorrar"])){
-    			$Controlador = $_GET["idBorrar"];
-    			$respuesta = crud2::borrarPromocionModel($Controlador, "promociones");
+    			$datosController = $_GET["idBorrar"];
+    			$respuesta = crud2::borrarPromocionModel($datosController, "promociones");
 
        			if($respuesta == "success"){
         			echo "<script> window.location = 'index.php?action=verPromociones';</script>";
@@ -137,9 +137,9 @@
       	if(isset($_POST["idCuponRegistro"]))
       	{
         	//especificacion de la toma de registro de cada campo
-        	$Controlador = array("password"=>$_POST["passwordCuponRegistro"],"expiracion"=>$_POST["expiracionCuponRegistro"]);
+        	$datosController = array("password"=>$_POST["passwordCuponRegistro"],"expiracion"=>$_POST["expiracionCuponRegistro"]);
 
-        	$respuesta = crud2::registroCuponesModel($Controlador,"cupones");
+        	$respuesta = crud2::registroCuponesModel($datosController,"cupones");
         
        		//si los datos estan completos y correctos entra al success
         	if($respuesta =="success")
@@ -164,8 +164,8 @@
 
   		public function editarCuponController(){//Funcion para editar Cupon
 
-    		$Controlador = $_GET["cupon_id"];
-    		$respuesta = crud2::editarCuponesModel($Controlador, "cupones");
+    		$datosController = $_GET["cupon_id"];
+    		$respuesta = crud2::editarCuponesModel($datosController, "cupones");
 			   echo'
     		<div class="form-group"> 
       			<input type="hidden" class="form-control" value="'.$respuesta["cupon_id"].'" name="idCuponActualizar">
@@ -188,11 +188,11 @@
 
     		if(isset($_POST["idCuponActualizar"])){
 
-      		$Controlador = array("cupon_id"=>$_POST["idCuponActualizar"],
+      		$datosController = array("cupon_id"=>$_POST["idCuponActualizar"],
             "password"=>$_POST["passwordCuponActualizar"],
             "expiracion"=>$_POST["expiracionCuponActualizar"]);
 
-				    $respuesta = crud2::actualizarCuponModel($Controlador, "cupones");
+				    $respuesta = crud2::actualizarCuponModel($datosController, "cupones");
 
       			if($respuesta == "success"){
         			echo "<script> window.location = 'index.php?action=verCupones';</script>";
@@ -208,9 +208,9 @@
 
     		if(isset($_GET["idBorrar"])){
 
-    			$crud2Controller = $_GET["idBorrar"];
+    			$datosController = $_GET["idBorrar"];
     			 
-          $respuesta = crud2::borrarCuponModel($Controlador, "cupones");
+          $respuesta = crud2::borrarCuponModel($datosController, "cupones");
 
        		if($respuesta == "success"){
         		echo "<script> window.location = 'index.php?action=verCupones';</script>";
@@ -227,9 +227,9 @@
         if(isset($_POST["idPremioRegistro"]))
         {
           //especificacion de la toma de registro de cada campo
-          $Controlador = array("nombre"=>$_POST["nombrePremiosRegistro"],"descripcion"=>$_POST["descripcionPremiosRegistro"], "visitasRequeridas"=>$_POST["visitasRequeridasPremiosRegistro"]);
+          $datosController = array("nombre"=>$_POST["nombrePremiosRegistro"],"descripcion"=>$_POST["descripcionPremiosRegistro"], "visitasRequeridas"=>$_POST["visitasRequeridasPremiosRegistro"]);
 
-          $respuesta = crud2::registroPremiosModel($Controlador,"premios");
+          $respuesta = crud2::registroPremiosModel($datosController,"premios");
         
           //si los datos estan completos y correctos entra al success
           if($respuesta =="success")
@@ -254,8 +254,8 @@
 
       public function editarPremioController(){//Funcion para editar Premio
 
-        $Controlador = $_GET["premio_id"];
-        $respuesta = crud2::editarPremiosModel($Controlador, "premios");
+        $datosController = $_GET["premio_id"];
+        $respuesta = crud2::editarPremiosModel($datosController, "premios");
          echo'
         <div class="form-group"> 
             <input type="hidden" class="form-control" value="'.$respuesta["premio_id"].'" name="idPremioActualizar">
@@ -282,12 +282,12 @@
 
         if(isset($_POST["idPremioActualizar"])){
 
-          $Controlador = array("premio_id"=>$_POST["idPremioActualizar"],
+          $datosController = array("premio_id"=>$_POST["idPremioActualizar"],
             "nombre"=>$_POST["nombrePremioActualizar"],
             "descripcion"=>$_POST["descripcionPremioActualizar"],
             "visitasRequeridas"=>$_POST["visitasRequeridasPremioActualizar"]);
 
-            $respuesta = crud2::actualizarPremioModel($Controlador, "premios");
+            $respuesta = crud2::actualizarPremioModel($datosController, "premios");
 
             if($respuesta == "success"){
               echo "<script> window.location = 'index.php?action=verPremios';</script>";
@@ -303,9 +303,9 @@
 
         if(isset($_GET["idBorrar"])){
 
-          $Controlador = $_GET["idBorrar"];
+          $datosController = $_GET["idBorrar"];
            
-          $respuesta = crud2::borrarPremioModel($Controlador, "premios");
+          $respuesta = crud2::borrarPremioModel($datosController, "premios");
 
           if($respuesta == "success"){
             echo "<script> window.location = 'index.php?action=verPremios';</script>";
