@@ -122,13 +122,10 @@
 
   		//Funcion para borrar Promocion
   		public function borrarPromocionesController(){
-    		if(isset($_GET["idBorrar"])){
-    			$datosController = $_GET["idBorrar"];
-    			$respuesta = crud2::borrarPromocionModel($datosController, "promociones");
+    		if(isset($_GET["id"])){
+    			$respuesta = crud2::borrarPromocionModel($_GET["id"], "promociones");
 
-       			if($respuesta == "success"){
-        			echo "<script> window.location = 'index.php?action=verPromociones';</script>";
-       			}
+       			echo "<script> window.location = 'index.php?action=verPromociones&status=".$respuesta."';</script>";
     		}
   		}
 
@@ -314,15 +311,11 @@
       //Funcion para borrar premio
       public function borrarPremiosController(){
 
-        if(isset($_GET["idBorrar"])){
-
-          $datosController = $_GET["idBorrar"];
+        if(isset($_GET["id"])){
            
-          $respuesta = crud2::borrarPremioModel($datosController, "premios");
+          $respuesta = crud2::borrarPremioModel($_GET["id"], "premios");
 
-          if($respuesta == "success"){
-            echo "<script> window.location = 'index.php?action=verPremios';</script>";
-          }
+          echo "<script> window.location = 'index.php?action=verPremios&status=".$respuesta."';</script>";
         }
       }
 	  }

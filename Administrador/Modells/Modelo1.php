@@ -17,9 +17,11 @@ class Modelo1 {
             $enlace == 'verPromociones' || 
             $enlace == 'registroPromociones'||
             $enlace == 'editarPromocion' ||
+            $enlace == 'borrarPromociones' ||
             $enlace == 'verPremios' ||
             $enlace == 'registroPremios' ||
             $enlace == 'editarPremio' ||
+            $enlace == 'borrarPremio' ||
             $enlace == 'verCupones' ||
             $enlace == 'registroCupon' ||
             $enlace == 'editarCupon' ||

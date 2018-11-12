@@ -52,7 +52,7 @@
                     <td class="td-actions">
                       <a href="index.php?action=verPromociones&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-search edit"></i></a>
                       <a href="index.php?action=editarPromocion&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-edit edit"></i></a>
-                      <a href="index.php?action=borrarPromocion&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-trash delete"></i></a>
+                      <a href="index.php?action=borrarPromociones&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-trash delete"></i></a>
                    </td>
                   </tr>    
               <?php  endforeach; // FIN foreach?>
