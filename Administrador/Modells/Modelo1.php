@@ -26,6 +26,7 @@ class Modelo1 {
             $enlace == 'registroCupon' ||
             $enlace == 'editarCupon' ||
             $enlace == 'listaDeCupones' ||
+            $enlace == 'verHorarios' ||
             $enlace == 'generarCupon'
         ){
 
