@@ -5,7 +5,7 @@ class Conexion{
 
     public function conectar(){
 
-        $pdo = new PDO('mysql:host=localhost;dbname=sistema_lavado', 'admin', 'f65b98dfbe2057a5ccf3122b6f69ef35328fe67ac9f9118b');
+        $pdo = new PDO('mysql:host=localhost;dbname=sistema_lavado', 'root', '');
         return $pdo;
 
     }
