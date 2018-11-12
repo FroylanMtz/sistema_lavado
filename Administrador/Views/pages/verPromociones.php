@@ -64,4 +64,3 @@
             window.location.href = "index.php?action=registroPromociones";
         }
     </script>
-                
