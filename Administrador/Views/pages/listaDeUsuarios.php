@@ -56,12 +56,13 @@
             foreach($usuarios as $usuario): // Inicio foreach
         ?>        
             <tr>
+                <!-- Nombre de usuario con un estlo diferente a los demás campos-->
                 <td><span style="width:100px;"><span class="badge-text badge-text-small info"><?php echo $usuario["nombreUsuario"]; ?></span></span></td>
                 <td><span class="text-primary"><?php echo $usuario["nombreAdmin"]; ?></span></td>
                 <td><?php echo $usuario["apellidos"]; ?></td>
                 <td><?php echo $usuario["telefono"]; ?></td>
                 <td><?php echo $usuario["correo"]; ?></td>
-                <td><?php echo $usuario["foto"]; ?></td>
+                <?php echo '<td> <img src="fotosAdmin/'. $usuario["foto"] .'" height="50px" width="50px"> </td>'; ?>
                 <td class="td-actions">
                     <a href="index.php?action=verUsuario&id=<?php echo($usuario["admin_id"]); ?>"><i class="la la-search edit"></i></a>
                     <a href="index.php?action=editarUsuario&id=<?php echo($usuario["admin_id"]); ?>"><i class="la la-edit edit"></i></a>
