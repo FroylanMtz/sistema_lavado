@@ -28,8 +28,7 @@
             <!-- VISITAS -->
              <li><a href="#dropdown-authentication" aria-expanded="false" data-toggle="collapse"><i class="la la-car"></i><span>Visitas</span></a>
                 <ul id="dropdown-authentication" class="collapse list-unstyled pt-0">
-                    <li><a href="index.php?action=visitas">Todas las visitas</a></li>
-                    <li><a href="index.php?action=agregarVisita">Agregar visita</a></li>
+                    <li><a href="index.php?action=visitas">Agregar visita</a></li>
                 </ul>
             </li>
 

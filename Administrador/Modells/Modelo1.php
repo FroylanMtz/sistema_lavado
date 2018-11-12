@@ -14,6 +14,7 @@ class Modelo1 {
             $enlace == 'eliminarUsuario' ||
             $enlace == 'cupones' ||
             $enlace == 'visitas' ||
+            $enlace == 'agregarVisita' ||
             $enlace == 'verPromociones' || 
             $enlace == 'registroPromociones'||
             $enlace == 'editarPromocion' ||
@@ -28,7 +29,8 @@ class Modelo1 {
             $enlace == 'listaDeCupones' ||
             $enlace == 'verHorarios' ||
             $enlace == 'registroHorarios' ||
-            $enlace == 'generarCupon'
+            $enlace == 'generarCupon' ||
+            $enlace == 'cupon'
         ){
 
             $pagina = 'Views/pages/'. $enlace .'.php';

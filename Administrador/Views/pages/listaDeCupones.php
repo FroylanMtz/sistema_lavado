@@ -46,7 +46,7 @@
             <tr>
                 <th>ID del cupón</th>
                 <th>Fecha de expiración</th>                
-                <th>Detalles</th>
+                <th>Ver y/o canjear premio</th>
             </tr>
         </thead>
         <tbody>

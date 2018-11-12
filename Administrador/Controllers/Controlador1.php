@@ -243,6 +243,7 @@ class Controlador1 {
         // El número generado será el id y el password(inicial) del cupón
         $id = $password = random_int(10000, 99999);
         
+
         // Se establece la fecha de expiración
         $fecha = date('Y-m-j'); // Fecha actual
         // Se le suman la cantidad de dias requeridos
@@ -268,4 +269,125 @@ class Controlador1 {
                   </script>';
         }
     }
+
+
+    // Método para canjear cupón
+    public function canjearCupon(){
+        // Respuesta del modelo, parámetros: id del premio y del cupón
+        $respuesta = crud1::canjearCupon($_GET["premio"],$_GET["id"]);
+        if($respuesta){
+             echo '<script> 
+                        alert("Cupón Canjeado!!!");
+                        window.location.href = "index.php?action=listaDeCupones"; 
+                  </script>'; 
+        }else{ // Si no se generó muestra el mensaje de error
+            echo '<script> 
+                        alert("Error -> ERR_COUPON");
+                  </script>';
+        }
+
+    }
+
+
+
+    # VISITAS ----------------------------------------
+        # -------------------------
+    // Método del controlador para enviar los datos al modelo y agregar una visita
+    public function agregarVisita() {
+
+        // Fecha actual
+        $fecha = date("Y-m-d");
+
+        // Recibe la respuesta del modelo, la función recibe la fecha actual y el id del cupón como parámetro
+        $respuesta = crud1::agregarVisita($fecha,$_GET["id"]);
+
+        // Si se agregó la visita con éxito
+        if($respuesta){
+            echo '<script>
+                        alert("Visita agregada Correctamente!!!");
+                        window.location.href = "index.php?action=visitas";
+                  </script>';
+        }else{
+            echo '<script>
+                        alert("Error -> ERR_VISIT_INSERT");
+                  </script>';
+        }
+    }
+
+    // Método para recibir del modelo el # de visitas de un cupón
+    //(Parámetro: id del cupón)
+    public function numeroVisitas($cupon_id) {
+        // Respuesta del modelo, recibe como parámetro el id del cupón
+        $respuesta = crud1::numeroVisitas($cupon_id);
+
+        // se retorna la respuesta del modelo
+        return $respuesta;
+    }
+
+    # PREMIOS - CUPONES -------------------------------------
+        # ---------------------------------------
+    // Método para verificar si un cupón merece un premio de acuerdo a las visitas
+    //(Parámetro: ID del cupón y # de visitas)
+    public function verificarPremio($cupon_id,$numVisitas) {        
+        // Fnción para verificar el premio del cupón, si se cumplen las consiciones
+        // en el modelo se agregan los ids del cupón y del premio en cupones_premios
+        //Parámetro: ID del cupón y # de visitas
+        crud1::verificarPremio($cupon_id,$numVisitas);
+
+    }
+
+    // Método para obtener los premios de los cupones
+    public function obtenerPremiosCupones(){
+        // Se recibe la Respuesta del modelo, se manda como parámetro el id del cupón
+        $respuesta = crud1::obtenerPremiosCupones($_GET["id"]);
+
+        // Se retorna la respuesta, si todo va bien es un array asociativo
+        return $respuesta;
+    }
+
+
+    # NUMERO DE REGISTROS -{---------------------------}
+        # ----------------------
+    // Contar usuarios
+    public function numeroUsuarios() {
+        $respuesta = crud1::numeroUsuarios();
+
+        return $respuesta;
+    }
+
+     // Contar Cupones
+    public function numeroCupones() {
+        $respuesta = crud1::numeroCupones();
+
+        return $respuesta;
+    }
+
+     // Contar Visitas
+    public function numeroDeVisitas() {
+        $respuesta = crud1::numeroDeVisitas();
+
+        return $respuesta;
+    }
+
+    // Contar Promociones
+    public function numeroPromociones() {
+        $respuesta = crud1::numeroPromociones();
+
+        return $respuesta;
+    }
+
+    // Contar Premios
+    public function numeroPremios() {
+        $respuesta = crud1::numeroPremios();
+
+        return $respuesta;
+    }
+
+    // Contar Horarios
+    public function numeroHorarios() {
+        $respuesta = crud1::numeroHorarios();
+
+        return $respuesta;
+    }
+
 }

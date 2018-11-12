@@ -1,16 +1,18 @@
 <?php 
     
-    // Traer todos los datos de un cupón, se crea un objeto del tipo controlador 1
+    // Traer todos los datos de un cupón con sus respectivos premios, se crea un objeto del tipo controlador 1
     $controlador = new Controlador1();
     
-    // Se verifica el id con GET
-    if(isset($_GET["id"])){
-        // Se manda llamar al método para obtener todos los datos del cupón como un 
-        // array asociativo
-        $datosCupon = $controlador->obtenerCuponById();
-        var_dump($datosCupon);
-    }
+    // Se llama al método para obtener los premios de un cupón
+    $premiosCupones = $controlador->obtenerPremiosCupones();
 
+    // Si se oprimió el botón de canjear
+    if(isset($_POST["canjear"])){
+        // Llamada al método para canjear cupón
+        $controlador->canjearCupon();
+        //echo $_GET["premio"] ."<br>"; ID PREMIO
+        //echo $_GET["id"]; ID CUPON
+    }
  ?>
 
 <div class="row">
@@ -23,31 +25,43 @@
     </div><br>
 
 
-
-     <div class="col-xl-6">
-            <!-- Block Buttons -->            
-            <div class="row">                           
-                <div class="col-xl-6">
-                    <form method="POST">
-                    <button name="generar" type="submit" class="btn btn-shadow btn-block mb-2">+ Generar cupón</button>
-                    </form>
-                </div>
-            </div>
-            <!-- End Block Buttons -->
-        </div>
     <br>
 
     <table id="sorting-table" class="table mb-0">
         <thead>
             <tr>
-                <th>ID del cupón</th>
-                <th>Fecha de expiración</th>                
-                <th>Detalles</th>
+                <th>Premios</th>
+                <th>Descripción</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
-        
-            
+        <?php 
+            // Si tiene premios canjeados o canjeables se muestran, sino el mensaje ad hoc
+            if($premiosCupones){
+                // Se muestran los diferentes premios del cupón con foreach
+              foreach($premiosCupones as $premioCupon):
+                echo "<tr>";
+                echo "<td>" . $premioCupon["premio_id"] . "</td>";
+                echo "<td>" . $premioCupon["descripcion"] . "</td>";
+
+                if($premioCupon["canjeable"]=="SI"){
+                    $id = $_GET["id"];
+                    ?>
+
+                    <form method="POST" action="index.php?action=cupon&premio=<?php echo($premioCupon["premio_id"]) ?>&id=<?php echo($id) ?>">
+                    
+                    <td><button class="btn btn-success" type="submit" name="canjear">Canjeable</button></td>
+                    </form>
+                <?php                  
+                }else{
+                    echo "<td> Canjeado </td>";
+                }
+              endforeach;
+            }else{
+                echo "Este cupón aún no tiene premios canjeados o por canjear";
+            }
+         ?>            
         </tbody>
     </table>
 

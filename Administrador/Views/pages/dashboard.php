@@ -1,3 +1,31 @@
+<?php 
+
+    // Traer todos los numeros de registros de algunas tablas
+    // nuevo controlador
+    $controlador = new Controlador1();
+
+    // # de usuarios
+    $usuarios = $controlador->numeroUsuarios();
+
+    // # de cupones
+    $cupones = $controlador->numeroCupones();
+
+    // # de visitas
+    $visitas = $controlador->numeroDeVisitas();
+
+    // # de promociones
+    $promociones = $controlador->numeroPromociones();
+
+    // # de premios
+    $premios = $controlador->numeroPremios();
+
+    // # de horarios
+    $horarios = $controlador->numeroHorarios();
+
+ ?>
+
+
+
     <div class="row">
         <div class="page-header">
           <div class="d-flex align-items-center">
@@ -25,7 +53,8 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="title text-twitter">Usuarios</div>
-                                    <div class="number">10,865 Likes</div>
+                                    <!-- # de usuarios -->
+                                    <div class="number">Total: <?php echo $usuarios; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +71,8 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="title text-linkedin">Cupones</div>
-                                    <div class="number">8,986 Followers</div>
+                                    <!-- # de cupones -->
+                                    <div class="number">Total: <?php echo $cupones; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +89,8 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="title text-twitter">Visitas</div>
-                                    <div class="number">8,986 Followers</div>
+                                    <!-- # de visitas -->
+                                    <div class="number">Total: <?php echo $visitas; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -83,7 +114,8 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="title text-linkedin">Promociones</div>
-                                    <div class="number">3,654 Followers</div>
+                                    <!-- # de pomociones -->
+                                    <div class="number">Total: <?php echo $promociones; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -101,7 +133,8 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="title text-twitter">Premios</div>
-                                    <div class="number">8,986 Followers</div>
+                                    <!-- # de premios -->
+                                    <div class="number">Total: <?php echo $premios; ?></div>
                                 </div>
                             </div>
                         </div>
@@ -119,7 +152,8 @@
                                 </div>
                                 <div class="media-body align-self-center">
                                     <div class="title text-linkedin">Horarios</div>
-                                    <div class="number">10,865 Likes</div>
+                                    <!-- # de horarios -->
+                                    <div class="number">Total: <?php echo $horarios; ?></div>
                                 </div>
                             </div>
                         </div>
