@@ -1,11 +1,11 @@
 <?php 
     
     // Si se oprimió el botón de guardar datos
-    if(isset($_POST["premios"])){
+    if($_POST){
         // Se crea un objeto del tipo Controlador2
         $controlador = new Controlador2();
         // Se llama al método para agregar usuario
-        $controlador->registroPremios();        
+        $controlador->registroPremiosController();        
     }
 ?>
 
@@ -23,7 +23,8 @@
               <form role="form" method="POST">
                 <div class="card-body">
                 <div class="form-group">
-                    <input type="hidden" class="form-control" id="idPremioRegistro" name="idPremioRegistro"  value="1">
+                  <label for="idPremioRegistro">Id</label>
+                    <input type="number" class="form-control" id="idPremioRegistro" name="idPremioRegistro">
                   </div>
                   <div class="form-group">
                     <label for="nombrePremioRegistro">Nombre</label>
@@ -35,7 +36,7 @@
                   </div>
                    <div class="form-group">
                     <label for="visitasRequeridasPremioRegistro">Visitas Requeridas</label>
-                    <input type="text" class="form-control" id="visitasRequeridasPremioRegistro" name="visitasRequeridasPremioRegistro" placeholder="Visitas">
+                    <input type="number" class="form-control" id="visitasRequeridasPremioRegistro" name="visitasRequeridasPremioRegistro" placeholder="Visitas">
                   </div>
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">Guardar</button>

@@ -35,9 +35,11 @@
         // Recibe la respuesta del modelo, se pasa como parámetro el nombre de la tabla
         $respuesta = crud2::getAll($tabla);
 
+        return $respuesta;
+
         // Si trae por lo menos un registro retorna el registro (array asociativo)
-        if($respuesta) return $respuesta;
-        else return false; // Si no trae nada retorna false
+        //if($respuesta) return $respuesta;
+        //else return false; // Si no trae nada retorna false
     }
 
     //////////////////////////////////////////////P R O M O C I O N E S /////////////////////////////////////////////////////////////////////////
@@ -49,15 +51,17 @@
       if(isset($_POST["idPromocionRegistro"]))
       {
         //especificacion de la toma de registro de cada campo
-        $datosController = array("nombre"=>$_POST["nombrePromocionRegistro"],"descripcion"=>$_POST["descripcionPromocionRegistro"]);
+        $datosController = array("promocion_id"=>$_POST["idPromocionRegistro"],
+        						 "nombre"=>$_POST["nombrePromocionRegistro"],
+        						 "descripcion"=>$_POST["descripcionPromocionRegistro"]);
 
         $respuesta = crud2::registroPromocionesModel($datosController,"promociones");
         
        	//si los datos estan completos y correctos entra al success
-        if($respuesta =="success")
-        {
-        	echo "<script> window.location = 'index.php?action=verPromociones';</script>";
-        }
+        //if($respuesta =="success")
+        //{
+        	echo "<script> window.location = 'index.php?action=verPromociones&status=".$respuesta."';</script>";
+        //}
       }
   	}
 
@@ -223,19 +227,28 @@
       //✩ Funcion para registrar PremiosPremios ✩
       public function registroPremiosController()
       {
+
         //se hace un llamado con POST para registrar todos los campos
         if(isset($_POST["idPremioRegistro"]))
         {
+        	echo "<script>alert('".$_POST["idPremioRegistro"].",".$_POST["nombrePremioRegistro"].",".$_POST["descripcionPremioRegistro"].",".$_POST["visitasRequeridasPremioRegistro"]."');</script>";
+        	
           //especificacion de la toma de registro de cada campo
-          $datosController = array("nombre"=>$_POST["nombrePremiosRegistro"],"descripcion"=>$_POST["descripcionPremiosRegistro"], "visitasRequeridas"=>$_POST["visitasRequeridasPremiosRegistro"]);
+          $datosController = array("premio_id"=>$_POST["idPremioRegistro"], 
+          						   "nombrePremio"=>$_POST["nombrePremioRegistro"],
+          						   "descripcion"=>$_POST["descripcionPremioRegistro"], 
+          						   "visitasRequeridas"=>$_POST["visitasRequeridasPremioRegistro"]);
+
 
           $respuesta = crud2::registroPremiosModel($datosController,"premios");
+
+
         
           //si los datos estan completos y correctos entra al success
-          if($respuesta =="success")
-          {
-            echo "<script> window.location = 'index.php?action=registroPremios';</script>";
-          }
+          //if($respuesta =="success")
+          //{
+            echo "<script> window.location = 'index.php?action=verPremios&status=".$respuesta."';</script>";
+          //}
         }
       }
 

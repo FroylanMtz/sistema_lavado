@@ -15,7 +15,7 @@ class crud2 extends Conexion{
     	$stmt->execute();
 
     	// Se guarda en una variable un array asciativo con todos los resultados
-    	$respuesta = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    	$respuesta = $stmt->fetchAll();
     	// Se retorna el array
     	return $respuesta;
     }
@@ -25,9 +25,9 @@ class crud2 extends Conexion{
     	//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (promocion_id, nombrePromocion,descripcion) VALUES (:promocion_id,:nombrePromocion,:descripcion)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":promocion_id",$datosModel["promocion_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":nombrePromocion",$datosModel["nombrePromocion"], PDO::PARAM_STR);
-		$stmt->bidParam(":descripcion",$datosModel["descripcion"], PDO::PARAM_STR);
+		$stmt->bindParam(":promocion_id",$datosModel["promocion_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombrePromocion",$datosModel["nombre"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion",$datosModel["descripcion"], PDO::PARAM_STR);
 
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
@@ -44,9 +44,9 @@ class crud2 extends Conexion{
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (cupon_id, password, expiracion) VALUES (:cupon_id,:password,:expiracion)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":cupon_id",$datosModel["cupon_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":password",$datosModel["password"], PDO::PARAM_STR);
-		$stmt->bidParam(":expiración",$datosModel["expiración"], PDO::PARAM_INT);
+		$stmt->bindParam(":cupon_id",$datosModel["cupon_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":password",$datosModel["password"], PDO::PARAM_STR);
+		$stmt->bindParam(":expiración",$datosModel["expiración"], PDO::PARAM_INT);
 
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
@@ -63,10 +63,10 @@ class crud2 extends Conexion{
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (premio_id, nombrePremio,descripcion, visitasRequeridas) VALUES (:premio_id,:nombrePremio,:descripcion,:visitasRequeridas)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":premio_id",$datosModel["premio_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":nombrePremio",$datosModel["nombrePremio"], PDO::PARAM_STR);
-		$stmt->bidParam(":descripcion",$datosdatosModel["descripcion"], PDO::PARAM_STR);
-		$stmt->bidParam(":visitasRequeridas",$datosModel["visitasRequeridas"], PDO::PARAM_INT);
+		$stmt->bindParam(":premio_id",$datosModel["premio_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":nombrePremio",$datosModel["nombrePremio"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion",$datosModel["descripcion"], PDO::PARAM_STR);
+		$stmt->bindParam(":visitasRequeridas",$datosModel["visitasRequeridas"], PDO::PARAM_INT);
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
 			return "success";
@@ -82,8 +82,8 @@ class crud2 extends Conexion{
 		//consulta para obtener el valor de las variables cuando ejecutamos execute
 		$stmt = Conexion::conectar()->prepare ("INSERT INTO $tabla (horario_id, horario) VALUES (:horario_id,:horario)");
 		//hacemos referencia a las variables que tenemos vinculadas
-		$stmt->bidParam(":horario_id",$datosModel["horario_id"], PDO::PARAM_INT);
-		$stmt->bidParam(":horario",$datosModel["horario"], PDO::PARAM_STR);
+		$stmt->bindParam(":horario_id",$datosModel["horario_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":horario",$datosModel["horario"], PDO::PARAM_STR);
 		//esas variables anteriores son ejecutadas con execute
 		if($stmt->execute()){
 			return "success";

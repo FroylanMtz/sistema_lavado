@@ -44,20 +44,21 @@
                   <tbody>
                   <?php 
                   // Se muestran todos los registros de los admin con un foreach
-                  foreach($premios as $premios)://inicio foreach
+                  foreach ($premios as $key => $value) {
+                    
                   ?>        
                   <tr>
-                    <td><?php echo $premios["premio_id"]; ?></td>
-                    <td><?php echo $premios["nombrePremio"]; ?></td>
-                    <td><?php echo $premios["descripcion"]; ?></td>
-                    <td><?php echo $premios["visitasRequeridas"]; ?></td>
+                    <td><?php echo $value["premio_id"]; ?></td>
+                    <td><?php echo $value["nombrePremio"]; ?></td>
+                    <td><?php echo $value["descripcion"]; ?></td>
+                    <td><?php echo $value["visitasRequeridas"]; ?></td>
                     <td class="td-actions">
                       <a href="index.php?action=verPremios&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-search edit"></i></a>
                       <a href="index.php?action=editarPremios&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-edit edit"></i></a>
                       <a href="index.php?action=borrarPremio&id=<?php echo($premios["premio_id"]); ?>"><i class="la la-trash delete"></i></a>
                    </td>
                   </tr>    
-              <?php  endforeach; // FIN foreach?>
+              <?php  } // FIN foreach?>
             </tbody>
           </table>
  <!-- Script para redireccionar a la página de agregar usuario -->

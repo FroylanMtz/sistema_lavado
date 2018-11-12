@@ -11,7 +11,8 @@
               <form role="form" method="POST">
                 <div class="card-body">
                 <div class="form-group">
-                    <input type="hidden" class="form-control" id="idPromocionRegistro" name="idPromocionRegistro"  value="1">
+                  <label for="idPromocionRegistro">Id</label>
+                    <input type="number" class="form-control" id="idPromocionRegistro" name="idPromocionRegistro"  value="1">
                   </div>
                   <div class="form-group">
                     <label for="nombrePromocionRegistro">Nombre</label>
@@ -29,10 +30,10 @@
             <!-- /.card -->
 <?php 
   // Si se oprimió el botón de guardar datos
-  if(isset($_POST["promociones"])){
+  if($_POST){
     // Se crea un objeto del tipo Controlador2
     $controlador = new Controlador2();
     // Se llama al método para agregar usuario
-    $controlador->registroPromociones();        
+    $controlador->registroPromocionesController();        
   }
 ?>
