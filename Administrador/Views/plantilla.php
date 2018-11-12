@@ -43,6 +43,7 @@ Author: SAEROX
         <link rel="stylesheet" href="Public/assets/vendors/css/base/elisyam-1.5.min.css">
         <link rel="stylesheet" href="Public/assets/css/owl-carousel/owl.carousel.min.css">
         <link rel="stylesheet" href="Public/assets/css/owl-carousel/owl.theme.min.css">
+        <link rel="stylesheet" href="Public/assets/css/datatables/datatables.min.css">
         <!-- Tweaks for older IEs--><!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
@@ -248,6 +249,22 @@ Author: SAEROX
         <script src="Public/assets/vendors/js/owl-carousel/owl.carousel.min.js"></script>
         <script src="Public/assets/vendors/js/app/app.js"></script>
         <!-- End Page Vendor Js -->
+
+
+        <script src="Public/assets/vendors/js/datatables/datatables.min.js"></script>
+        <script src="Public/assets/vendors/js/datatables/dataTables.buttons.min.js"></script>
+        
+        <script src="Public/assets/vendors/js/datatables/buttons.html5.min.js"></script>
+        
+        
+        <script src="Public/assets/vendors/js/datatables/buttons.print.min.js"></script>
+        <script src="Public/assets/vendors/js/nicescroll/nicescroll.min.js"></script>
+        
+        <!-- End Page Vendor Js -->
+        <!-- Begin Page Snippets -->
+        <script src="Public/assets/js/components/tables/tables.js"></script>
+
+
         <!-- Begin Page Snippets -->
         <script src="Public/assets/js/dashboard/db-default.js"></script>
         <!-- End Page Snippets -->

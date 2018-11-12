@@ -61,7 +61,7 @@
                     <td><span class="text-primary"><?php echo $cupon["expiracion"]; ?></span></td>
                     
                     <td class="td-actions">
-                        <a href="index.php?action=verUsuario&id=<?php echo($cupon["admin_id"]); ?>"><i class="la la-search edit"></i></a>                    
+                        <a href="index.php?action=cupon&id=<?php echo($cupon["cupon_id"]); ?>"><i class="la la-search edit"></i></a>                    
                     </td>
                 </tr>
               
