@@ -65,7 +65,7 @@ $datosPremios = $controlador -> obtenerMisPremios();
 <?php
     //En este otro for se muestran todos los premios ya canjeados, la diferencia es que aqui se muestran los que tengan el campo que indica si el boleto es canejable en NO
     for($i = 0; $i < count($datosPremios); $i++){
-        if($datosPremios[$i]['canjeable'] == 'No' || $datosPremios[$i]['canjeable'] == 'no' ){
+        if($datosPremios[$i]['canjeable'] == 'NO' || $datosPremios[$i]['canjeable'] == 'NO' ){
             
 
             echo '<div class="row">
