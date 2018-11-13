@@ -90,7 +90,7 @@
        			<input type="text" class="form-control" value="'.$respuesta[0]["nombrePromocion"].'" name="nombrePromocionActualizar" required>
     		</div>
     		<div class="form-group">
-       			<label for="descripcionPromocionEditar">Nombre</label> 
+       			<label for="descripcionPromocionEditar">Descripcion</label> 
        			<input type="text" class="form-control" value="'.$respuesta[0]["descripcion"].'" name="descripcionPromocionActualizar" required>
     		</div>
   			<div class="card-footer">
@@ -346,7 +346,7 @@
         }
       }
 
-      public function vistaHorariosController(){//Funcion para poder ver la tabla de Premios
+      public function vistaHorariosController(){//Funcion para poder ver la tabla de horario
         $respuesta = crud2::vistaHorariosModel("horarios");
         foreach($respuesta as $row => $item){
           echo'<tr>
@@ -357,7 +357,7 @@
         }
       }
 
-      public function editarHorariosController(){//Funcion para editar Premio
+      public function editarHorariosController(){//Funcion para editar horario
 
         $datosController = $_GET["id"];
         $respuesta = crud2::editarHorarioModel($datosController, "horarios");
@@ -374,7 +374,7 @@
         </div>';
       }
 
-      //Funcion para actualizar Premio
+      //Funcion para actualizar horario
       public function actualizarHorariosController(){
 
         if(isset($_POST["idHorarioActualizar"])){
@@ -393,7 +393,7 @@
         }  
       }
 
-      //Funcion para borrar premio
+      //Funcion para borrar horario
       public function borrarHorariosController(){
 
         if(isset($_GET["id"])){
