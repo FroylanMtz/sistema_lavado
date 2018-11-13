@@ -330,16 +330,19 @@
           
           //especificacion de la toma de registro de cada campo
           $datosController = array("horario_id"=>$_POST["idHorarioRegistro"], 
-                         "horarioHorario"=>$_POST["horarioHorarioRegistro"]);
+                         "horario"=>$_POST["horarioHorarioRegistro"]);
 
           $respuesta = crud2::registroHorariosModel($datosController,"horarios");
         
-          //si los datos estan completos y correctos entra al success
-          //if($respuesta =="success")
-          //{
-          
-            echo "<script> window.location = 'index.php?action=verHorarios&status=".$respuesta."';</script>";
-          //}
+          if($respuesta == "success"){
+                echo '<script> 
+                            alert("Datos guardados correctamente");
+                            window.location.href = "index.php?action=verHorarios"; 
+                      </script>';                
+            }else{
+                //En caso de haber un error se queda en la misma pagina y le notifica al usuario
+                echo '<script> alert("Error al guardar") </script>';
+            }
         }
       }
 
