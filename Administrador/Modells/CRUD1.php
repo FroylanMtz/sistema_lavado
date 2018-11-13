@@ -183,7 +183,7 @@ class crud1 extends Conexion{
 
 
     // Método para verificar si un cupón es merecedor de un premio, si es así
-    // agrega el is del premio y del cupón en la tabla premios_cupones
+    // agrega el id del premio y del cupón en la tabla premios_cupones
     // (Parámetro: # de visitas)
     public function verificarPremio($cupon_id,$numVisitas) {
         // Consulta sql
@@ -204,7 +204,7 @@ class crud1 extends Conexion{
                 
                 // si se cumple se manda llamar la función para agregar el id del cupón
                 // y del premio a la tabla premios_cupones
-                self::agregarPremio($premio["premio_id"],$cupon_id,$canjeable);                 
+                if(self::agregarPremio($premio["premio_id"],$cupon_id,$canjeable));
             }
         endforeach;
     }

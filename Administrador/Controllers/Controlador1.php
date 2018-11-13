@@ -278,7 +278,7 @@ class Controlador1 {
         if($respuesta){
              echo '<script> 
                         alert("Cupón Canjeado!!!");
-                        window.location.href = "index.php?action=listaDeCupones"; 
+                        window.location.href = "index.php?action=listaDeCupones";
                   </script>'; 
         }else{ // Si no se generó muestra el mensaje de error
             echo '<script> 
@@ -303,10 +303,11 @@ class Controlador1 {
 
         // Si se agregó la visita con éxito
         if($respuesta){
-            echo '<script>
+            return true;
+            /*echo '<script>
                         alert("Visita agregada Correctamente!!!");
                         window.location.href = "index.php?action=visitas";
-                  </script>';
+                  </script>';*/
         }else{
             echo '<script>
                         alert("Error -> ERR_VISIT_INSERT");

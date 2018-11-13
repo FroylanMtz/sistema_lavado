@@ -12,15 +12,14 @@
     // Si se oprimió el botón de agregar usuario
     if(isset($_POST["generar"])){                
         // Se llama a la función del controlador para generar un cupón
-        $controlador->generarCupon();                    
+        $controlador->generarCupon();
     }
-
  ?>
 
 <div class="row">
         <div class="page-header">
           <div class="d-flex align-items-center">
-              <h2 class="page-header-title">Lista de cupones</h2>              
+              <h2 class="page-header-title">Cupones y visitas</h2>
           </div>
         </div>
 
@@ -45,36 +44,51 @@
         <thead>
             <tr>
                 <th>ID del cupón</th>
-                <th>Fecha de expiración</th>                
+                <th>Fecha de expiración</th>                                
+                <th>Número de visitas</th>
+                <th>Agregar visita</th>                              
                 <th>Ver y/o canjear premio</th>
             </tr>
         </thead>
         <tbody>
         <?php 
             // Se muestran todos los registros de los admin con un foreach
-            // se muestra un mensaje si no hay cupones
-            if($cupones){
-                foreach($cupones as $cupon): // Inicio foreach
+        if($cupones){
+            foreach($cupones as $cupon): // Inicio foreach        
         ?>        
-                <tr>
-                    <td><span style="width:100px;"><span class="badge-text badge-text-small info"><?php echo $cupon["cupon_id"]; ?></span></span></td>
-                    <td><span class="text-primary"><?php echo $cupon["expiracion"]; ?></span></td>
-                    
-                    <td class="td-actions">
-                        <a href="index.php?action=cupon&id=<?php echo($cupon["cupon_id"]); ?>"><i class="la la-search edit"></i></a>                    
+            <tr>
+                <!-- Nombre de usuario con un estlo diferente a los demás campos-->
+                <td><span style="width:100px;"><span class="badge-text badge-text-small info"><?php echo $cupon["cupon_id"]; ?></span></span></td>
+                
+                <td><?php echo $cupon["expiracion"]; ?></td>
+                
+
+                <!-- # de visitas -->
+                    <td>
+                    <?php // Llamada al método para ver el numero de visitas de un cupón
+                        $numVisitas = $controlador->numeroVisitas($cupon["cupon_id"]);
+                        echo $numVisitas;
+
+                        // Se manda llamar la función del controlador para verificar si el número de visitas corresponde a un premio, si es así se inserta el id del premio y del cupón en la tabla premio_cupones.
+                        // Se pasan como parámetros el id del cupón y las visitas del mismo
+                        // $controlador->verificarPremio($cupon["cupon_id"],$numVisitas);
+                     ?>
                     </td>
-                </tr>
+                <!-- Agregar visitas -->
+                    <td class="td-actions">
+                        <a href="index.php?action=agregarVisita&id=<?php echo($cupon["cupon_id"]); ?>"><i class="la la-plus edit"></i></a>
+                    </td>
+
+                <td class="td-actions">
+                        <a href="index.php?action=cupon&id=<?php echo($cupon["cupon_id"]); ?>"><i class="la la-search edit"></i></a>                    
+                </td>
+            </tr>
               
-        <?php  endforeach; // FIN foreach?>
-      <?php }  // FIN IF
-            else{
-                echo "<tr><td>No hay cupones</td></tr>";
-            }
-                ?>
-            
+        <?php  endforeach; // FIN foreach
+        }else{
+            echo "<td>No hay cupones</td>";
+        }
+        ?>
+
         </tbody>
     </table>
-
-  
-
-            

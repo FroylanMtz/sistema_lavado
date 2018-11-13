@@ -22,13 +22,9 @@
             </li>
 
             <!-- CUPONES -->
-            <li><a href="index.php?action=listaDeCupones" ><i class="la la-ticket"></i><span>Cupones</span></a>                
+            <li><a href="index.php?action=listaDeCupones" ><i class="la la-ticket"></i><i class="la la-car"></i>
+            <span>Cupones/Visitas</span></a>                
             </li>
 
-            <!-- VISITAS -->
-             <li><a href="#dropdown-authentication" aria-expanded="false" data-toggle="collapse"><i class="la la-car"></i><span>Visitas</span></a>
-                <ul id="dropdown-authentication" class="collapse list-unstyled pt-0">
-                    <li><a href="index.php?action=visitas">Agregar visita</a></li>
-                </ul>
-            </li>
+            
 

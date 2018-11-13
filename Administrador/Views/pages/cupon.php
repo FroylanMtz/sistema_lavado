@@ -42,7 +42,7 @@
                 // Se muestran los diferentes premios del cupón con foreach
               foreach($premiosCupones as $premioCupon):
                 echo "<tr>";
-                echo "<td>" . $premioCupon["premio_id"] . "</td>";
+                echo "<td>" . $premioCupon["nombrePremio"] . "</td>";
                 echo "<td>" . $premioCupon["descripcion"] . "</td>";
 
                 if($premioCupon["canjeable"]=="SI"){

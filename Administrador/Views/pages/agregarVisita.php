@@ -10,7 +10,18 @@
         // Se compara que la contraseña ingresada y la del usaurio en sesión sean iguales
         if($_SESSION["password"] == $_POST["password"]){
             // Se llama al método para agregar visita
-            $controlador->agregarVisita();             
+            if($controlador->agregarVisita()){
+
+                // Se manda llamar la función del controlador para verificar si el número de visitas corresponde a un premio, si es así se inserta el id del premio y del cupón en la tabla premio_cupones.
+                // Se pasan como parámetros el id del cupón y las visitas del mismo
+                // Se trean las visitas de el  cupón
+                $numVisitas = $controlador->numeroVisitas($_GET["id"]);
+                $controlador->verificarPremio($_GET["id"],$numVisitas);
+                echo '<script>
+                        alert("Visita agregada Correctamente!!!");
+                        window.location.href = "index.php?action=listaDeCupones";
+                  </script>';
+            }
         }else{
             // Si no coinciden las contraseñas se muestra el mensaje
             echo "<script> alert('Contraseña incorrecta!'); </script>";
