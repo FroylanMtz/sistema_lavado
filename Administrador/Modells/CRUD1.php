@@ -148,8 +148,11 @@ class crud1 extends Conexion{
         // Se prepara la consulta
         $stmt = Conexion::conectar()->prepare($sql);
         // Si se ejecuta con éxito devuelve true sino false
-        if($stmt->execute([$fecha,$cupon_id])) return true;
-        else return false;
+        if($stmt->execute([$fecha,$cupon_id])) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
     // Método para conocer el # de visitas de un cupón (Parámetros: id del cupón)
