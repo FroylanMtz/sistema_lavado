@@ -244,7 +244,7 @@ class Controlador1 {
         $id = $password = random_int(10000, 99999);
         
 
-        // Se establece la fecha de expiración
+        // --- Se establece la fecha de expiración ---
         $fecha = date('Y-m-j'); // Fecha actual
         // Se le suman la cantidad de dias requeridos
         $expiracion = strtotime ( '+30 day' , strtotime ( $fecha ) ) ;
@@ -257,7 +257,7 @@ class Controlador1 {
         // Se recibe la respuesta del modelo. Parámetro: id, password y fecha
         $respuesta = crud1::generarCupon($id,$password,$expiracion);
 
-        // Si el modelo generó con éxito el cupón se muestra el mensaje prtinente
+        // Si el modelo generó con éxito el cupón se muestra el mensaje pertinente
         if($respuesta){
              echo '<script> 
                         alert("Cupón Generado Correctamente!!!");

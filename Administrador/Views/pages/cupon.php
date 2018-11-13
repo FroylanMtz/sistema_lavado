@@ -9,9 +9,7 @@
     // Si se oprimió el botón de canjear
     if(isset($_POST["canjear"])){
         // Llamada al método para canjear cupón
-        $controlador->canjearCupon();
-        //echo $_GET["premio"] ."<br>"; ID PREMIO
-        //echo $_GET["id"]; ID CUPON
+        $controlador->canjearCupon();        
     }
  ?>
 
