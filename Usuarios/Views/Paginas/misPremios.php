@@ -28,7 +28,7 @@ $datosPremios = $controlador -> obtenerMisPremios();
 <?php
     //Con este for se recorren todos los premios disponibles y se compara si el campo que indica si es canjeable esta en si, para ponerle un mensaje concorde a la tarjeta, y de igual forma un color que represente esto como el color verde
     for($i = 0; $i < count($datosPremios); $i++){
-        if($datosPremios[$i]['canjeable'] == 'SI' || $datosPremios[$i]['canjeable'] == 'SI' ){
+        if($datosPremios[$i]['canjeable'] == 'Si' || $datosPremios[$i]['canjeable'] == 'SI' || $datosPremios[$i]['canjeable'] == 'si'){
             
             echo '<div class="row">
                 <div class="col s12 m12">
@@ -65,7 +65,7 @@ $datosPremios = $controlador -> obtenerMisPremios();
 <?php
     //En este otro for se muestran todos los premios ya canjeados, la diferencia es que aqui se muestran los que tengan el campo que indica si el boleto es canejable en NO
     for($i = 0; $i < count($datosPremios); $i++){
-        if($datosPremios[$i]['canjeable'] == 'NO' || $datosPremios[$i]['canjeable'] == 'NO' ){
+        if($datosPremios[$i]['canjeable'] == 'No' || $datosPremios[$i]['canjeable'] == 'NO' || $datosPremios[$i]['canjeable'] == 'no' ){
             
 
             echo '<div class="row">

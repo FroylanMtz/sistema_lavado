@@ -67,7 +67,7 @@ $premiosDisponibles = $controlador -> obtenerMisPremios();
 
                 if($datosPremios[$i]['premio_id'] == $premiosDisponibles[$j]['premio_id'] ){
 
-                    if($premiosDisponibles[$j]['canjeable'] == 'No' || $premiosDisponibles[$j]['canjeable'] == 'no' ){
+                    if($premiosDisponibles[$j]['canjeable'] == 'No' || $premiosDisponibles[$j]['canjeable'] == 'no' || $premiosDisponibles[$j]['canjeable'] == 'NO'){
                         echo '<span class="red-text text-darken-2"> <center> <h4> Premio ya canjeado </h4> </center> ';
                     }else{
                         echo '<span class="green-text text-darken-2"> <center>
