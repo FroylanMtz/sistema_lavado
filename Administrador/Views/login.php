@@ -113,7 +113,7 @@ Author: SAEROX
 
                             <div class="row">                          
                             <div class="col text-right">
-                                <a href="#">Ha olvidado la contraseña ?</a>
+                               
                             </div>
                         </div>
                         <div class="sign-btn text-center">
