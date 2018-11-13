@@ -154,6 +154,13 @@ class crud2 extends Conexion{
 		return $cupones->fetchAll();
 	}
 
+	//✩ Funcion de get para Horarios ✩
+	static public function getHorariosModel(){
+		$horarios = Conexion::conectar()->prepare("SELECT * FROM horarios");
+		$horarios->execute();
+		return $horarios->fetchAll();
+	}
+
 
 	//✩ Funcion de editar Promociones ✩
 	static public function editarPromocionModel($datosModel, $tabla){
@@ -191,6 +198,18 @@ class crud2 extends Conexion{
 		$stmt->close();
 	}
 
+	//✩ Funcion de editar Horarios ✩
+	static public function editarHorarioModel($datosModel, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("SELECT horario_id, horario FROM $tabla WHERE horario_id = :horario_id");
+		$stmt->bindParam(":horario_id", $datosModel, PDO::PARAM_INT);	
+		$stmt->execute();
+
+		return $stmt->fetch();
+
+		$stmt->close();
+	}
+
 
 	//✩ Funcion de Actualizar Promocion ✩
 	static public function actualizarPromocionModel($datosModel, $tabla){
@@ -219,6 +238,44 @@ class crud2 extends Conexion{
 		$stmt->bindParam(":password", $datosModel["password"], PDO::PARAM_STR);
 		$stmt->bindParam(":expiración", $datosModel["expiración"], PDO::PARAM_STR);
 		$stmt->bindParam(":cupon_id", $datosModel["cupon_id"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+			return "success";
+		}
+
+		else{
+			return "error";
+		}
+		$stmt->close();
+	}
+
+	//✩ Funcion de Actualizar premio ✩
+	static public function actualizarPremioModel($datosModel, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nombrePremio = :nombrePremio, descripcion = :descripcion, visitasRequeridas = :visitasRequeridas WHERE premio_id = :premio_id");
+
+		$stmt->bindParam(":nombrePremio", $datosModel["nombrePremio"], PDO::PARAM_STR);
+		$stmt->bindParam(":descripcion", $datosModel["descripcion"], PDO::PARAM_STR);
+		$stmt->bindParam(":visitasRequeridas", $datosModel["visitasRequeridas"], PDO::PARAM_INT);
+		$stmt->bindParam(":premio_id", $datosModel["premio_id"], PDO::PARAM_INT);
+
+		if($stmt->execute()){
+			return "success";
+		}
+
+		else{
+			return "error";
+		}
+		$stmt->close();
+	}
+
+	//✩ Funcion de Actualizar horario ✩
+	static public function actualizarHorarioModel($datosModel, $tabla){
+
+		$stmt = Conexion::conectar()->prepare("UPDATE $tabla SET horario = :horario WHERE horario_id = :horario_id");
+
+		$stmt->bindParam(":horario", $datosModel["horario"], PDO::PARAM_STR);
+		$stmt->bindParam(":horario_id", $datosModel["horario_id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";
@@ -266,6 +323,21 @@ class crud2 extends Conexion{
 
 		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE premio_id = :premio_id");
 		$stmt->bindParam(":premio_id", $datosModel, PDO::PARAM_INT);
+
+		if($stmt->execute()){
+			return "success";
+		}
+		else{
+		return "error";
+		}
+		$stmt->close();
+	}
+
+	//✩ Funcion de borrar premio ✩
+	static public function borrarHorarioModel($datosModel,$tabla){
+
+		$stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE horario_id = :horario_id");
+		$stmt->bindParam(":horario_id", $datosModel, PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";

@@ -16,15 +16,13 @@
      // Se muestra la página dependiendo de la variable GET - action
     public function mostrarPagina(){
 
-        if(isset($_GET['action'] )){
-            $enlace = $_GET['action'];
-        }else{
-            $enlace = 'dashboard'; 
-        }
-
-        // Se llama al método del modelo que regresa la ruta del archivo a incluir
-      
-        $pagina = Modelo2::mostrarPagina($enlace);
+      if(isset($_GET['action'] )){
+        $enlace = $_GET['action'];
+      }else{
+        $enlace = 'dashboard'; 
+      }
+      // Se llama al método del modelo que regresa la ruta del archivo a incluir
+      $pagina = Modelo2::mostrarPagina($enlace);
     }
 
 
@@ -109,11 +107,11 @@
             	"nombre"=>$_POST["nombrePromocionActualizar"],
             	"descripcion"=>$_POST["descripcionPromocionActualizar"]);
 
-				$respuesta = crud2::actualizarPromocionModel($datosController, "promociones");
+				    $respuesta = crud2::actualizarPromocionModel($datosController, "promociones");
 
       			if($respuesta == "success"){
         			echo "<script> window.location = 'index.php?action=verPromociones';</script>";
-     			}
+     			  }
       			else{
         			echo "error";
       			}
@@ -318,5 +316,89 @@
           echo "<script> window.location = 'index.php?action=verPremios&status=".$respuesta."';</script>";
         }
       }
-	  }
+      
+      //////////////////////////////////////////////  H O R A R I O S /////////////////////////////////////////////////////////////////////////
+
+      //✩ Funcion para registrar Horarios ✩
+      public function registroHorariosController()
+      {
+
+        //se hace un llamado con POST para registrar todos los campos
+        if(isset($_POST["idHorarioRegistro"]))
+        {
+          echo "<script>alert('".$_POST["idHorarioRegistro"].",".$_POST["horarioHorarioRegistro"]."');</script>";
+          
+          //especificacion de la toma de registro de cada campo
+          $datosController = array("horario_id"=>$_POST["idHorarioRegistro"], 
+                         "horarioHorario"=>$_POST["horarioHorarioRegistro"]);
+
+          $respuesta = crud2::registroHorariosModel($datosController,"horarios");
+        
+          //si los datos estan completos y correctos entra al success
+          //if($respuesta =="success")
+          //{
+          
+            echo "<script> window.location = 'index.php?action=verHorarios&status=".$respuesta."';</script>";
+          //}
+        }
+      }
+
+      public function vistaHorariosController(){//Funcion para poder ver la tabla de Premios
+        $respuesta = crud2::vistaHorariosModel("horarios");
+        foreach($respuesta as $row => $item){
+          echo'<tr>
+            <td>'.$item["horarios"].'</td>
+
+            <td><a href="index.php?action=verHorarios&idBorrar='.$item["horario_id"].'"><button class="btn btn-danger">Borrar</button></a></td></tr>
+            <td><a href="index.php?action=verHorarios&idBorrar='.$item["horario_id"].'"><button class="btn btn-info">Editar</button></a></td></tr>';
+        }
+      }
+
+      public function editarHorarioController(){//Funcion para editar Premio
+
+        $datosController = $_GET["horario_id"];
+        $respuesta = crud2::editarHorariosModel($datosController, "horarios");
+         echo'
+        <div class="form-group"> 
+            <input type="hidden" class="form-control" value="'.$respuesta["horario_id"].'" name="idHorarioActualizar">
+        </div>
+        <div class="form-group">
+            <label for="horarioHorarioEditar">Nombre</label> 
+            <input type="text" class="form-control" value="'.$respuesta["horario"].'" name="horarioHorarioActualizar" required>
+        </div>
+        <div class="card-footer">
+            <input type="submit" class="btn btn-primary" value="Actualizar">
+        </div>';
+      }
+
+      //Funcion para actualizar Premio
+      public function actualizarHorarioController(){
+
+        if(isset($_POST["idHorarioActualizar"])){
+
+          $datosController = array("horario_id"=>$_POST["idHorarioActualizar"],
+            "horario"=>$_POST["horarioHorarioActualizar"]);
+
+            $respuesta = crud2::actualizarHorarioModel($datosController, "horarios");
+
+            if($respuesta == "success"){
+              echo "<script> window.location = 'index.php?action=verHorarios';</script>";
+            }
+            else{
+              echo "error";
+            }
+        }  
+      }
+
+      //Funcion para borrar premio
+      public function borrarHorarioController(){
+
+        if(isset($_GET["id"])){
+           
+          $respuesta = crud2::borrarHorarioModel($_GET["id"], "horarios");
+
+          echo "<script> window.location = 'index.php?action=verHorarios&status=".$respuesta."';</script>";
+        }
+      }
+  }
 ?>
