@@ -62,3 +62,5 @@
             window.location.href = "index.php?action=registroHorarios";
         }
     </script>
+
+    

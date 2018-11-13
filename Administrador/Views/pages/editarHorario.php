@@ -5,9 +5,9 @@
     	<div class="card-body">
     		<form method="post">
         	<?php
-			$editarHorarios = new crud2();
-			$editarHorarios -> editarHorarioController();
-			$editarHorarios -> actualizarHorarioController();
+			$editarHorarios = new Controlador2();
+			$editarHorarios -> editarHorariosController();
+			$editarHorarios -> actualizarHorariosController();
 			?>
 			</form>          	
         </div>

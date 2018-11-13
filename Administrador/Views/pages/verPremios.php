@@ -15,7 +15,7 @@
 <div class="row">
         <div class="page-header">
           <div class="d-flex align-items-center">
-              <h2 class="page-header-title">Ver Premios</h2>        
+              <h2 class="page-header-title">Ver Premios</h2>       
           </div>
         </div>
 </div><br>
@@ -60,7 +60,7 @@
                   </tr>    
               <?php  } // FIN foreach?>
             </tbody>
-          </table>
+          </table> 
  <!-- Script para redireccionar a la página de agregar usuario -->
     <script type="text/javascript">
         function registroPremios(){

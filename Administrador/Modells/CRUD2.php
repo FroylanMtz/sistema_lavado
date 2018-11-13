@@ -169,7 +169,7 @@ class crud2 extends Conexion{
 		$stmt->bindParam(":promocion_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
-		return $stmt->fetch();
+		return $stmt->fetchAll();
 
 		$stmt->close();
 	}
@@ -193,7 +193,7 @@ class crud2 extends Conexion{
 		$stmt->bindParam(":premio_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
-		return $stmt->fetch();
+		return $stmt->fetchAll();
 
 		$stmt->close();
 	}
@@ -205,7 +205,7 @@ class crud2 extends Conexion{
 		$stmt->bindParam(":horario_id", $datosModel, PDO::PARAM_INT);	
 		$stmt->execute();
 
-		return $stmt->fetch();
+		return $stmt->fetchAll();
 
 		$stmt->close();
 	}
@@ -218,7 +218,7 @@ class crud2 extends Conexion{
 
 		$stmt->bindParam(":nombrePromocion", $datosModel["nombrePromocion"], PDO::PARAM_STR);
 		$stmt->bindParam(":descripcion", $datosModel["descripcion"], PDO::PARAM_STR);
-		$stmt->bindParam(":promocion_id", $datos2Model["promocion_id"], PDO::PARAM_INT);
+		$stmt->bindParam(":promocion_id", $datosModel["promocion_id"], PDO::PARAM_INT);
 
 		if($stmt->execute()){
 			return "success";

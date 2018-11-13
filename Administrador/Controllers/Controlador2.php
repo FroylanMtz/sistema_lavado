@@ -79,19 +79,19 @@
 
   		public function editarPromocionController(){//Funcion para editar Promocion
 
-    		$datosController = $_GET["promocion_id"];
-    		$respuesta = crud2::editarPromocionesModel($datosController, "promociones");
+    		$datosController = $_GET["id"];
+    		$respuesta = crud2::editarPromocionModel($datosController, "promociones");
 			echo'
     		<div class="form-group"> 
-      			<input type="hidden" class="form-control" value="'.$respuesta["promocion_id"].'" name="idPromocionActualizar">
+      			<input type="hidden" class="form-control" value="'.$respuesta[0]["promocion_id"].'" name="idPromocionActualizar">
     		</div>
    			<div class="form-group">
        			<label for="nombrePromocionEditar">Nombre</label> 
-       			<input type="text" class="form-control" value="'.$respuesta["nombre"].'" name="nombrePromocionActualizar" required>
+       			<input type="text" class="form-control" value="'.$respuesta[0]["nombrePromocion"].'" name="nombrePromocionActualizar" required>
     		</div>
     		<div class="form-group">
        			<label for="descripcionPromocionEditar">Nombre</label> 
-       			<input type="text" class="form-control" value="'.$respuesta["descripcion"].'" name="descripcionPromocionActualizar" required>
+       			<input type="text" class="form-control" value="'.$respuesta[0]["descripcion"].'" name="descripcionPromocionActualizar" required>
     		</div>
   			<div class="card-footer">
       			<input type="submit" class="btn btn-primary" value="Actualizar">
@@ -104,7 +104,7 @@
     		if(isset($_POST["idPromocionActualizar"])){
 
       			$datosController = array("promocion_id"=>$_POST["idPromocionActualizar"],
-            	"nombre"=>$_POST["nombrePromocionActualizar"],
+            	"nombrePromocion"=>$_POST["nombrePromocionActualizar"],
             	"descripcion"=>$_POST["descripcionPromocionActualizar"]);
 
 				    $respuesta = crud2::actualizarPromocionModel($datosController, "promociones");
@@ -259,26 +259,26 @@
             <td><a href="index.php?action=verPremios&idBorrar='.$item["premio_id"].'"><button class="btn btn-info">Editar</button></a></td></tr>';
         }
       }
+ 
+      public function editarPremiosController(){//Funcion para editar Premio
 
-      public function editarPremioController(){//Funcion para editar Premio
-
-        $datosController = $_GET["premio_id"];
-        $respuesta = crud2::editarPremiosModel($datosController, "premios");
+        $datosController = $_GET["id"];
+        $respuesta = crud2::editarPremioModel($datosController, "premios");
          echo'
         <div class="form-group"> 
-            <input type="hidden" class="form-control" value="'.$respuesta["premio_id"].'" name="idPremioActualizar">
+            <input type="hidden" class="form-control" value="'.$respuesta[0]["premio_id"].'" name="idPremioActualizar">
         </div>
         <div class="form-group">
             <label for="nombrePremioEditar">Nombre</label> 
-            <input type="text" class="form-control" value="'.$respuesta["nombre"].'" name="nombrePremioActualizar" required>
+            <input type="text" class="form-control" value="'.$respuesta[0]["nombrePremio"].'" name="nombrePremioActualizar" required>
         </div>
         <div class="form-group">
             <label for="descripcionPremioEditar">Descripcion</label> 
-            <input type="text" class="form-control" value="'.$respuesta["descripcion"].'" name="descripcionPremioActualizar" required>
+            <input type="text" class="form-control" value="'.$respuesta[0]["descripcion"].'" name="descripcionPremioActualizar" required>
      </div>
         <div class="form-group">
             <label for="visitasRequeridasPremioEditar">visitasRequeridas</label> 
-            <input type="text" class="form-control" value="'.$respuesta["visitasRequeridas"].'" name="visitasRequeridasPremioActualizar" required>
+            <input type="text" class="form-control" value="'.$respuesta[0]["visitasRequeridas"].'" name="visitasRequeridasPremioActualizar" required>
         </div>
         <div class="card-footer">
             <input type="submit" class="btn btn-primary" value="Actualizar">
@@ -291,7 +291,7 @@
         if(isset($_POST["idPremioActualizar"])){
 
           $datosController = array("premio_id"=>$_POST["idPremioActualizar"],
-            "nombre"=>$_POST["nombrePremioActualizar"],
+            "nombrePremio"=>$_POST["nombrePremioActualizar"],
             "descripcion"=>$_POST["descripcionPremioActualizar"],
             "visitasRequeridas"=>$_POST["visitasRequeridasPremioActualizar"]);
 
@@ -357,17 +357,17 @@
         }
       }
 
-      public function editarHorarioController(){//Funcion para editar Premio
+      public function editarHorariosController(){//Funcion para editar Premio
 
-        $datosController = $_GET["horario_id"];
-        $respuesta = crud2::editarHorariosModel($datosController, "horarios");
+        $datosController = $_GET["id"];
+        $respuesta = crud2::editarHorarioModel($datosController, "horarios");
          echo'
         <div class="form-group"> 
-            <input type="hidden" class="form-control" value="'.$respuesta["horario_id"].'" name="idHorarioActualizar">
+            <input type="hidden" class="form-control" value="'.$respuesta[0]["horario_id"].'" name="idHorarioActualizar">
         </div>
         <div class="form-group">
             <label for="horarioHorarioEditar">Nombre</label> 
-            <input type="text" class="form-control" value="'.$respuesta["horario"].'" name="horarioHorarioActualizar" required>
+            <input type="text" class="form-control" value="'.$respuesta[0]["horario"].'" name="horarioHorarioActualizar" required>
         </div>
         <div class="card-footer">
             <input type="submit" class="btn btn-primary" value="Actualizar">
@@ -375,7 +375,7 @@
       }
 
       //Funcion para actualizar Premio
-      public function actualizarHorarioController(){
+      public function actualizarHorariosController(){
 
         if(isset($_POST["idHorarioActualizar"])){
 
@@ -394,7 +394,7 @@
       }
 
       //Funcion para borrar premio
-      public function borrarHorarioController(){
+      public function borrarHorariosController(){
 
         if(isset($_GET["id"])){
            

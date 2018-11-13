@@ -1,5 +1,5 @@
 <?php
-
+ 
 class Modelo1 {
 
 
@@ -28,6 +28,7 @@ class Modelo1 {
             $enlace == 'editarCupon' ||
             $enlace == 'listaDeCupones' ||
             $enlace == 'verHorarios' ||
+            $enlace == 'editarHorario' ||
             $enlace == 'registroHorarios' ||
             $enlace == 'borrarHorario' ||
             $enlace == 'generarCupon' ||
