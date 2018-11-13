@@ -38,6 +38,7 @@
                         <th>ID</th>
                         <th>Nombre</th>
                         <th>Descripcion</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                   <tbody>
@@ -49,8 +50,7 @@
                     <td><?php echo $promociones["promocion_id"]; ?></td>
                     <td><?php echo $promociones["nombrePromocion"]; ?></td>
                     <td><?php echo $promociones["descripcion"]; ?></td>
-                    <td class="td-actions">
-                      <a href="index.php?action=verPromociones&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-search edit"></i></a>
+                    <td class="td-actions">                      
                       <a href="index.php?action=editarPromocion&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-edit edit"></i></a>
                       <a href="index.php?action=borrarPromociones&id=<?php echo($promociones["promocion_id"]); ?>"><i class="la la-trash delete"></i></a>
                    </td>

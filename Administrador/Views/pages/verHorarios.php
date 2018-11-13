@@ -37,6 +37,7 @@
                       <tr>
                         <th>ID</th>
                         <th>Horario</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                   <tbody>
@@ -47,8 +48,7 @@
                   <tr>
                     <td><?php echo $horarios["horario_id"]; ?></td>
                     <td><?php echo $horarios["horario"]; ?></td>
-                    <td class="td-actions">
-                      <a href="index.php?action=verHorarios&id=<?php echo($horarios["horario_id"]); ?>"><i class="la la-search edit"></i></a>
+                    <td class="td-actions">                      
                       <a href="index.php?action=editarHorario&id=<?php echo($horarios["horario_id"]); ?>"><i class="la la-edit edit"></i></a>
                       <a href="index.php?action=borrarHorario&id=<?php echo($horarios["horario_id"]); ?>"><i class="la la-trash delete"></i></a>
                    </td>

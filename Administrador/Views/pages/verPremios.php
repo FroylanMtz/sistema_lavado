@@ -39,6 +39,7 @@
                         <th>Nombre</th>
                         <th>Descripcion</th>
                         <th>Visitas Requeridas</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
                   <tbody>
@@ -52,8 +53,7 @@
                     <td><?php echo $value["nombrePremio"]; ?></td>
                     <td><?php echo $value["descripcion"]; ?></td>
                     <td><?php echo $value["visitasRequeridas"]; ?></td>
-                    <td class="td-actions">
-                      <a href="index.php?action=verPremios&id=<?php echo($value["premio_id"]); ?>"><i class="la la-search edit"></i></a>
+                    <td class="td-actions">                      
                       <a href="index.php?action=editarPremio&id=<?php echo($value["premio_id"]); ?>"><i class="la la-edit edit"></i></a>
                       <a href="index.php?action=borrarPremio&id=<?php echo($value["premio_id"]); ?>"><i class="la la-trash delete"></i></a>
                    </td>
